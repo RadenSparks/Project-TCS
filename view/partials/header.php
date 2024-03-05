@@ -39,7 +39,7 @@
 
 <nav class="navbar navbar_flex form_hidden" id="navbar_2">
     <div class="nav_bar">
-        <a id="nav_a" href="#store">STORE</a>
+        <a id="nav_a" href="#store">STORE</a>0
         <a id="nav_a" href="#faq">FAQ</a>
         <a id="nav_a" href="#help">HELP</a>
         <a id="nav_a" href="#unreal_engine">UNREAL ENGINE</a>

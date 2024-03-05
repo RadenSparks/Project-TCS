@@ -5,6 +5,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,6 +39,7 @@ session_start();
     <link rel="stylesheet" href="public/css/5_free_games.css">
     <link rel="stylesheet" href="public/css/rest.css">
     <link rel="stylesheet" href="public/css/9_media_index.css">
+    <link rel="stylesheet" href="public/css/11_log_register.css">
     <style>
         body::-webkit-scrollbar {
             display: none;
@@ -65,9 +67,10 @@ session_start();
 </head>
 
 <body>
-<?php
-    include "./view/partials/navbar.php";
-
+    <?php
+    // Header
+    // 
+    include "./view/partials/header.php";
     include "./view/partials/nav2.php";
 
     include "./view/partials/carousel.php";
@@ -81,6 +84,7 @@ session_start();
     include "./view/partials/card_slider.php";
 
     include "./view/partials/suggest.php";
+    // include "./view/partials/login.php";
 
     ?>
 
