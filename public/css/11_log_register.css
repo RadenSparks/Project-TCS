@@ -38,7 +38,7 @@ body{
 
 .form_cont {
     margin: 3.5rem auto;
-    width: 100%;
+    width: unset;
     max-width: 475px;
     padding: 5.5rem 6rem;
     background: #202020;
@@ -100,9 +100,10 @@ input:focus::placeholder{
     color: var(--text_white);
 }
 .input_full{
-    width: 100%;
+    width: calc(100% - 2rem);
 }
 .input_half_cont{
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
@@ -112,7 +113,7 @@ input:focus::placeholder{
     flex-direction: column;
 }
 .input_half{
-    width: 100%;
+    width: unset;
 }
 
 
@@ -201,4 +202,31 @@ form .field.valid input {
     margin: 1rem 0;
     font-size: 1.3rem;
     color: var(--text_gray);
+}
+
+
+@media only screen and (max-width: 480px) {
+    .input_half_cont{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 0rem;
+    }
+
+
+    .link {
+        margin-bottom: unset;
+        font-size:  1.1rem;
+    }
+
+    .rem_cont {
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+    }
 }

@@ -38,9 +38,15 @@
     color: var(--text_gray);
 }
 
-#search{
+.nav2 #search{
     background-color: transparent;
     color: black;
+    border: 0;
+    height: inset;
+    margin: initial;
+    padding-left: initial;
+    border-radius: initial;
+    color: var(--text_gray);
 }
 .nav2_left_list ,.nav2_right_list{
     display: flex;
