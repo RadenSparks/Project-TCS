@@ -50,7 +50,7 @@
     height: 4vh;
     gap: 1rem;
 }
-.nav2_left_list .nav2_list a,.nav2_right_list .nav2_list a{  
+.nav2_left_list .nav2_list a.inactive,.nav2_right_list .nav2_list a.inactive{  
     height: 100%;
     width: 6rem;
     font-size: 1.4rem;
@@ -61,3 +61,15 @@
 .nav2_left_list .nav2_list a:hover,.nav2_right_list .nav2_list a:hover{
     color: var(--text_white);
 }  
+
+.nav2_left_list .nav2_list a.active,.nav2_right_list .nav2_list a.active{  
+    height: 100%;
+    width: 6rem;
+    font-size: 1.4rem;
+    display: grid;
+    place-items: center;
+    color: var(--text_white);
+    background-color: transparent !important;
+}
+
+
