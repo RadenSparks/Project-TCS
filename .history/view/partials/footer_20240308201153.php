@@ -179,13 +179,13 @@
               Validator.isRequired('#firstname'),
               Validator.isRequired('#lastname'),
               Validator.isRequired('#name'),
-              Validator.isRequired('#password'),
               Validator.isRequired('#email'),
-              Validator.isEmail('#email'),
+            Validator.isRequired('#password'),
+              Validator.isEmail('#email'),   
               Validator.isConfirmed('#password', 6),
           ],
           onSubmit: function(data) {
-              console.log(data);
+            console.log(data);
           }
       });
   </script>

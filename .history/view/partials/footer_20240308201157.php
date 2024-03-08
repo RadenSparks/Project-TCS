@@ -164,8 +164,8 @@
   </div>
 
 
-  <script src="public/js/index.js"></script>
   <script src="public/js/carosel.js"></script>
+  <script src="public/js/index.js"></script>
   <script src="public/js/swiper-bundle.min.js"></script>
   <script src="public/js/card_slider.js"></script>
   <script src="public/js/register_val.js"></script>
@@ -179,13 +179,13 @@
               Validator.isRequired('#firstname'),
               Validator.isRequired('#lastname'),
               Validator.isRequired('#name'),
-              Validator.isRequired('#password'),
               Validator.isRequired('#email'),
-              Validator.isEmail('#email'),
+            Validator.isRequired('#password'),
+              Validator.isEmail('#email'),   
               Validator.isConfirmed('#password', 6),
           ],
           onSubmit: function(data) {
-              console.log(data);
+            console.log(data);
           }
       });
   </script>

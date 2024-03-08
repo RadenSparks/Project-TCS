@@ -1,7 +1,6 @@
 
 function Validator(options) {
-    console.log(options, "Options");
-    console.log(options.rules, "Rules")
+
     let selectorRules = {};
     const formElement = document.querySelector(options.form);
     // Đưa errorMessage ra ngoài 
@@ -12,7 +11,7 @@ function Validator(options) {
         var notificationError = parentInput.querySelector(options.errorSelector);
         // console.log(notificationError, 'CheckError');
         // Đưa errorMessage ra ngoài
-        let rules = selectorRules[rule.selector];
+        let rules = selectorRules[rule.selector]
         for (let i = 0; i < rules.length; i++) {
             errorMessage = rules[i](inputField.value)
             if (errorMessage) break;
@@ -23,7 +22,7 @@ function Validator(options) {
         } else {
             notificationError.innerText = "";
         }
-        return !errorMessage;
+        return !
     }
 
     if (formElement) {
@@ -41,9 +40,9 @@ function Validator(options) {
                 }
             })
             if(isFormValid) {
-                console.log("Register Successful");
+                console.log("Login Successful");
             } else {
-                console.log("Register Failed")
+                console.log("Login Failed")
             }
             
            
@@ -51,7 +50,6 @@ function Validator(options) {
         }
         // Lặp qua mỗi rules và xử lý (lắng nghe blur, input);
         options.rules.forEach((rule, index) => {
-            console.log(rule, 'Rule');
             if (Array.isArray(selectorRules[rule.selector])) {
                 selectorRules[rule.selector].push(rule.test);
             } else {

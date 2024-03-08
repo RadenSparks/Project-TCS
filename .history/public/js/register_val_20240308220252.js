@@ -12,7 +12,7 @@ function Validator(options) {
         var notificationError = parentInput.querySelector(options.errorSelector);
         // console.log(notificationError, 'CheckError');
         // Đưa errorMessage ra ngoài
-        let rules = selectorRules[rule.selector];
+        let rules = selectorRules[rule.selector]
         for (let i = 0; i < rules.length; i++) {
             errorMessage = rules[i](inputField.value)
             if (errorMessage) break;

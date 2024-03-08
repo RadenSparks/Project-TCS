@@ -54,7 +54,7 @@
                     <div class="rem_cont">
                         <div class="rem_cont_inner">
                             <div class="check_box">
-                                <input class="input_full" type="checkbox" name="remember_me" id="remember_me"
+                                <input class="" type="checkbox" name="remember_me" id="remember_me"
                                     value="pass">
                             </div>
                             <label id="rem_text" for="remember_me">I have read and agree to the <a class="link"

@@ -1,7 +1,6 @@
 
 function Validator(options) {
-    console.log(options, "Options");
-    console.log(options.rules, "Rules")
+
     let selectorRules = {};
     const formElement = document.querySelector(options.form);
     // Đưa errorMessage ra ngoài 
@@ -12,7 +11,7 @@ function Validator(options) {
         var notificationError = parentInput.querySelector(options.errorSelector);
         // console.log(notificationError, 'CheckError');
         // Đưa errorMessage ra ngoài
-        let rules = selectorRules[rule.selector];
+        let rules = selectorRules[rule.selector]
         for (let i = 0; i < rules.length; i++) {
             errorMessage = rules[i](inputField.value)
             if (errorMessage) break;
@@ -23,63 +22,27 @@ function Validator(options) {
         } else {
             notificationError.innerText = "";
         }
-        return !errorMessage;
     }
 
     if (formElement) {
-        var indexCheck = 0;
         formElement.onsubmit = function (e) {
             e.preventDefault();
-            let isFormValid = true;
+            var isFormValid = true; // Đặt giá trị mặc định là true
             options.rules.forEach((rule) => {
-                // console.log(rules, "CheckRules")
                 let inputField = formElement.querySelector(rule.selector);
-                let isValid = validate(inputField, rule)
-                
-                if (isValid != true) {
-                    isFormValid = false;
+                let isValid = validate(inputField, rule);
+                if (isValid !== true) {
+                    isFormValid = false; // Đặt thành false nếu có lỗi
                 }
-            })
-            if(isFormValid) {
-                console.log("Register Successful");
+            });
+            if (isFormValid) {
+                console.log('Form is valid'); // Nếu form hợp lệ
             } else {
-                console.log("Register Failed")
+                console.log('Form is invalid'); // Nếu form không hợp lệ
             }
-            
-           
-            // Lặp qua mỗi rules và xử lý (lắng nghe blur, input);
-        }
-        // Lặp qua mỗi rules và xử lý (lắng nghe blur, input);
-        options.rules.forEach((rule, index) => {
-            console.log(rule, 'Rule');
-            if (Array.isArray(selectorRules[rule.selector])) {
-                selectorRules[rule.selector].push(rule.test);
-            } else {
-                selectorRules[rule.selector] = [rule.test];
-            }
-
-            let inputField = formElement.querySelector(rule.selector);
-
-            // console.log(inputField, 'Check');
-            // Lấy trường cha từ thẻ input
-            // Query vào phần tử con để đưa thông báo lỗi error vào
-
-            inputField.onblur = function () {
-                validate(inputField, rule)
-            }
-
-            inputField.oninput = function () {
-                let parentInput = inputField.closest('.field');
-                let notificationError = parentInput.querySelector(options.errorSelector);
-                notificationError.style.display = 'none';
-                notificationError.innerText = "";
-            }
-            // let btnSubmit = formElement.querySelector('button[type="submit"]');
-            // console.log(btnSubmit, 'ButtonSubmit');
-
-            // console.log(selectorRules, 'SLT Rsssssles');
-        })
+        };
     }
+    
 }
 
 // Định nghĩa Phương Thức isRequired của hàm Validator

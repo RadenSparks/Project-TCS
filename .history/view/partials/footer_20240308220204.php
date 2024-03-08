@@ -172,15 +172,15 @@
   <script src="public/js/login_val.js"></script>
   <script>
       Validator({
-          form: '#form-1',
+          form: '#form-2',
           errorSelector: '.error',
           rules: [
               Validator.isRequired('#country', 'Vui lòng nhập tên đầy đủ của bạn'),
               Validator.isRequired('#firstname'),
               Validator.isRequired('#lastname'),
               Validator.isRequired('#name'),
-              Validator.isRequired('#password'),
               Validator.isRequired('#email'),
+              Validator.isRequired('#password'),
               Validator.isEmail('#email'),
               Validator.isConfirmed('#password', 6),
           ],

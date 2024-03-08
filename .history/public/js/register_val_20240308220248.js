@@ -12,7 +12,7 @@ function Validator(options) {
         var notificationError = parentInput.querySelector(options.errorSelector);
         // console.log(notificationError, 'CheckError');
         // Đưa errorMessage ra ngoài
-        let rules = selectorRules[rule.selector];
+        let rules = selectorRules[rule.selector]
         for (let i = 0; i < rules.length; i++) {
             errorMessage = rules[i](inputField.value)
             if (errorMessage) break;
@@ -51,7 +51,7 @@ function Validator(options) {
         }
         // Lặp qua mỗi rules và xử lý (lắng nghe blur, input);
         options.rules.forEach((rule, index) => {
-            console.log(rule, 'Rule');
+            console.log(rule)
             if (Array.isArray(selectorRules[rule.selector])) {
                 selectorRules[rule.selector].push(rule.test);
             } else {
