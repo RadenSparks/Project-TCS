@@ -1,27 +1,26 @@
 <?php
 require_once('connection.php');
 
-$page = isset($_GET['page']) ? $_GET['page'] : '';
+$site = isset($_GET['site']) ? $_GET['site'] : '';
 
 require_once('routes.php');
 
-//Nếu tham số page không tồn tại trong $routeMap
-if ($page == '') {
-    $page = 'home';
+//Nếu tham số site không tồn tại trong $routeMap
+if ($site == '') {
+    $site = 'home';
   }
   
-  //Nếu page được map vào routeMap
-  if (!array_key_exists($page, $routeMap)) {
-    $page = 'error';
+  //Nếu site được map vào routeMap
+  if (!array_key_exists($site, $routeMap)) {
+    $site = 'error';
   }
   
   //Nếu phướng thức không được map vào routeMap hoặc không có trong controller thì báo lỗi
-  if (!in_array($routeMap[$page]['method'], get_class_methods($routeMap[$page]['controller']))) {
-    $page = 'error';
+  if (!in_array($routeMap[$site]['method'], get_class_methods($routeMap[$site]['controller']))) {
+    $site = 'error';
   }
   
-  // include_once('controllers/' . $page . '_controller.php');
   // Tạo ra tên controller class từ các giá trị lấy được từ URL sau đó gọi ra để hiển thị trả về cho người dùng.
-  $calledMethod = $routeMap[$page]['method'];
-  $routeMap[$page]['controller']->$calledMethod();
+  $calledMethod = $routeMap[$site]['method'];
+  $routeMap[$site]['controller']->$calledMethod();
 ?>

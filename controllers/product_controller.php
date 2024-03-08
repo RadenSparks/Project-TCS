@@ -13,7 +13,7 @@ class ProductController extends BaseController
   //Make sure that file exists
   public function products()
   {
-    $this->render('products');
+    $this->render('/search-page/searchpage');
   }  
 
   public function details(){

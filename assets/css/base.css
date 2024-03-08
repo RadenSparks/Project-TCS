@@ -1,0 +1,128 @@
+:root {
+    --primary-color: #2a2a2a;
+    --sub-color: #0078f2;
+    --text-color: #ccc;
+    --black-color: #000;
+    --white-color: #fff;
+
+    --header-height: 51.8px;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+#main {
+    padding-top: var(--header-height);
+    background-color: #121212;
+    display: none;
+}
+
+/* Common class */
+.heading {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.title {
+    color: rgb(245, 245, 245);
+    font-weight: 500;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.border-blue {
+    border: 1px solid #0078f2;
+}
+
+.payment-price {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 1.4rem;
+    color: rgba(20,20,20,0.72);
+}
+
+/* Button style */
+.btn {
+    padding: 0 40px;
+    font-size: 1rem;
+}
+
+.btn--blue {
+    background-color: var(--sub-color);
+    transition: background-color 0.2s ease-in-out;
+    color: #fff;
+}
+
+.btn--blue:hover {
+    background-color: #007dfc;
+}
+
+.btn--off {
+    background-color: transparent;
+    border-color: var(--white-color);
+    cursor: default !important;
+    user-select: none;
+}
+
+.btn--off:hover {
+    background-color: transparent;
+    border-color: var(--white-color);
+}
+
+button {
+    box-sizing: border-box !important;
+    text-indent: 0px !important;
+    border: 0;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* List style */
+.list-item {
+    display: flex;
+}
+
+.list-icon {
+    border-radius: 12px;
+    margin-right: 12px;
+}
+
+.list-title {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Loading */
+.preload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+    background-color: #121212;
+}
+
+.loader {
+    width: 70px;
+    height: 70px;
+    border-width: 6px;
+}
+

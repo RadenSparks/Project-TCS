@@ -1,0 +1,14 @@
+<?php
+	if(isset($_GET['browse'])){
+		$tam=$_GET['browse'];
+	}else{
+		$tam='';
+	}if(isset($_POST['search'])){
+		include('search.php');
+	}elseif($tam=='genre'){
+		include('genre.php');
+	}
+	else{
+		include('browse.php');
+	}
+?>

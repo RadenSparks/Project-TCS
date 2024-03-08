@@ -21,7 +21,9 @@ $routeMap = array(
   'details' => route('controllers/product_controller.php', 'ProductController', 'details', function () { //Game Details
     return isset($_GET['id']) && $_GET['id'] != '';
   }),
+  'wishlist' => route('controllers/wishlist_controller.php', 'WishlistController', 'wishlist'),
   'products' => route('controllers/product_controller.php', 'ProductController', 'products'),
+  'cart' => route('controllers/cart_controller.php', 'CartController', 'cart'),
   "error" => route('controllers/base_controller.php', 'BaseController', 'error') //Error page  
 );
 
