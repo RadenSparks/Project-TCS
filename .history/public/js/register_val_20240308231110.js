@@ -3,8 +3,6 @@ function Validator(options) {
     // console.log(options, "Options");
     // console.log(options.rules, "Rules")
     let selectorRules = {};
-    let saveSelector = [];
-    let user = {};
     const formElement = document.querySelector(options.form);
     // Đưa errorMessage ra ngoài 
     var errorMessage;
@@ -45,16 +43,8 @@ function Validator(options) {
             if (isFormValid) {
                 console.log("Register Successful");
                 options.rules.reduce((values, rule) => {
-                    saveSelector.push(rule.selector);
-                    const saveSelectorNew = new Set(saveSelector);
-                    saveSelector = [...saveSelectorNew];
+                    if(rule.selector )
                 }, {});
-                console.log(saveSelector, 'Check');
-                for (let i = 0; i < saveSelector.length; i++) {
-                    let getUserValue = formElement.querySelector(saveSelector[i]).value;
-                    user[saveSelector[i]] = getUserValue
-                }
-                console.log(user);
             } else {
                 console.log("Register Failed")
             }
@@ -69,7 +59,7 @@ function Validator(options) {
                 selectorRules[rule.selector].push(rule.test);
             } else {
                 selectorRules[rule.selector] = [rule.test];
-            }
+            } 
 
             let inputField = formElement.querySelector(rule.selector);
 

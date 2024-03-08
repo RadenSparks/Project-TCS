@@ -54,7 +54,6 @@ function Validator(options) {
                     let getUserValue = formElement.querySelector(saveSelector[i]).value;
                     user[saveSelector[i]] = getUserValue
                 }
-                console.log(user);
             } else {
                 console.log("Register Failed")
             }

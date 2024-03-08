@@ -3,8 +3,6 @@ function Validator(options) {
     // console.log(options, "Options");
     // console.log(options.rules, "Rules")
     let selectorRules = {};
-    let saveSelector = [];
-    let user = {};
     const formElement = document.querySelector(options.form);
     // Đưa errorMessage ra ngoài 
     var errorMessage;
@@ -37,29 +35,19 @@ function Validator(options) {
                 // console.log(rules, "CheckRules")
                 let inputField = formElement.querySelector(rule.selector);
                 let isValid = validate(inputField, rule)
-
+                
                 if (isValid != true) {
                     isFormValid = false;
                 }
             })
-            if (isFormValid) {
+            if(isFormValid) {
                 console.log("Register Successful");
-                options.rules.reduce((values, rule) => {
-                    saveSelector.push(rule.selector);
-                    const saveSelectorNew = new Set(saveSelector);
-                    saveSelector = [...saveSelectorNew];
-                }, {});
-                console.log(saveSelector, 'Check');
-                for (let i = 0; i < saveSelector.length; i++) {
-                    let getUserValue = formElement.querySelector(saveSelector[i]).value;
-                    user[saveSelector[i]] = getUserValue
-                }
-                console.log(user);
+                let 
             } else {
                 console.log("Register Failed")
             }
-
-
+            
+           
             // Lặp qua mỗi rules và xử lý (lắng nghe blur, input);
         }
         // Lặp qua mỗi rules và xử lý (lắng nghe blur, input);

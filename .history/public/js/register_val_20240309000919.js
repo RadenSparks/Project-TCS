@@ -4,7 +4,7 @@ function Validator(options) {
     // console.log(options.rules, "Rules")
     let selectorRules = {};
     let saveSelector = [];
-    let user = {};
+    let 
     const formElement = document.querySelector(options.form);
     // Đưa errorMessage ra ngoài 
     var errorMessage;
@@ -52,9 +52,9 @@ function Validator(options) {
                 console.log(saveSelector, 'Check');
                 for (let i = 0; i < saveSelector.length; i++) {
                     let getUserValue = formElement.querySelector(saveSelector[i]).value;
-                    user[saveSelector[i]] = getUserValue
+                    
+                    
                 }
-                console.log(user);
             } else {
                 console.log("Register Failed")
             }
