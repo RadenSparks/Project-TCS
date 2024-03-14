@@ -32,7 +32,7 @@
     <div class="container">
       <?php
         load_searchbar();
-        include('content.php');
+        include('browse.php');
       ?>
     </div>
     
@@ -43,6 +43,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script type="text/js" href="./customjs.js"></script>
   <script src="assets/js/loader.js" defer></script>
+  <script>
+  document.getElementById("searchsideform").addEventListener("submit", function(event){
+    event.preventDefault()
+    window.location = "/Project-TCS/index.php?site=products&page=1&search=" + event.currentTarget.inputsearch.value+"&genre=";
+  });
+</script>
 </body>
 </html>
 

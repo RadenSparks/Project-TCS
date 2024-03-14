@@ -1,14 +1,7 @@
 <?php
-	if(isset($_GET['browse'])){
-		$tam=$_GET['browse'];
-	}else{
-		$tam='';
-	}if(isset($_POST['search'])){
-		include('search.php');
-	}elseif($tam=='genre'){
-		include('genre.php');
-	}
-	else{
-		include('browse.php');
-	}
+	$search = isset($_GET["search"]) && $_GET['search'] ? $_GET['search'] : "";
+	$genre = isset($_GET["genre"]) && $_GET['genre'] ? $_GET['genre'] : "";
+	$genreQueryCondition = isset($_GET["genre"]) && $_GET['genre'] ? " and genreid='" . $_GET['genre'] . "'" : "";
+	
+	include('browse.php');
 ?>
