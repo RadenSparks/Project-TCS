@@ -9,7 +9,7 @@ require 'site.php';
 // Find name to set title
 if (isset($_GET['id'])) {
     $gameid = $_GET['id'];
-    $searchName = mysqli_query($conn, "SELECT gamename FROM game WHERE gameid = '$gameid'");
+    $searchName = mysqli_query($conn, "SELECT gamename FROM game WHERE gameid = '$gameid'");                  
     if ($row = mysqli_fetch_array($searchName)) {
         $gameName = $row['gamename'];
     }
@@ -132,12 +132,12 @@ if (isset($_GET['id'])) {
                                 ';
                             } else {
                                 $addBtn = '
-                                    <button gameid=' . $gameid . ' class="btn btn-outline-light game-aside__btn game-aside__btn--add">ADD TO CART 1</button>
+                                    <button gameid=' . $gameid . ' class="btn btn-outline-light game-aside__btn game-aside__btn--add">ADD TO CART</button>
                                 ';
                             }
                         } else {
                             $addBtn = '
-                            <button gameid=' . $gameid . ' class="btn btn-outline-light game-aside__btn game-aside__btn--add">ADD TO CART 2</button>
+                            <button gameid=' . $gameid . ' class="btn btn-outline-light game-aside__btn game-aside__btn--add">ADD TO CART</button>
                             ';
                         }
 

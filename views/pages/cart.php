@@ -47,7 +47,7 @@
                             if (isset($_SESSION['email'])) {
                                 // Display cart
                                 $email = $_SESSION['email'];
-                                $checkCart = mysqli_query($conn, "SELECT * FROM cart WHERE email = '$email'") or die(mysqli_error($conn));
+                                $checkCart = mysqli_query($conn, "SELECT * FROM cart c JOIN cartitem ci ON c.cartid = ci.cartid WHERE status = 1 and email = '$email'") or die(mysqli_error($conn));
                                 $totalprice = 0;
                                 $totalsale = 0;
                                 if ($row = mysqli_fetch_array($checkCart)) {
