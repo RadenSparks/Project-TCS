@@ -48,7 +48,7 @@
             <div class="row">
                 <div id="carouselExampleCaptions" class="carousel game-slider" data-bs-ride="false">
                     <div class="carousel-inner game-slider__img">
-                        <a href="./index.php?site=details&id=m77" class="slide carousel-item active">
+                        <a href="./index.php?site=details&id=76" class="slide carousel-item active">
                             <img src="https://cdn2.unrealengine.com/egs-pubg-carousel-desktop-1920x1080-dd4decb712c8.jpg?h=1080&resize=1&w=1920" class="d-block w-100 rounded-5" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <img src="https://cdn2.unrealengine.com/egs-pubg-carousel-logo-350x100-943474bc2a8b.png" alt="" class="slide__label">
@@ -61,7 +61,11 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./index.php?site=details&id=m2" class="slide carousel-item">
+                        <?php
+                        
+                        
+                        ?>
+                        <a href="./index.php?site=details&id=13" class="slide carousel-item">
                             <img src="https://cdn2.unrealengine.com/egs-a-plague-tale-requiem-carousel-desktop-1248x702-24c927037c03.jpg?h=1080&resize=1&w=1920" class="d-block w-100 rounded-5" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <img src="https://cdn2.unrealengine.com/egs-a-plague-tale-requiem-carousel-logo-350x69-408997aa9613.png" alt="" class="slide__label">
@@ -77,7 +81,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./index.php?site=details&id=m66" class="slide carousel-item">
+                        <a href="./index.php?site=details&id=63" class="slide carousel-item">
                             <img src="https://cdn2.unrealengine.com/egs-genshin-impact-3-1-carousel-desktop-1248x702-be2f8dc04e27.jpg?h=1080&resize=1&w=1920" class="d-block w-100 rounded-5" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <img src="https://cdn2.unrealengine.com/genshin-impact-logo-en-v2-350x139-101962c8032b.png" alt="" class="slide__label">
@@ -92,7 +96,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./index.php?site=details&id=m19" class="slide carousel-item">
+                        <a href="./index.php?site=details&id=12" class="slide carousel-item">
                             <img src="https://cdn2.unrealengine.com/egs-destiny-2-festival-of-the-lost-carousel-desktop-1248x702-7aa78f815cf2.jpg?h=1080&resize=1&w=1920" class="d-block w-100 rounded-5" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <img src="https://cdn2.unrealengine.com/en-egs-destiny-2-festival-of-the-lost-logo-350x158-f5e886b8c8a8.png" alt="" class="slide__label">
@@ -107,12 +111,12 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./index.php?site=details&id=m47" class="slide carousel-item">
+                        <a href="./index.php?site=details&id=14" class="slide carousel-item">
                             <img src="https://cdn2.unrealengine.com/egs-spider-man-miles-morales-carousel-desktop-1248x702-0cbd7e91abd2.jpg?h=1080&resize=1&w=1920" class="d-block w-100 rounded-5" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                                 <img src="https://cdn2.unrealengine.com/egs-carousel-logo-image-350x170-4e2c1c6cd310.png" alt="" class="slide__label">
                                 <div class="slide__info">
-                                    <p class="slide__sub-label">OUT NOW</p>
+                                    <p class="slide__sub-label">1,139,000</p>
                                     <p class="slide__desc">
                                         When a fierce power struggle threatens to destroy his home,
                                         Miles must take up the mantle of Spider-Man and own it.
@@ -122,18 +126,17 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="./index.php?site=details&id=m76" class="slide carousel-item">
-                            <img src="https://cdn2.unrealengine.com/egs-ghostbusters-spirits-unleashed-carousel-desktop-1248x702-287e3c41c9a9.jpg?h=1080&resize=1&w=1920" class="d-block w-100 rounded-5" alt="...">
+                        <a href="./index.php?site=details&id=59" class="slide carousel-item">
+                            <img src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_G1A_03_1920x1080-1df3ab45b895adfee06b011673df20aa_1920x1080-1df3ab45b895adfee06b011673df20aa?h=270&resize=1&w=480" class="d-block w-100 rounded-5" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <img src="https://cdn2.unrealengine.com/egs-ghostbusters-spirits-unleashed-carousel-logo-v2-400x75-854291862610.png" alt="" class="slide__label">
+                                <img src="https://cdn2.unrealengine.com/egs-greeneye-sloclap-ic1-400x400-7f5493d6af29.png?h=480&resize=1&w=480" alt="" class="slide__label">
                                 <div class="slide__info">
-                                    <p class="slide__sub-label">OUT NOW</p>
+                                    <p class="slide__sub-label">373,000</p>
                                     <p class="slide__desc">
-                                        Play with up to four friends or solo. 
-                                        The choice is yours in the asymmetrical 
-                                        Ghostbusters game from IIIFonic.
+                                    Sifu is the new game of Sloclap, the independent studio behind Absolver. 
+                                    A third person action game featuring intense hand-to-hand combat.
                                     </p>
-                                    <p class="slide__price">Starting at <span style="text-decoration: underline;">đ</span><span style="font-weight: 600; font-size:1.6rem;">373,000</span></p>
+                                    <p class="slide__price">Starting at <span style="text-decoration: underline;">đ</span><span style="font-weight: 600; font-size:1.6rem;">456,000</span></p>
                                     <div href="" class="btn btn-light slide__btn">BUY NOW</div>
                                 </div>
                             </div>
@@ -172,8 +175,8 @@
                         </button>
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6">
                             <div class="list-item game-slider__item">
-                                <img src="https://cdn2.unrealengine.com/egs-ghostbusters-spirits-unleashed-carousel-thumb-1200x1600-ce822e7e468a.jpg?h=480&resize=1&w=360" alt="" class="list-icon game-slider__icon">
-                                <h4 class="list-title game-slider__title">Ghostbusters: Spirits Unleashed</h4>
+                                <img src="https://cdn1.epicgames.com/offer/b7b42e2078524ab386a8b2a9856ef557/EGS_SIFUStandardEdition_Sloclap_G1A_03_1920x1080-1df3ab45b895adfee06b011673df20aa_1920x1080-1df3ab45b895adfee06b011673df20aa?h=480&resize=1&w=360" alt="" class="list-icon game-slider__icon">
+                                <h4 class="list-title game-slider__title">Sifu</h4>
                             </div>
                         </button>
                     </div>
