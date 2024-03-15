@@ -9,6 +9,6 @@
     if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     }else{
-        header('Location: /Project-TCS/index.php?site=details&id='.$_GET['id']);
+        header('Location: /Project-TCS/index.php?site=cart');
     }
 ?>

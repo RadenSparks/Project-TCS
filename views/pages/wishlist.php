@@ -41,17 +41,17 @@
     <div id="main">
         <div class="container px-5">
             <div class="cart">
-                <h4 class="cart__title">My Cart</h4>
+                <h4 class="cart__title">My Wishlist</h4>
                 <div class="row cart__content">
                     <div class="col-8">
                         <?php
                             if (isset($_SESSION['email'])) {
                                 // Display cart
                                 $email = $_SESSION['email'];
-                                $checkCart = mysqli_query($conn, "SELECT * FROM cart c JOIN cartitem ci ON c.cartid = ci.cartid WHERE status = 1 and email = '$email'") or die(mysqli_error($conn));
+                                $checkWishlist = mysqli_query($conn, "SELECT * FROM wishlist w JOIN game g ON w.gameid = g.gameid WHERE email = '$email'") or die(mysqli_error($conn));
                                 $totalprice = 0;
                                 $totalsale = 0;
-                                if ($row = mysqli_fetch_array($checkCart)) {
+                                if ($row = mysqli_fetch_array($checkWishlist)) {
                                     do {
                                         $gameid = $row['gameid'];
                                         $gameDetail = mysqli_query($conn, "SELECT * FROM game WHERE gameid = '$gameid'") or die(mysqli_error($conn));
@@ -84,7 +84,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <a href="/Project-TCS/index.php?site=details&id='.$gameid.'" class="card-text cart-card__name">'.$name.'</a>
-                                                                <a href="/Project-TCS/assets/php/removeGame.php?id='.$gameid.'" class="card-text cart-card__remove">Remove</a>
+                                                                <a href="/Project-TCS/assets/php/removeWishlist.php?id='.$gameid.'" class="card-text cart-card__remove">Remove</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -106,7 +106,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <a href="/Project-TCS/index.php?site=details&id='.$gameid.'" class="card-text cart-card__name">'.$name.'</a>
-                                                                <a href="/Project-TCS/assets/php/removeGame.php?id='.$gameid.'" class="card-text cart-card__remove">Remove</a>
+                                                                <a href="/Project-TCS/assets/php/removeWishlist.php?id='.$gameid.'" class="card-text cart-card__remove">Remove</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -130,21 +130,21 @@
                                                                     </div>
                                                                 </div>
                                                                 <a href="/Project-TCS/index.php?site=details&id='.$gameid.'" class="card-text cart-card__name">'.$name.'</a>
-                                                                <a href="/Project-TCS/assets/php/removeGame.php?id='.$gameid.'" class="card-text cart-card__remove">Remove</a>
+                                                                <a href="/Project-TCS/assets/php/removeWishlist.php?id='.$gameid.'" class="card-text cart-card__remove">Remove</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             ';
                                         }
-                                    } while ($row = mysqli_fetch_array($checkCart));
+                                    } while ($row = mysqli_fetch_array($checkWishlist));
                                 } else {
                                     echo '
                                         <div class="cart__content cart__content--NOGAME">
                                             <span class="cart__icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="svg css-uwwqev" viewBox="0 0 45 52"><g fill="none" fill-rule="evenodd"><path d="M4.058 0C1.094 0 0 1.098 0 4.075v35.922c0 .338.013.65.043.94.068.65-.043 1.934 2.285 2.96 1.553.683 7.62 3.208 18.203 7.573 1.024.428 1.313.529 2.081.529.685.013 1.137-.099 2.072-.53 10.59-4.227 16.66-6.752 18.213-7.573 2.327-1.23 2.097-3.561 2.097-3.899V4.075C44.994 1.098 44.13 0 41.166 0H4.058z" fill="currentColor"></path><path stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 18l4.91 2.545-2.455 4M25.544 28.705c-1.056-.131-1.806-.14-2.25-.025-.444.115-1.209.514-2.294 1.197M29.09 21.727L25 19.5l2.045-3.5"></path></g></svg>
                                             </span>
-                                            <h4 class="cart__desc">Your cart is empty</h4>
+                                            <h4 class="cart__desc">Your wishlist is empty</h4>
                                             <a href="index.php?site=products&page=1" class="cart__link">Shop for Game</a>
                                         </div>
                                     ';
@@ -154,26 +154,6 @@
                                 echo '<script>window.location = "/Project-TCS/index.php?site=login"</script>';
                             }
                         ?>
-                    </div>
-                    <div class="col-4">
-                        <div class="cart-summary">
-                            <div class="card-body">
-                                <h5 class="card-title cart-summary__title">Games and Apps Summary</h5>
-                                <div class="payment-price cart-summary__order">
-                                    <div class="payment-price__label">Price</div>
-                                    <div class="payment-price__value"><?php echo 'đ'.number_format($totalprice)?></div>
-                                </div>
-                                <div class="payment-price cart-summary__order">
-                                    <div class="payment-price__label">Sale Discount</div>
-                                    <div class="payment-price__value"><?php echo '-đ'.number_format($totalsale)?></div>
-                                </div>
-                                <div class="payment-price cart-summary__order">
-                                    <div class="payment-price__label payment-price__label--PAY">Total</div>
-                                    <div class="payment-price__value payment-price__value--PAY"><?php echo 'đ'.number_format($total)?></div>
-                                </div>
-                                <a href="#" class="btn btn-primary confirm-btn cart-summary__btn">CHECK OUT</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

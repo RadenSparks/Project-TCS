@@ -9,7 +9,7 @@ require 'site.php';
 // Find name to set title
 if (isset($_GET['id'])) {
     $gameid = $_GET['id'];
-    $searchName = mysqli_query($conn, "SELECT gamename FROM game WHERE gameid = '$gameid'");                  
+    $searchName = mysqli_query($conn, "SELECT gamename FROM game WHERE gameid = '$gameid'");
     if ($row = mysqli_fetch_array($searchName)) {
         $gameName = $row['gamename'];
     }
@@ -21,20 +21,14 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://static-assets-prod.epicgames.com/epic-store/static/webpack/../favicon.ico"
-        type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" href="https://static-assets-prod.epicgames.com/epic-store/static/webpack/../favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.2.0-web/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/footer.css">
@@ -80,10 +74,12 @@ if (isset($_GET['id'])) {
                         // Insert comma into price to display
                         $strprice = "";
                         $strSalePrice = "";
+                        $wishlistbtn = "";
+
                         if ((isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
                             if ($price == 0 && $gametag != 'upcoming') {
                                 $strprice = "Free";
-                                $buybtn = '<a class="btn btn-primary game-aside__btn">GET</a>';
+                                $buybtn = '<a class="btn btn-primary game-aside__btn game-aside__btn--get">GET</a>';
                                 $pricebar = '
                                         <div class="game-aside__order">
                                             <p class="title game-aside__price">Free</p>
@@ -97,7 +93,7 @@ if (isset($_GET['id'])) {
                                         </div>
                                     ';
                             } else if ($sale == 0) {
-                                $buybtn = '<a class="btn btn-primary game-aside__btn">BUY NOW</a>';
+                                $buybtn = '<a class="btn btn-primary game-aside__btn game-aside__btn--buynow">BUY NOW</a>';
                                 $pricebar = '
                                         <div class="game-aside__order">
                                             <p class="title game-aside__price">đ' . number_format($price) . '</p>
@@ -122,6 +118,7 @@ if (isset($_GET['id'])) {
                             } else {
                                 $buybtn = '<a href="/Project-TCS/index.php?site=login" class="btn btn-primary game-aside__btn">BUY NOW</a>';
                             }
+                            $wishlistbtn = '<a href="/Project-TCS/index.php?site=login" class="btn btn-success game-aside__btn">ADD TO WISHLIST</a>';
                         }
                         if (isset($_SESSION['email'])) {
                             // Check if already in cart
@@ -134,6 +131,13 @@ if (isset($_GET['id'])) {
                                 $addBtn = '
                                     <button gameid=' . $gameid . ' class="btn btn-outline-light game-aside__btn game-aside__btn--add">ADD TO CART</button>
                                 ';
+                            }
+                            $email = $_SESSION['email'];
+                            $wishlistQuery = mysqli_query($conn, "SELECT * FROM wishlist WHERE gameid = '$gameid' and email = '$email'");
+                            if (mysqli_num_rows($wishlistQuery) == 0) {
+                                $wishlistbtn = '<a gameid=' . $gameid . ' class="btn btn-success game-aside__btn game-aside__btn__wishlist">ADD TO WISHLIST</a>';
+                            } else {
+                                $wishlistbtn = '<a gameid=' . $gameid . ' class="btn btn-warning game-aside__btn game-aside__btn__wishlist__remove">REMOVE FROM WISHLIST</a>';
                             }
                         } else {
                             $addBtn = '
@@ -241,6 +245,7 @@ if (isset($_GET['id'])) {
                                                 <img src="' . $logo . '" alt="" class="game-aside__img">
                                             </div>
                                             ' . (isset($pricebar) ? $pricebar : '') . '
+                                            ' . $wishlistbtn . '
                                             ' . $buybtn . '
                                             ' . $addBtn . '
                                             <div class="info">
@@ -263,7 +268,7 @@ if (isset($_GET['id'])) {
 
         <!-- Payment modal -->
         <?php
-        load_payment();
+        include('payment.php');
         ?>
     </div>
 
@@ -274,16 +279,37 @@ if (isset($_GET['id'])) {
 </body>
 <script>
     // Display payment modal
-    let buyBtn = document.querySelector('.game-aside__btn')
-    buyBtn.addEventListener('click', function () {
+    let buyBtn = document.querySelector('.game-aside__btn--buynow')
+    buyBtn?.addEventListener('click', function() {
+        paymentModal.style.display = "block";
+    })
+
+    let getBtn = document.querySelector('.game-aside__btn--get')
+    getBtn?.addEventListener('click', function() {
         paymentModal.style.display = "block";
     })
 
     let addBtn = document.querySelector('.game-aside__btn--add')
-    if (addBtn.getAttribute("gameid") != null) {
-        addBtn.addEventListener('click', function () {
+    if (addBtn?.getAttribute("gameid") != null) {
+        addBtn.addEventListener('click', function() {
             let gameid = addBtn.getAttribute("gameid");
-            window.location = "/Project-TCS/assets/php/addToCart.php?id=" + gameid
+            window.location = "/Project-TCS/assets/php/addToCart.php?id=" + gameid;
+        })
+    }
+
+    let wishlistBtn = document.querySelector('.game-aside__btn__wishlist')
+    if (wishlistBtn?.getAttribute("gameid") != null) {
+        wishlistBtn.addEventListener('click', function() {
+            let gameid = wishlistBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/assets/php/addToWishlist.php?id=" + gameid;
+        })
+    }
+
+    let removeWishlistBtn = document.querySelector('.game-aside__btn__wishlist__remove')
+    if (removeWishlistBtn?.getAttribute("gameid") != null) {
+        removeWishlistBtn.addEventListener('click', function() {
+            let gameid = removeWishlistBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/assets/php/removeWishlist.php?id=" + gameid;
         })
     }
 </script>

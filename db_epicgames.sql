@@ -1,3 +1,11 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 15, 2024 at 11:51 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -10,50 +18,65 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `db_epicgames`
+-- Database: `db_epicgames`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `accounts`
+-- Table structure for table `accounts`
 --
 
-CREATE TABLE `accounts` (  
+CREATE TABLE `accounts` (
   `email` varchar(100) NOT NULL,
   `password` varchar(30) NOT NULL,
   `firstname` text NOT NULL,
   `lastname` text NOT NULL,
-  `displayname` varchar(60) NOT NULL,
-  PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `displayname` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `accounts`
+--
 
 INSERT INTO `accounts` (`email`, `password`, `firstname`, `lastname`, `displayname`) VALUES
-('leafuit@gmail.com', '123456', 'Leaf', 'Koder', 'Leaf Koder'),
-('belrose@gmail.com', '123456', 'Phuoc', 'Le Minh', 'Le Minh Phuoc');
+('belrose@gmail.com', '123456', 'Phuoc', 'Le Minh', 'Le Minh Phuoc'),
+('leafuit@gmail.com', '123456', 'Leaf', 'Koder', 'Leaf Koder');
 
-CREATE TABLE `genre` (
-  `genreid` int(11) NOT NULL AUTO_INCREMENT,
-  `genrename` text NOT NULL,
-  PRIMARY KEY (`genreid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `cart`
+--
 
-INSERT INTO `genre` (`genreid`, `genrename`) VALUES
-(1, 'Action'),
-(2, 'Action-Adventure'),
-(3, 'Adventure'),
-(4, 'Application'),
-(5, 'Card Game'),
-(6, 'Casual'),
-(7, 'City Builder'),
-(8, 'Comedy'),
-(9, 'Dungeon Crawler'),
-(10, 'Exploration'),
-(11, 'Fighting');
+CREATE TABLE `cart` (
+  `cartid` bigint(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `purchasedate` datetime DEFAULT NULL,
+  `status` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cartitem`
+--
+
+CREATE TABLE `cartitem` (
+  `cartitemid` bigint(20) NOT NULL,
+  `cartid` bigint(20) NOT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `gameid` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `game`
+--
 
 CREATE TABLE `game` (
-  `gameid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `gameid` bigint(20) NOT NULL,
   `gamename` text NOT NULL,
   `sale` float NOT NULL,
   `price` float NOT NULL,
@@ -67,42 +90,12 @@ CREATE TABLE `game` (
   `second-img` varchar(500) NOT NULL,
   `third-img` varchar(500) NOT NULL,
   `icon` varchar(500) NOT NULL,
-  `logo` varchar(500) NOT NULL,
-  PRIMARY KEY (`gameid`),
-  FOREIGN KEY (`genreid`) REFERENCES `genre`(`genreid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `logo` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `cart` (
-  `cartid` bigint(20) NOT NULL AUTO_INCREMENT,
-  `email` varchar(100) NOT NULL,
-  `purchasedate` datetime,
-  `status` bit, 
-  PRIMARY KEY (`cartid`),
-  FOREIGN KEY (`email`) REFERENCES `accounts`(`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
-CREATE TABLE `cartitem` (
-  `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT,
-  `cartid` bigint(20) NOT NULL,
-  `quantity` int,
-  `gameid` bigint(20) NOT NULL,
-  PRIMARY KEY (`cartitemid`),
-  FOREIGN KEY (`cartid`) REFERENCES `cart`(`cartid`),
-  FOREIGN KEY (`gameid`) REFERENCES `game`(`gameid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-
-
-CREATE TABLE `wishlist` (
-  `wishid` bigint(20) AUTO_INCREMENT,
-  `email` varchar(100) NOT NULL,
-  `gameid` bigint(20) NOT NULL,
-  PRIMARY KEY (`wishid`),
-  FOREIGN KEY (`email`) REFERENCES `accounts`(`email`),
-  FOREIGN KEY (`gameid`) REFERENCES `game`(`gameid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+--
+-- Dumping data for table `game`
+--
 
 INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid`, `first-img`, `developer`, `publisher`, `summary`, `tag`, `second-img`, `third-img`, `icon`, `logo`) VALUES
 (1, 'Zelter', 0, 186000, 0, 1, 'https://cdn1.epicgames.com/spt-assets/6dbfe35a26c1465cb72df1f5c0773d86/zelter-66y5m.png?h=270&resize=1&w=480', 'G1 Playground', 'SuperGG.com', 'All the horrors of zombie apocalypse in adorable pixelated form! Craft explore and rescue people in a city overrun by the zombie horde. Good luck survivors!', 'topsellers', 'https://cdn1.epicgames.com/spt-assets/6dbfe35a26c1465cb72df1f5c0773d86/zelter-1nhn9.jpg?h=270&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/6dbfe35a26c1465cb72df1f5c0773d86/zelter-1raeb.jpg?h=270&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/6dbfe35a26c1465cb72df1f5c0773d86/zelter-vmjwv.png?h=854&resize=1&w=640', 'https://cdn1.epicgames.com/spt-assets/6dbfe35a26c1465cb72df1f5c0773d86/zelter-logo-1q7n0.png?h=270&resize=1&w=480'),
@@ -181,9 +174,192 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (73, 'Warhammer 40,000: Battlesector', 0, 0, 0, 1, 'https://cdn2.unrealengine.com/egs-warhammer40000battlesector-blacklabgames-g1a-02-1920x1080-7fe2c6011232.jpg', 'Black Lab Games', 'Slitherine Ltd.', 'Experience every bone-rattling explosion and soul-crushing charge in Warhammer 40,000: Battlesector, the definitive battle-scale game of turn-based strategy and fast-paced combat that takes you to the battlefields of the 41st Millenium.', 'free', 'https://cdn2.unrealengine.com/egs-warhammer40000battlesector-blacklabgames-g1a-03-1920x1080-8efc567bf9ad.jpg', 'https://cdn2.unrealengine.com/egs-warhammer40000battlesector-blacklabgames-g1a-04-1920x1080-5418ec5c394e.jpg', 'https://cdn1.epicgames.com/spt-assets/d26f2f9ea65c462dbd39040ae8389d36/download-warhammer-mechanicus-offer-1f6bv.jpg?h=854&resize=1&w=640', 'https://cdn2.unrealengine.com/egs-warhammer40000battlesector-blacklabgames-ic5-400x160-24d80fd76612.png?h=270&resize=1&w=480'),
 (74, 'Achilles: Legends Untold', 0, 140999, 0, 2, 'https://cdn1.epicgames.com/spt-assets/aec31192b8a6463c9bd43dcb6ece5c8f/achilles-legends-untold-offer-1mqig.jpg?h=270&resize=1&w=480', 'Dark Point Games S.A.', 'Dark Point Games S.A.', 'End the conflict between Hades and Ares in this Souls-like action RPG. Battle gods defeat mythological creatures and gather resources alone or in co-op in Achilles: Legends Untold.', '', 'https://cdn1.epicgames.com/spt-assets/aec31192b8a6463c9bd43dcb6ece5c8f/achilles-legends-untold-sv8gd.jpg?h=270&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/aec31192b8a6463c9bd43dcb6ece5c8f/achilles-legends-untold-fpi3v.jpg?h=270&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/aec31192b8a6463c9bd43dcb6ece5c8f/download-achilles-legends-untold-offer-kiu24.jpg?h=854&resize=1&w=640', 'https://cdn1.epicgames.com/spt-assets/aec31192b8a6463c9bd43dcb6ece5c8f/achilles-legends-untold-logo-1guzp.png?h=270&resize=1&w=480'),
 (75, 'Broken Pieces', 0, 233000, 0, 2, 'https://cdn1.epicgames.com/spt-assets/09cd905507fb4564ab2fa1b3a0954a7f/broken-pieces-offer-j022q.png?h=270&resize=1&w=480', 'Elseware Experience Benoit Dereau and Mael Vignau', 'Freedom Games', 'Broken Pieces is a psychological thriller taking place in a french coastal village somehow outside the flow of time. Solve the mysteries by putting the pieces of the story back together by figuring out the enigma behind this mystical place', 'mostplayed', 'https://cdn1.epicgames.com/spt-assets/09cd905507fb4564ab2fa1b3a0954a7f/broken-pieces-qygds.jpg?h=270&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/09cd905507fb4564ab2fa1b3a0954a7f/broken-pieces-tau44.jpg?h=270&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/09cd905507fb4564ab2fa1b3a0954a7f/download-broken-pieces-offer-1acg8.png?h=854&resize=1&w=640', 'https://cdn1.epicgames.com/spt-assets/09cd905507fb4564ab2fa1b3a0954a7f/broken-pieces-logo-1b68r.png?h=270&resize=1&w=480'),
-(76, 'PUBG', 0, 0, 0, 2, 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1fw6c.png?h=270&quality=medium&resize=1&w=480', 'KRAFTON, Inc.', 'KRAFTON, Inc.', 'Play PUBG: BATTLEGROUNDS for free. Land at strategic locations, loot weapons and supplies, then survive to become the last team standing in fierce combat across diverse battlefields.', 'mostplayed', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1wj9d.png?h=270&quality=medium&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1cbv1.png?h=270&quality=medium&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1gy48.png?h=270&quality=medium&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-logo-5xma7.png?h=270&quality=medium&resize=1&w=480');
+(76, 'PUBG', 0, 0, 0, 2, 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1fw6c.png?h=270&quality=medium&resize=1&w=480', 'KRAFTON, Inc.', 'KRAFTON, Inc.', 'Play PUBG: BATTLEGROUNDS for free. Land at strategic locations, loot weapons and supplies, then survive to become the last team standing in fierce combat across diverse battlefields.', 'mostplayed', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1wj9d.png?h=270&quality=medium&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1cbv1.png?h=270&quality=medium&resize=1&w=480', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-1pggr.jpg?h=480&quality=medium&resize=1&w=360', 'https://cdn1.epicgames.com/spt-assets/53ec4985296b4facbe3a8d8d019afba9/pubg-battlegrounds-logo-5xma7.png?h=270&quality=medium&resize=1&w=480');
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `genre`
+--
+
+CREATE TABLE `genre` (
+  `genreid` int(11) NOT NULL,
+  `genrename` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `genre`
+--
+
+INSERT INTO `genre` (`genreid`, `genrename`) VALUES
+(1, 'Action'),
+(2, 'Action-Adventure'),
+(3, 'Adventure'),
+(4, 'Application'),
+(5, 'Card Game'),
+(6, 'Casual'),
+(7, 'City Builder'),
+(8, 'Comedy'),
+(9, 'Dungeon Crawler'),
+(10, 'Exploration'),
+(11, 'Fighting');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `paymentid` bigint(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `cartid` bigint(20) NOT NULL,
+  `total` float NOT NULL,
+  `paymentdate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `referenceid` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlist`
+--
+
+CREATE TABLE `wishlist` (
+  `wishid` bigint(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `gameid` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cartid`),
+  ADD KEY `email` (`email`);
+
+--
+-- Indexes for table `cartitem`
+--
+ALTER TABLE `cartitem`
+  ADD PRIMARY KEY (`cartitemid`),
+  ADD KEY `cartid` (`cartid`),
+  ADD KEY `gameid` (`gameid`);
+
+--
+-- Indexes for table `game`
+--
+ALTER TABLE `game`
+  ADD PRIMARY KEY (`gameid`),
+  ADD KEY `genreid` (`genreid`);
+
+--
+-- Indexes for table `genre`
+--
+ALTER TABLE `genre`
+  ADD PRIMARY KEY (`genreid`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`paymentid`),
+  ADD KEY `cart_payment` (`cartid`),
+  ADD KEY `account_payment` (`email`);
+
+--
+-- Indexes for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD PRIMARY KEY (`wishid`),
+  ADD KEY `email` (`email`),
+  ADD KEY `gameid` (`gameid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cartid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `cartitem`
+--
+ALTER TABLE `cartitem`
+  MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `game`
+--
+ALTER TABLE `game`
+  MODIFY `gameid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
+--
+-- AUTO_INCREMENT for table `genre`
+--
+ALTER TABLE `genre`
+  MODIFY `genreid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `paymentid` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`email`) REFERENCES `accounts` (`email`);
+
+--
+-- Constraints for table `cartitem`
+--
+ALTER TABLE `cartitem`
+  ADD CONSTRAINT `cartitem_ibfk_1` FOREIGN KEY (`cartid`) REFERENCES `cart` (`cartid`),
+  ADD CONSTRAINT `cartitem_ibfk_2` FOREIGN KEY (`gameid`) REFERENCES `game` (`gameid`);
+
+--
+-- Constraints for table `game`
+--
+ALTER TABLE `game`
+  ADD CONSTRAINT `game_ibfk_1` FOREIGN KEY (`genreid`) REFERENCES `genre` (`genreid`);
+
+--
+-- Constraints for table `payment`
+--
+ALTER TABLE `payment`
+  ADD CONSTRAINT `account_payment` FOREIGN KEY (`email`) REFERENCES `accounts` (`email`);
+
+--
+-- Constraints for table `wishlist`
+--
+ALTER TABLE `wishlist`
+  ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`email`) REFERENCES `accounts` (`email`),
+  ADD CONSTRAINT `wishlist_ibfk_2` FOREIGN KEY (`gameid`) REFERENCES `game` (`gameid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
