@@ -29,7 +29,7 @@
                 $username = strtoupper(explode('@', $email)[0]);
                 echo '
                     <li class="nav-item nav-item--no-animation logged-in">
-                        <a href="#" class="btn nav-link">
+                        <a class="btn nav-link">
                             <i class="nav-icon fa-solid fa-user"></i>
                             '.$username.'
                             <div class="user-menu">
