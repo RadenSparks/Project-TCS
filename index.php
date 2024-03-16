@@ -1,5 +1,5 @@
 <?php
-require_once('connection.php');
+// require_once('connection.php');
 
 $site = isset($_GET['site']) ? $_GET['site'] : '';
 

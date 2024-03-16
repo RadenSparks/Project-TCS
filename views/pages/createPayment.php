@@ -1,16 +1,11 @@
 
 <?php
 
-
-echo "Something !";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     $total = $_POST["total"];
-    $cartid = $_POST["cartid"];
     $email = $_SESSION["email"];
 
-    $total = 0;
     // Construct the response array
     $response = [
         "actions" => [

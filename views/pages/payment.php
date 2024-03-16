@@ -69,9 +69,7 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
                             </div>
                             <div class="payment-confirm" name="orderBtn" hidden>
                                 <div class="payment-confirm__container">
-                                <!--<button type="button" class="btn btn-primary confirm-btn payment-confirm__btn">Pay via PAYPAL</button>-->
-                                <!--<div id="paypal-button-container" class="btn btn-primary confirm-btn payment-confirm__btn" name="orderBtn" disabled></div>-->
-                                <div id="paypal-button-container"></div>
+                                    <div id="paypal-button-container"></div>
                                 </div>                                
                             </div>
                         </div>
@@ -132,7 +130,7 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
                             </div>
                             <div class="payment-confirm">
                                 <div class="payment-confirm__container">
-                                    <button type="button" class="btn btn-primary confirm-btn payment-confirm__btn" name="orderBtn" disabled>PLACE ORDER</button>
+                                    <div id="paypal-button-container"></div>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +151,7 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
             type: 'POST',
             url: 'createPayment.php',
             data: formData,
-            success: function(response) {
+            success: function (response) {
                 // return actions.order.create({
                 //     "purchase_units": [{
                 //         "amount": {
@@ -166,7 +164,7 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
                 // });
                 return response;
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 console.log(xhr.responseText);
                 return null;
             }
@@ -181,19 +179,23 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
             tagline: false,
             label: '<?php echo 'pay'; ?>'
         },
-        onApprove(data) {
-            alertify.alert("Transaction process successfully !", function() {
-                //TODO: create new payment here
-                window.location.href = "index.php?site=home"
-            }).set({
-                title: ''
-            }).set({
-                labels: {
-                    ok: 'Ok'
-                }
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                alertify.alert("Transaction process successfully !", function () {
+                    //TODO: create new payment here
+                    window.location.href = "index.php?site=home"
+                }).set({
+                    title: ''
+                }).set({
+                    labels: {
+                        ok: 'Ok'
+                    }
+                });
+                // Call your backend to save the transaction details
             });
+            
         },
-        onError(err) {
+        onError: function(err) {
             alertify.alert('Error during processing payment! Please try again later').set({
                 title: ''
             }).set({
@@ -202,15 +204,24 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
                 }
             });
         },
-        createOrder: function(data, actions) {
-            return createPayment(data, actions);
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                "purchase_units": [{
+                    "amount": {
+                        "currency_code": "USD",
+                        "value": "<?php echo $total ?>"
+                    },
+                    "reference_id": generateUUID()
+                }],
+                "intent": "CAPTURE"
+            });
         }
     }).render('#paypal-button-container');
 
     function generateUUID() { // Public Domain/MIT
         var d = new Date().getTime(); //Timestamp
         var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0; //Time in microseconds since page-load or 0 if unsupported
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             var r = Math.random() * 16; //random number between 0 and 16
             if (d > 0) { //Use timestamp until depleted
                 r = (d + r) % 16 | 0;
@@ -225,7 +236,7 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
 </script>
 <script defer>
     // Display border and Active order button after choose pay method
-    jQuery("input[name='methodCheck']").change(function() {
+    jQuery("input[name='methodCheck']").change(function () {
         if (jQuery(this).is(":checked")) {
             jQuery(this).parent().addClass("border-blue");
             jQuery("div[name='orderBtn']").removeAttr('hidden')
@@ -239,7 +250,7 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
     // Close modal
     let closeBtn = document.querySelector('.payment-summary__close')
     let paymentModal = document.querySelector('.payment-modal')
-    closeBtn.addEventListener('click', function() {
+    closeBtn.addEventListener('click', function () {
         paymentModal.style.display = "none";
     })
 </script>
