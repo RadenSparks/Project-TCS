@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $searchPrice = mysqli_query($conn, "SELECT price FROM game WHERE gameid = '$id'");
     if (mysqli_num_rows($searchPrice) > 0) {
         $total = mysqli_fetch_array($searchPrice)['price'];
+
         $date = date('Y-m-d H:i:s');
         $insertCartQuery = "INSERT INTO `cart`(`email`, `purchasedate`, `status`) values ('" . $email . "','" . $date . "', 0)";
         mysqli_query($conn, $insertCartQuery) or die(mysqli_error($conn));
@@ -34,8 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 }else{
-    if (isset($_SERVER["HTTP_REFERER"])) {
-        header("Location: " . $_SERVER["HTTP_REFERER"]);
-    }
+    header('Location: /Project-TCS/index.php?site=home');
 }
 ?>
