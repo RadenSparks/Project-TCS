@@ -146,44 +146,19 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
 <link rel="stylesheet" href="./assets/js/css/alertify.css">
 <script src="./assets/js/alertify.js"></script>
 <script>
-    function createPayment(data, actions) {
-        $.ajax({
-            type: 'POST',
-            url: 'createPayment.php',
-            data: formData,
-            success: function (response) {
-                // return actions.order.create({
-                //     "purchase_units": [{
-                //         "amount": {
-                //             "currency_code": "USD",
-                //             "value": "<?php echo $total ?>"
-                //         },
-                //         "reference_id": generateUUID()
-                //     }],
-                //     "intent": "CAPTURE"
-                // });
-                return response;
-            },
-            error: function (xhr, status, error) {
-                console.log(xhr.responseText);
-                return null;
-            }
-        });
-    }
-
     paypal.Buttons({
         style: {
             layout: 'horizontal',
             color: 'blue',
             shape: 'rect',
-            tagline: false,
-            label: '<?php echo 'pay'; ?>'
+            tagline: false
         },
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
                 alertify.alert("Transaction process successfully !", function () {
-                    //TODO: create new payment here
-                    window.location.href = "index.php?site=home"
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const id = urlParams.get('id');                    
+                    window.location = "/Project-TCS/assets/php/buyNow.php?id=" + id;
                 }).set({
                     title: ''
                 }).set({
@@ -193,9 +168,9 @@ if (isset($_GET['id']) && isset($_SESSION['email'])) {
                 });
                 // Call your backend to save the transaction details
             });
-            
+
         },
-        onError: function(err) {
+        onError: function (err) {
             alertify.alert('Error during processing payment! Please try again later').set({
                 title: ''
             }).set({
