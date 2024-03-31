@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- custom css & js-->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- font-awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Epic Games Store</title>
+    <link rel="icon" type="image/x-icon" href="epicFavIcon.ico">
+</head>
+
+<body class="d-flex flex-column justify-content-center align-items-center">
+        <!-- 
+        
+            section-1 navbar 
+    
+        -->
+    <nav class="nav-1 navbar d-flex justify-content-between p-0">
+        <ul class="d-flex align-items-center p-0 m-0">
+            <li><img class='navIcon ms-2' src="static/navIcon.png" alt=""></li>
+            <li class="nav-1-links ms-2 store-link">store</li>
+            <li class="nav-1-links">faq</li>
+            <li class="nav-1-links">help</li>
+            <li class="nav-1-links">unreal engine</li>
+        </ul>
+        <ul class="d-flex align-items-center m-0 gap-3">
+            <li><img class="symbols" src="static/globe.png" alt=""></li>
+            <li class="d-flex align-items-center gap-2 me-2"><img class="symbols mx-1"
+                    onclick="window.open('form.html', '');" src="static/profile.png" alt=""><a href="form.html"
+                    target="_blank">sign in</a></li>
+            <li><button class="download border border-0">download</button></li>
+        </ul>
+    </nav>
+
+
+    <!-- 
+        
+        main content
+    
+    -->
+
+    <main class="main">
+
+        <!-- 
+            
+            
+            carousel 1,              
+            section 2 
+        
+        
+        -->
+        <div class="container-fluid p-0 w-100">
+            <!-- navbar 2 -->
+            <nav class="nav-2 navbar d-flex justify-content-start align-items-center py-3 px-0 w-100">
+                <ul class="d-flex align-items-center m-0 gap-3 px-0 py-3">
+                    <li class="active">
+                        <div
+                            class="input-1-box bg-dark d-flex align-items-center justify-content-start mx-0 px-3 rounded-pill">
+                            <span><i class="fa fa-search opacity-50"></i></span>
+                            <input class="input-1 bg-dark border border-0" type="text" placeholder="Search Store">
+                        </div>
+                    </li>
+                    <li class="text-light">Discover</li>
+                    <li>Browse</li>
+                    <li>News</li>
+                </ul>
+            </nav>
+
+            <div class="row w-100 m-0">
+                <!-- carousel 1 -->
+                <div id="carouselExampleSlidesOnly" class="col-9 p-0 carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="static/carousel-1/game1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="static/carousel-1/game2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="static/carousel-1/game3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- sideline 1 -->
+                <div class="col-3 card mb-3 bg-transparent d-flex justify-content-between align-items-start">
+
+                    <div
+                        class="row g-0 side-line-game d-flex align-items-center justify-content-start rounded-3 p-3 mx-3 w-100">
+                        <div class="text-light d-flex align-items-center justify-content-start">
+                            <img src="static/carousel-1/sideLine1/game1.jpg" class="img-fluid side-line-img rounded p-0"
+                                alt="...">
+                            <p class="p-0 mx-3 my-0 side-line-text">The Callisto Protocol</p>
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="row g-0 side-line-game d-flex align-items-center justify-content-start rounded-3 p-3 mx-3 w-100">
+                        <div class="text-light d-flex align-items-center justify-content-start">
+                            <img src="static/carousel-1/sideLine1/game2.jpg" class="img-fluid side-line-img rounded p-0"
+                                alt="...">
+                            <p class="p-0 mx-3 my-0 side-line-text">STAR WARS Jedi: Survivor&#8482;</p>
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="row g-0 side-line-game d-flex align-items-center justify-content-start rounded-3 p-3 mx-3 w-100">
+                        <div class="text-light d-flex align-items-center justify-content-start">
+                            <img src="static/carousel-1/sideLine1/game3.jpg" class="img-fluid side-line-img rounded p-0"
+                                alt="...">
+                            <p class="p-0 mx-3 my-0 side-line-text">The Last Of Us&#8482; Part I</p>
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="row g-0 side-line-game d-flex align-items-center justify-content-start rounded-3 p-3 mx-3 w-100">
+                        <div class="text-light d-flex align-items-center justify-content-start">
+                            <img src="static/carousel-1/sideLine1/game4.jpg" class="img-fluid side-line-img rounded p-0"
+                                alt="...">
+                            <p class="p-0 mx-3 my-0 side-line-text">Shoulders of Giants</p>
+
+                        </div>
+                    </div>
+
+                    <div
+                        class="row g-0 side-line-game d-flex align-items-center justify-content-start rounded-3 p-3 mx-3 w-100">
+                        <div class="text-light d-flex align-items-center justify-content-start">
+                            <img src="static/carousel-1/sideLine1/game5.jpg" class="img-fluid side-line-img rounded p-0"
+                                alt="...">
+                            <p class="p-0 mx-3 my-0 side-line-text">VALORANT</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 
+                
+                Section 3 , 5 games manual carousel
+            
+            -->
+            <div class="section3 container-fluid d-flex flex-column justify-content-center gap-3 p-0 my-5 ">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <a href="#">Games on Sales <span class="ticks">&gt;</span></a>
+                    </div>
+                    <div>
+                        <button class="carousel-btn" type="button" data-bs-target="#carouselExample1"
+                            data-bs-slide="prev">&lt;</button>
+                        <button class="carousel-btn" type="button" data-bs-target="#carouselExample1"
+                            data-bs-slide="next">&gt;</button>
+                    </div>
+                </div>
+                <div id="carouselExample1" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="d-flex gap-3 align-items-start justify-content-between ">
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/carousel-2/card1.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text">The Callisto Protocol</p>
+                                        <a href="#" class="btn btn-primary px-2 py-0">-20%</a>
+                                        <span><del>₹2,599</del> ₹1,999.20</span>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/carousel-2/card2.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">ADD ON</h6>
+                                        <p class="card-text">Palladis Season Pass 2022</p>
+                                        <a href="#" class="btn btn-primary px-2 py-0">-33%</a>
+                                        <span><del>₹1,280</del> ₹857.60</span>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/carousel-2/card3.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text">Paladins Digital Delux Edition 2022</p>
+                                        <a href="#" class="btn btn-primary px-2 py-0">-50%</a>
+                                        <span><del>₹1,419</del> ₹709.50</span>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/carousel-2/card4.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">ADD On</h6>
+                                        <p class="card-text">SMITE Season Pass 2022</p>
+                                        <a href="#" class="btn btn-primary px-2 py-0">-33%</a>
+                                        <span><del>₹939</del> ₹629.13</span>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/carousel-2/card5.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">EDITION</h6>
+                                        <p class="card-text">Divine Knockout (DKO) - Founders Edition </p>
+                                        <a href="#" class="btn btn-primary px-2 py-0">-20%</a>
+                                        <span><del>₹939</del> ₹629.13</span>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/carousel-2/card6.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text">DOOM 3</p>
+                                        <a href="#" class="btn btn-primary px-2 py-0">-60%</a>
+                                        <span><del>₹449</del> ₹179.60</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item">
+
+                                <div class="d-flex gap-3 align-items-start justify-content-between ">
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/carousel-2/card1.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text">The Callisto Protocol</p>
+                                            <a href="#" class="btn btn-primary px-2 py-0">-20%</a>
+                                            <span><del>₹2,599</del> ₹1,999.20</span>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/carousel-2/card2.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">ADD ON</h6>
+                                            <p class="card-text">Palladis Season Pass 2022</p>
+                                            <a href="#" class="btn btn-primary px-2 py-0">-33%</a>
+                                            <span><del>₹1,280</del> ₹857.60</span>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/carousel-2/card3.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text">Paladins Digital Delux Edition 2022</p>
+                                            <a href="#" class="btn btn-primary px-2 py-0">-50%</a>
+                                            <span><del>₹1,419</del> ₹709.50</span>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/carousel-2/card4.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">ADD On</h6>
+                                            <p class="card-text">SMITE Season Pass 2022</p>
+                                            <a href="#" class="btn btn-primary px-2 py-0">-33%</a>
+                                            <span><del>₹939</del> ₹629.13</span>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/carousel-2/card5.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">EDITION</h6>
+                                            <p class="card-text">Divine Knockout (DKO) - Founders Edition </p>
+                                            <a href="#" class="btn btn-primary px-2 py-0">-20%</a>
+                                            <span><del>₹939</del> ₹629.13</span>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/carousel-2/card6.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text">DOOM 3</p>
+                                            <a href="#" class="btn btn-primary px-2 py-0">-60%</a>
+                                            <span><del>₹449</del> ₹179.60</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- 
+
+                section 4, 3 games in offer
+
+             -->
+            <div class="container-fluid d-flex align-items-start justify-content-between gap-3 p-0">
+
+                <!-- card 1 -->
+                <div class=" section-4-card card" style="width: 28em;">
+                    <img src="static/section-4/game1.jpg" class="cardCover something card-img-top bg-light rounded-4"
+                        alt="...">
+                    <div class="card-body gameInfo">
+                        <h5 class="card-title text-light my-3">League of Legends - Lunar Reveal 2023</h5>
+                        <p class="card-text text-secondary my-3">Celebrate a new year with enchanting experiences and
+                            good fortune all around.</p>
+                        <a href="#" class="section-4-links text-light fs-4 my-3">Play for Free</a>
+                    </div>
+                </div>
+
+                <!-- card 2 -->
+                <div class=" section-4-card card" style="width: 28em;">
+                    <img src="static/section-4/game2.jpg" class="cardCover something card-img-top bg-light rounded-4"
+                        alt="...">
+                    <div class="card-body gameInfo">
+                        <h5 class="card-title text-light my-3">Honkai Impact 3rd</h5>
+                        <p class="card-text text-secondary my-3">New character Herrscher of Truth debuts. Play Supply
+                            event featuring her to get equipment items.</p>
+                        <p class="text-light fs-4 my-3">Free</p>
+                    </div>
+                </div>
+
+                <!-- card 3 -->
+                <div class=" section-4-card card" style="width: 28em;">
+                    <img src="static/section-4/game3.jpg" class="cardCover something card-img-top bg-light rounded-4"
+                        alt="...">
+                    <div class="card-body gameInfo">
+                        <h5 class="card-title text-light my-3">Hi-Rez Publisher Weekend</h5>
+                        <p class="card-text text-secondary my-3">Celebrate the SMITE World Championship with a SMITE Gem
+                            Sale and amazing DLC deals across all Hi-Rez games!</p>
+                        <a href="#" class="section-4-links text-light fs-4 my-3">Save Now</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 
+
+                setion 5, Free Games
+
+              -->
+            <div class="section-5-container container-fluid text-light d-flex flex-column align-items-center ">
+
+                <div class="d-flex justify-content-between align-items-center w-100 p-0 mb-4">
+                    <p class="text-light fs-5 m-0"><span><img class="w-25 me-3" src="static/gift.png" alt=""></span>Free
+                        Games</p>
+                    <div>
+                        <button class="section-5-btn text-light border border-secondary m-0" type="button">VIEW
+                            MORE</button>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start justify-content-between gap-3 w-100">
+
+                    <!-- cards 1-->
+                    <div class=" card" style="width: 20em;">
+                        <img src="static/section-5/game1.jpg" class="section-5-img card-img-top" alt="...">
+                        <button class="btn btn-primary rounded-0 py-1">Free Now</button>
+                        <div class="card-body px-0 py-4">
+                            <p class="card-text m-0 p-0">Divine Knockout (DKO) - Founders Edition </p>
+                            <a href="#" class="text-white-50 m-0 p-0">Free Now - Jan 19 at 09:30 PM</a>
+                        </div>
+                    </div>
+
+                    <!-- cards 2-->
+                    <div class=" card" style="width: 20em;">
+                        <img src="static/section-5/game2.jpg" class="section-5-img card-img-top" alt="...">
+                        <button class="btn btn-primary rounded-0 py-1">Free Now</button>
+                        <div class="card-body px-0 py-4">
+                            <p class="card-text m-0 p-0">First Class Trouble</p>
+                            <a href="#" class="text-white-50 m-0 p-0">Free Now - Jan 19 at 09:30 PM</a>
+                        </div>
+                    </div>
+
+                    <!-- cards 3-->
+                    <div class=" card" style="width: 20em;">
+                        <img src="static/section-5/game3.jpg" class="section-5-img card-img-top" alt="...">
+                        <button class="btn btn-primary rounded-0 py-1">Free Now</button>
+                        <div class="card-body px-0 py-4">
+                            <p class="card-text m-0 p-0">Gamedec - Definitive Edition</p>
+                            <a href="#" class="text-white-50 m-0 p-0">Free Now - Jan 19 at 09:30 PM</a>
+                        </div>
+                    </div>
+
+                    <!-- cards 4-->
+                    <div class=" card" style="width: 20em;">
+                        <img src="static/section-5/game4.jpg" class="section-5-img card-img-top" alt="...">
+                        <button class="btn text-light rounded-0 py-1" style="background-color: black;">COMING
+                            SOON</button>
+                        <div class="card-body px-0 py-4">
+                            <p class="card-text m-0 p-0">Epistory - Typing Chronicles</p>
+                            <a href="#" class="text-white-50 m-0 p-0">Free Now - Jan 19 at 09:30 PM</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- 
+
+                section 6, Top sellers
+
+             -->
+
+
+
+            <div
+                class="section-6 container-fluid d-flex justify-content-between align-items-center text-light my-5 p-0">
+
+
+                <!-- section 6-1 -->
+                <div class=" section-6-1 d-flex flex-column border-end border-dark px-3">
+
+                    <div class="d-flex justify-content-between align-items-center w-100 p-0 mb-4">
+                        <p class=" fs-4 text-light m-0">Top Sellers</p>
+                        <div>
+                            <button class="section-6-btn text-light border border-secondary m-0" type="button">VIEW
+                                MORE</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-1.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Hogwarts Legacy</p>
+                            <p class="m-0 text-secondary">Available 02/10/23</p>
+                            <p class="my-2">₹2,999</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-2.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Grand Theft Auto V: Premium...</p>
+                            <p class="my-2">₹2,321.44</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-3.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Goat Simulator 3</p>
+                            <p class="my-2">₹1,874</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-4.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">EA SPORTS&#8482; FIFA 23 STANDARD...</p>
+                            <p class="my-2">₹3,499</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-5.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">PC Building Simulator</p>
+                            <p class="my-2">₹2,080</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- section 6-2 -->
+                <div class=" section-6-1 d-flex flex-column border-end border-dark px-3">
+
+                    <div class="d-flex justify-content-between align-items-center w-100 p-0 mb-4">
+                        <p class=" fs-4 text-light m-0">Most Played</p>
+                        <div>
+                            <button class="section-6-btn text-light border border-secondary m-0" type="button">VIEW
+                                MORE</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-6.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Fortnite</p>
+                            <p class="my-2">Free</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-7.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Rocket League&#174;</p>
+                            <p class="my-2">Free</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-8.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Genshin Impact</p>
+                            <p class="my-2">Free</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-9.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Assassin's Creed&#174; Mirage</p>
+                            <p class="my-2">₹3,499</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-10.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">VALORANT</p>
+                            <p class="my-2">Free</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- section 6-3 -->
+                <div class=" section-6-1 d-flex flex-column px-3">
+
+                    <div class="d-flex justify-content-between align-items-center w-100 p-0 mb-4">
+                        <p class=" fs-4 text-light m-0">Top Sellers</p>
+                        <div>
+                            <button class="section-6-btn text-light border border-secondary m-0" type="button">VIEW
+                                MORE</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-1.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Hogwarts Legacy</p>
+                            <p class="m-0 text-secondary">Available 02/10/23</p>
+                            <p class="my-2">₹2,999</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-2.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Grand Theft Auto V: Premium...</p>
+                            <p class="my-2">₹2,321.44</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-3.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Goat Simulator 3</p>
+                            <p class="my-2">₹1,874</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-4.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">EA SPORTS FIFA 23 STANDARD...</p>
+                            <p class="my-2">₹3,499</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-6/game-6-5.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">PC Building Simulator</p>
+                            <p class="my-2">₹2,080</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 
+
+                section - 7, Manual carousel - Most popular
+
+             -->
+            <div class="section3 container-fluid d-flex flex-column justify-content-center gap-3 p-0 my-5 ">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <a href="#">Most Popular<span class="ticks">&gt;</span></a>
+                    </div>
+                    <div>
+                        <button class="carousel-btn" type="button" data-bs-target="#carouselExample2"
+                            data-bs-slide="prev">&lt;</button>
+                        <button class="carousel-btn" type="button" data-bs-target="#carouselExample2"
+                            data-bs-slide="next">&gt;</button>
+                    </div>
+                </div>
+                <div id="carouselExample2" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item  active">
+                            <div class="d-flex gap-3 align-items-start justify-content-between ">
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-7/game1.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Grand Theft Auto V: Premium Edition</p>
+                                        <p>₹2,321.44</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-7/game2.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">VALORANT</p>
+                                        <p>Free</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-7/game3.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">NARAKA: BLADEPOINT</p>
+                                        <p>₹1,199</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-7/game4.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Bloons TD 6</p>
+                                        <p>₹699</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-7/game5.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Red Dead Redemption 2</p>
+                                        <p>₹3,199</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-7/game6.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">EA SPORTS&#8482; FIFA 23 Standard Edition</p>
+                                        <p>₹3,499</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item">
+                                <div class="d-flex gap-3 align-items-start justify-content-between ">
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/section-7/game1.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text my-1">Grand Theft Auto V: Premium Edition</p>
+                                            <p>₹2,321.44</p>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/section-7/game2.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text my-1">VALORANT</p>
+                                            <p>Free</p>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/section-7/game3.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text my-1">NARAKA: BLADEPOINT</p>
+                                            <p>₹1,199</p>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/section-7/game4.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text my-1">Bloons TD 6</p>
+                                            <p>₹699</p>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/section-7/game5.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text my-1">Red Dead Redemption 2</p>
+                                            <p>₹3,199</p>
+                                        </div>
+                                    </div>
+
+                                    <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                        <img src="static/section-7/game6.jpg"
+                                            class="cardCover something card-img-top bg-light" alt="...">
+                                        <div class="card-body p-1 gameInfo">
+                                            <h6 class="card-title text-secondary">Base Game</h6>
+                                            <p class="card-text my-1">EA SPORTS&#8482; FIFA 23 Standard Edition</p>
+                                            <p>₹3,499</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 
+
+                section 8, New releases
+
+             -->
+
+            <div
+                class="section-6 container-fluid d-flex justify-content-between align-items-center text-light my-5 p-0">
+
+
+                <!-- section 8-1 -->
+                <div class=" section-6-1 d-flex flex-column border-end border-dark px-3">
+
+                    <div class="d-flex justify-content-between align-items-center w-100 p-0 mb-4">
+                        <p class=" fs-4 text-light m-0">New Releases</p>
+                        <div>
+                            <button class="section-6-btn text-light border border-secondary m-0" type="button">VIEW
+                                MORE</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game1.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Divine Knockout (DKO) - Starter...</p>
+                            <p class="my-2">₹3,99</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game2.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Aquatico</p>
+                            <p class="my-2">₹589</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game3.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Divine Knockout</p>
+                            <p class="my-2">Free</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game4.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Indies Lies</p>
+                            <p class="bg-dark rounded text-center px-2 py-1 w-50 " style="font-size: 0.8em;">NOW ON EPIC
+                            </p>
+                            <p class="my-2">₹349</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game5.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Sailing Era</p>
+                            <p class="my-2">
+                                <span class="bg-primary rounded px-2 py-1" style="font-size: 0.8em;">-10%</span>
+                                <del class="mx-1">₹701.59</del>
+                                ₹631.43
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- section 8-2 -->
+                <div class=" section-6-1 d-flex flex-column border-end border-dark px-3">
+
+                    <div class="d-flex justify-content-between align-items-center w-100 p-0 mb-4">
+                        <p class=" fs-4 text-light m-0">Top Rated</p>
+                        <div>
+                            <button class="section-6-btn text-light border border-secondary m-0" type="button">VIEW
+                                MORE</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game6.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">The Jackbox Party Pack</p>
+                            <p class="my-2">₹595</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game7.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Evil Nun: The Broken Mask</p>
+                            <p class="my-2">₹349</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game8.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Celeste</p>
+                            <p class="my-2">₹595</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game9.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Hades</p>
+                            <p class="my-2">₹595</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game10.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Jackbox Party Pack 3</p>
+                            <p class="my-2">₹595</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- section 8-3 -->
+                <div class=" section-6-1 d-flex flex-column border-end border-dark px-3">
+
+                    <div class="d-flex justify-content-between align-items-center w-100 p-0 mb-4">
+                        <p class=" fs-4 text-light m-0">New Releases</p>
+                        <div>
+                            <button class="section-6-btn text-light border border-secondary m-0" type="button">VIEW
+                                MORE</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game1.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Divine Knockout (DKO) - Starter...</p>
+                            <p class="my-2">₹3,99</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game2.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Aquatico</p>
+                            <p class="my-2">₹589</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game3.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Divine Knockout</p>
+                            <p class="my-2">Free</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game4.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Indies Lies</p>
+                            <p class="bg-dark rounded text-center px-2 py-1 w-50 " style="font-size: 0.8em;">NOW ON EPIC
+                            </p>
+                            <p class="my-2">₹349</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="sidelineSubContainer side-line-game px-4 py-3 rounded rounded-4 d-flex align-items-center justify-content-start gap-3 text-light">
+                        <div class="game-6 game-6-1" style="background-image:  url(static/section-8/game5.jpg);">
+                        </div>
+                        <div class="gameText ms-3">
+                            <p class="my-1">Sailing Era</p>
+                            <p class="my-2">
+                                <span class="bg-primary rounded px-2 py-1" style="font-size: 0.8em;">-10%</span>
+                                <del class="mx-1">₹701.59</del>
+                                ₹631.43
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 
+
+
+            Section - 9, Three games in offer
+
+
+         -->
+
+        <div class="container-fluid d-flex align-items-stetch justify-content-between gap-3 p-0">
+
+            <!-- section-9 card 1 -->
+            <div class=" section-4-card card" style="width: 28em;">
+                <img src="static/section-9/game1.jpg" class="cardCover something card-img-top bg-light rounded-4"
+                    alt="...">
+                <div class="card-body gameInfo">
+                    <h5 class="card-title text-light my-3">Fall Guys</h5>
+                    <p class="card-text text-secondary my-3">I used to be a Fall Guy like you, until I took a Blast Ball
+                        to the knee… Alduin is in the Fall Guys Store right now.</p>
+                    <a href="#" class="section-4-links text-light fs-4 my-3">Play For Free</a>
+                </div>
+            </div>
+
+            <!-- section-9 card 2 -->
+            <div class=" section-4-card card" style="width: 28em;">
+                <img src="static/section-9/game2.jpg" class="cardCover something card-img-top bg-light rounded-4"
+                    alt="...">
+                <div class="card-body gameInfo">
+                    <h5 class="card-title text-light my-3">Rocket League</h5>
+                    <p class="card-text text-secondary my-3">Classic meets current in Rocket League in the Ford Mega
+                        Bundle. Save 75% and receive all the Ford and Mustang vehicles!</p>
+                    <a href="#" class="section-4-links text-light fs-4 my-3">Play For Free</a>
+                </div>
+            </div>
+
+            <!-- section-9 card 3 -->
+            <div class=" section-4-card card" style="width: 28em;">
+                <img src="static/section-9/game3.jpg" class="cardCover something card-img-top bg-light rounded-4"
+                    alt="...">
+                <div class="card-body gameInfo">
+                    <h5 class="card-title text-light my-3">Hogwarts Legacy - Coming February 10</h5>
+                    <p class="card-text text-secondary my-3">Experience Hogwarts in the 1800s. Make allies, battle Dark
+                        wizards and decide the fate of the wizarding world.</p>
+                    <p class="text-light fs-4 my-3">₹3,499</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- 
+            
+            section 10, Manual carousel, Most popular
+        
+        -->
+
+        <div class="section3 container-fluid d-flex flex-column justify-content-center gap-3 p-0 my-5 ">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <a href="#">Most Popular <span class="ticks">&gt;</span></a>
+                </div>
+                <div>
+                    <button class="carousel-btn" type="button" data-bs-target="#carouselExample3"
+                        data-bs-slide="prev">&lt;</button>
+                    <button class="carousel-btn" type="button" data-bs-target="#carouselExample3"
+                        data-bs-slide="next">&gt;</button>
+                </div>
+            </div>
+            <div id="carouselExample3" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex gap-3 align-items-start justify-content-between ">
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game1.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">NHRA Championship Drag Racing - Speed For All</p>
+                                    <p class="bg-dark rounded text-center px-2 py-1 mt-2 mb-2 w-50 "
+                                        style="font-size: 0.8em;">NOW ON EPIC</p>
+                                    <p>₹1,179</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game2.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">My Friend Peppa Pig</p>
+                                    <p>₹1,600</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game3.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">MY LITTLE PONY A Maritime Bay Adventure</p>
+                                    <p>₹1,600</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game4.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">PAW Patrol Mighty Pups Save Adventure Bay</p>
+                                    <p>₹1,300</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game5.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">High O Life</p>
+                                    <p>₹1,419</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game6.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Saints Row IV Re-Elected</p>
+                                    <p>₹1,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex gap-3 align-items-start justify-content-between ">
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game1.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">NHRA Championship Drag Racing - Speed For All</p>
+                                    <p class="bg-dark rounded text-center px-2 py-1 mt-2 mb-2 w-50 "
+                                        style="font-size: 0.8em;">NOW ON EPIC</p>
+                                    <p>₹1,179</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game2.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">My Friend Peppa Pig</p>
+                                    <p>₹1,600</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game3.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">MY LITTLE PONY A Maritime Bay Adventure</p>
+                                    <p>₹1,600</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game4.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">PAW Patrol Mighty Pups Save Adventure Bay</p>
+                                    <p>₹1,300</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game5.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">High O Life</p>
+                                    <p>₹1,419</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-10/game6.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Saints Row IV Re-Elected</p>
+                                    <p>₹1,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+        <!-- 
+            
+            section 11, Manual carousel, Recently played
+        
+        -->
+        <div class="section3 container-fluid d-flex flex-column justify-content-center gap-3 p-0 my-5 ">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <a href="#">Recently Updated <span class="ticks">&gt;</span></a>
+                </div>
+                <div>
+                    <button class="carousel-btn" type="button" data-bs-target="#carouselExample4"
+                        data-bs-slide="prev">&lt;</button>
+                    <button class="carousel-btn" type="button" data-bs-target="#carouselExample4"
+                        data-bs-slide="next">&gt;</button>
+                </div>
+            </div>
+            <div id="carouselExample4" class="carousel slide">
+
+                <!-- section 11-1 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex gap-3 align-items-start justify-content-between ">
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-11/game1.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Somerville</p>
+                                    <p>₹589</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-11/game2.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Tails of Iron</p>
+                                    <p>₹1,299</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-11/game3.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Century: Age of Ashes</p>
+                                    <p>Free</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-11/game4.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Timberborn</p>
+                                    <p>₹589</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-11/game5.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">GigaBash</p>
+                                    <p>₹829</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-11/game6.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Satisfactory</p>
+                                    <p>₹745</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- section 11-2 -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <div class="d-flex gap-3 align-items-start justify-content-between ">
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-11/game1.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Somerville</p>
+                                        <p>₹589</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-11/game2.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Tails of Iron</p>
+                                        <p>₹1,299</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-11/game3.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Century: Age of Ashes</p>
+                                        <p>Free</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-11/game4.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Timberborn</p>
+                                        <p>₹589</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-11/game5.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">GigaBash</p>
+                                        <p>₹829</p>
+                                    </div>
+                                </div>
+
+                                <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                    <img src="static/section-11/game6.jpg"
+                                        class="cardCover something card-img-top bg-light" alt="...">
+                                    <div class="card-body p-1 gameInfo">
+                                        <h6 class="card-title text-secondary">Base Game</h6>
+                                        <p class="card-text my-1">Satisfactory</p>
+                                        <p>₹745</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 
+            
+            section 12, manual carousel, Now on epic
+        
+        -->
+        <div class="section3 container-fluid d-flex flex-column justify-content-center gap-3 p-0 my-5 ">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <a href="#">Now On The Epic Game Store <span class="ticks">&gt;</span></a>
+                </div>
+                <div>
+                    <button class="carousel-btn" type="button" data-bs-target="#carouselExample5"
+                        data-bs-slide="prev">&lt;</button>
+                    <button class="carousel-btn" type="button" data-bs-target="#carouselExample5"
+                        data-bs-slide="next">&gt;</button>
+                </div>
+            </div>
+            <div id="carouselExample5" class="carousel slide">
+
+                <!-- section 12-1 -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex gap-3 align-items-start justify-content-between ">
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game1.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Edge Of Galaxy</p>
+                                    <p class="bg-dark rounded text-center px-2 py-1 mt-2 mb-2 w-50 "
+                                        style="font-size: 0.8em;">NOW ON EPIC</p>
+                                    <p>₹209</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game2.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">The Galactic Junkers</p>
+                                    <p>₹479</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game3.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Kerbal Space Program</p>
+                                    <p>₹849</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game4.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">NHRA Championship Drag Racing - Speed For All</p>
+                                    <p>₹1,179</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game5.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Sentinel 3 - Homeworld</p>
+                                    <p class="text-secondary">Available Dec 2022</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game6.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Battle of Europe</p>
+                                    <p class="text-secondary">Available Dec 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex gap-3 align-items-start justify-content-between ">
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game1.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Edge Of Galaxy</p>
+                                    <p class="bg-dark rounded text-center px-2 py-1 mt-2 mb-2 w-50 "
+                                        style="font-size: 0.8em;">NOW ON EPIC</p>
+                                    <p>₹209</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game2.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">The Galactic Junkers</p>
+                                    <p>₹479</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game3.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Kerbal Space Program</p>
+                                    <p>₹849</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game4.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">NHRA Championship Drag Racing - Speed For All</p>
+                                    <p>₹1,179</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game5.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Sentinel 3 - Homeworld</p>
+                                    <p class="text-secondary">Available Dec 2022</p>
+                                </div>
+                            </div>
+
+                            <div class=" card text-bg-dark" style="width: 13.5rem;">
+                                <img src="static/section-12/game6.jpg" class="cardCover something card-img-top bg-light"
+                                    alt="...">
+                                <div class="card-body p-1 gameInfo">
+                                    <h6 class="card-title text-secondary">Base Game</h6>
+                                    <p class="card-text my-1">Battle of Europe</p>
+                                    <p class="text-secondary">Available Dec 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 
+
+                section - 13, Explore catalog 
+
+             -->
+            <div class="container-flui d-flex flex-row align-items-center justify-content-between gap-5 my-4">
+                <!-- <div class="section-13"> -->
+                    <img class="section-13-img img-fluid rounded-4 me-4" src="static/section-13/bg-1.jpg" alt="">
+                <!-- </div> -->
+                <div>
+                    <a href="#" class="text-light fs-4">Explore Our Catalog</a>
+                    <p class="text-secondary text-wrap mt-4 mb-4 pe-4">Browse by genre, features, price, and more to
+                        find your next favorite game.</p>
+                    <button class="section-13-btn text-dark">BROWSE ALL</button>
+                </div>
+            </div>
+
+    </main>
+
+    <!-- 
+
+
+        Footer section
+
+
+     -->
+
+    <div class="footer w-100">
+
+        <!-- social media -->
+        <div class="container-fluid d-flex align-items-center justify-content-between px-0 my-3">
+            <div class="socials d-flex align-items-center gap-3 ">
+                <i class="socialsIcons fa fa-facebook-square" aria-hidden="true"></i>
+                <i class="socialsIcons fa fa-twitter" aria-hidden="true"></i>
+                <i class="socialsIcons fa fa-youtube-play" aria-hidden="true"></i>
+            </div>
+            <div class="upIconBox"><i class="upIcon fa fa-chevron-up" aria-hidden="true"></i></div>
+        </div>
+
+        <div class="d-flex gap-4">
+
+            <!-- resources links 1-->
+            <div>
+                <div>
+                    <p class="text-secondary my-1">Resources</p>
+                </div>
+                <div class="d-flex justify-content-start gap-3 text-dark">
+                    <div class="d-flex flex-column gap-1">
+                        <a href="#" class="footer-links">Support-A-Creator</a>
+                        <a href="#" class="footer-links">Distribte on Epic Games</a>
+                        <a href="#" class="footer-links">Careers</a>
+                        <a href="#" class="footer-links">Company</a>
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                        <a href="#" class="footer-links">Fan Art Policy</a>
+                        <a href="#" class="footer-links">UX Research</a>
+                        <a href="#" class="footer-links">Store EULA</a>
+                    </div>
+                    <div class="d-flex flex-column gap-1">
+                        <a href="#" class="footer-links">Online Services</a>
+                        <a href="#" class="footer-links">Community Rules</a>
+                        <a href="#" class="footer-links">Epic Newsroom</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+                <!-- resources links 2-->
+                <div>
+                    <div>
+                        <p class="text-secondary my-1">Made by Epic Games</p>
+                    </div>
+                    <div class="d-flex justify-content-start gap-3 text-dark">
+                        <div class="d-flex flex-column gap-1">
+                            <a href="#" class="footer-links">Battle Breakers</a>
+                            <a href="#" class="footer-links">Fortnite</a>
+                            <a href="#" class="footer-links">Infinity Blade</a>
+                        </div>
+                        <div class="d-flex flex-column gap-1">
+                            <a href="#" class="footer-links">Robo Recall</a>
+                            <a href="#" class="footer-links">Shadow Complex</a>
+                            <a href="#" class="footer-links">Unreal Tournament</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="footer-copyRight-container w-50 my-4 py-4">
+            <p class="footer-copyRight m-0">© 2023, Epic Games, Inc. All rights reserved. Epic, Epic Games, the Epic
+                Games logo, Fortnite, the
+                Fortnite logo, Unreal, Unreal Engine, the Unreal Engine logo, Unreal Tournament, and the Unreal
+                Tournament logo are trademarks or registered trademarks of Epic Games, Inc. in the United States of
+                America and elsewhere. Other brands or product names are the trademarks of their respective owners.
+                Non-US transactions through Epic Games International, S.à r.l. </p>
+        </div>
+
+        <!-- terms, conditions & logos -->
+        <div class="d-flex align-items-end justify-content-between mb-5">
+            <div>
+                <a href="#" class="footer-links me-2">Terms of Service</a>
+                <a href="#" class="footer-links me-2">Privacy Policy</a>
+                <a href="#" class="footer-links me-2">Store Refund Policy</a>
+            </div>
+            <div>
+                <img src="static/navIcon.png" alt="" class="footer-icons mx-1">
+                <img src="static/unrealEngine.png" alt="" class="footer-icons mx-1">
+            </div>
+        </div>
+</body>
+
+</html>
