@@ -1,0 +1,57 @@
+#footer {
+    background-color: #202020;
+}
+
+.social-list, .resource-title {
+    display: flex;
+    padding-top: 30px;
+}
+
+.social-item {
+    list-style: none;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.2s ease-in-out;
+}
+
+.social-icon {
+    font-size: 3rem;
+    margin-right: 16px;
+}
+
+.resource-title {
+    font-size: 1.4rem;
+    color: #333;
+    padding-bottom: 8px;
+}
+
+.resource-list {
+    display: flex;
+}
+
+.resource-item {
+    list-style: none;
+    padding: 6px 0;
+}
+
+.resource-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.resource-column {
+    padding: 0 16px;
+}
+
+.resource-column:first-child {
+    padding-left: 0;
+}
+
+.resource:last-child {
+    padding-bottom: 30px;
+}
