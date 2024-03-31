@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- custom css-->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <!-- font-awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Sign in to your Epic Games account</title>
+    <link rel="icon" type="image/x-icon" href="epicFavIcon.ico">
+</head>
+
+<body class="bg-tertiary d-flex flex-column align-items-center justify-content-center vh-100">
+
+    <div class="d-flex flex-column justify-content-center align-items-center  text-light login-container">
+        <img class="form-icon" src="static/navIcon.png" alt="">
+
+        <p class="sign-in text-center"><b>Sign In with an Epic Games account</b></p>
+
+
+
+        <!-- form -->
+        <form class="row g-3 needs-validation w-100 p-0 gap-3" novalidate>
+
+            <div class="col-md-4 w-100">
+                <div class="form-floating">
+                    <input type="email" class="form-control  bg-transparent text-light border border-secondary px-3"
+                        id="email" placeholder="Email" value="" required>
+                    <label for="email" class="text-secondary mx-1">Email address</label>
+                    <div class="d-none email-alert text-danger">
+                        Invalid Email
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 w-100">
+                <div class="form-floating">
+                    <input type="password" class="form-control text-light bg-transparent border border-secondary px-3"
+                        id="password" placeholder="Email" value="" required>
+                    <label for="password" class="text-secondary mx-1">Password</label>
+                    <div class="d-none password-alert text-danger">
+                        Required
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <input class="form-check-input text-primary" type="checkbox" value="" id="invalidCheck">
+                    <label class="form-check-label text-light" for="invalidCheck">
+                        Remember Me
+                    </label>
+                </div>
+                <div>
+                    <a href="" class="text-decoration-underline sign-up-link">Forgot Your Password</a>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <button class="submit btn btn-primary rounded-1 disabled w-100" type="submit">LOG IN NOW</button>
+            </div>
+        </form>
+        <a href="" class="d-block privacy sign-up-link my-4">Privacy Policy</a>
+        <p class="m-0"><span class="sign-up-text">Don't have an Epic Games account?</span> <a class="sign-up-link  m-0"
+                href="#">Sign Up</a></p>
+        <p class="m-0"><span class="sign-up-text">Back to</span> <a class="sign-up-link  m-0" href="form.html">all
+                sign-in options</a></p>
+
+    </div>
+
+    <script>
+        const submit = document.querySelector('.submit')
+        const email = document.querySelector('#email')
+        const emailNote = document.querySelector('.email-alert')
+        const password = document.querySelector('#password')
+        const passwordNote = document.querySelector('.password-alert')
+
+        const validRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+
+
+        email.addEventListener('focus', ()=> {
+            email.classList.add('border-light')
+        })
+
+
+        email.addEventListener('blur', () => {
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value) && email.value) {
+                emailNote.classList.add('d-none')
+                email.classList.remove('border-danger')
+                email.classList.remove('border-light')  
+            }
+            else {
+                emailNote.classList.remove('d-none')
+                email.classList.add('border-danger')
+                submit.classList.add('disabled')
+                email.classList.remove('border-light')  
+
+            }
+        })
+
+        password.addEventListener('focus', ()=> {
+            password.classList.add('border-light')
+        })
+
+        password.addEventListener('blur', () => {
+            if (password.value && email.value) {
+                passwordNote.classList.add('d-none')
+                password.classList.remove('border-light')
+                password.classList.remove('border-danger')
+                submit.classList.remove('disabled')
+            }
+            else {
+                passwordNote.classList.remove('d-none')
+                password.classList.add('border-danger')
+                password.classList.remove('border-light')
+                submit.classList.add('disabled')
+            }
+        })
+
+    </script>
+</body>
+
+</html>
