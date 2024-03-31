@@ -3,7 +3,6 @@
         <!-- Slideshow container -->
         <div class="slideshow-container">
 
-            {{#each carousel}}
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <a href="/games/{{this.link_game_name}}">
@@ -30,17 +29,12 @@
                     </div>
                 </a>
             </div>
-            {{/each}}
-
-
-            <!-- Next and previous buttons -->
-            {{!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a> --}}
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a> 
         </div>
 
-        <!-- The dots/circles -->
         <div class="dots" style="text-align:center">
-            {{#each carousel}}
+
             <span class="dot" onclick="currentSlide({{this.id}})">
                 <img id="dot" src="{{this.game_img}}">
                 <div class="carousel_dot_info">
@@ -59,7 +53,6 @@
 
 <section class="carosel_2">
     <div class="carosel_cont2">
-        {{#each carousel}}
         <div class="carosel2_card">
             <a href="/games/{{this.link_game_name}}">
                 <img class="carosel2_card_img" src="{{this.game_img}}" alt="">
@@ -84,7 +77,6 @@
                 </div>
             </a>
         </div>
-        {{/each}}
 
     </div>
 </section>

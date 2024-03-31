@@ -8,7 +8,6 @@
     <div class="slide-content">
         <div class="card-wrapper swiper-wrapper">
 
-            {{#each slider}}
             <div class="card swiper-slide">
                 {{!-- <a href="/games/{{this.id}}"> --}}
                 <a href="/games/{{this.link_game_name}}">

@@ -2,43 +2,29 @@
     <div class="carosel">
         <!-- Slideshow container -->
         <div class="slideshow-container">
+            <div class="mySlides fade">
 
-            <!-- Full-width images with number and caption text -->
-            {{#each slider.pre_img}}
-                <div class="mySlides fade">
-
-                    {{!-- <iframe id="car" src="{{this.links}}" frameborder="0" allow="autoplay; encrypted-media"
-                        allowfullscreen></iframe> --}}
-                    <img id="car" src="{{this.links}}" style="background:black;">
-                </div>
-            {{/each}}
-
-            {{!-- <div class="mySlides fade">
+                {{!-- <iframe id="car" src="{{this.links}}" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe> --}}
+                <img id="car" src="{{this.links}}" style="background:black;">
+            </div>
+            <div class="mySlides fade">
                 <iframe id="car" src="https://www.youtube.com/embed/WxjeV10H1F0" title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
-            </div> --}}
-
-            <!-- Next and previous buttons -->
-            {{!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a> --}}
+            </div> 
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-
-        <!-- The dots/circles -->
         <div class="dots" style="text-align:center">
-            {{#each slider.pre_img}}
+
             <span class="dot" onclick="currentSlide({{this.Id}})">
                 <img id="dot" src="{{this.links}}">
 
             </span>
             {{/each}}
         </div>
-
-
-
-
-        <!-- game_details -->
         <p id="game_det">
             The Grand Theft Auto V: Premium Edition includes the complete GTAV story, Grand Theft Auto Online and all
             existing gameplay upgrades and content. You’ll also get the Criminal Enterprise Starter Pack, the fastest
@@ -65,8 +51,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- notes -->
         <div class="notes">
             <p id="note">Note:</p>
             <p id="note_det">
