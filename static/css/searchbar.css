@@ -1,0 +1,118 @@
+body{
+    background: #121212;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.searchbox{
+    padding: 0 12px;
+    margin-bottom: 15px;
+    color: rgb(245, 245, 245);
+    background-color: rgb(32, 32, 32);
+    border-radius: 24px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+    gap: 16px;
+}
+
+.searchbox > btn {
+
+}
+
+.searchbox > input {
+    background-color: transparent;
+    border: none;
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.searchbox > input:focus {
+	outline: none;
+}
+
+.searchbar-link {
+    font-size: 1.4rem;
+    color: #676767;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-left: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.searchbar-link:hover {
+    color: var(--white-color);
+}
+
+.base{
+    -webkit-transition: color 125ms ease-in-out;
+    transition: color 125ms ease-in-out;
+    color: rgba(245, 245, 245, 0.6);
+    font-size: 8px;
+    line-height: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding-top: 10px;
+}
+.game-name{
+    color: #f5f5f5;
+    
+}
+.price-bar{
+    display: flex;
+}
+.sale{
+    font-size: 9px;;
+}
+.sale-price, .price{
+    font-size: 14px;
+    margin-left: 5px;
+}
+.sale-price{
+    color: #f5f5f599;
+    text-decoration: line-through;
+}
+.price{
+    color: #f5f5f5 ;
+}
+
+.dropdown-toggle{
+    opacity: 0.6;
+    color: #f5f5f5;
+    font-size: 12px;
+    --bs-btn-focus-box-shadow: 0 0 0 1px rgb(245, 245, 245);
+}
+.dropdown-toggle:hover{
+    opacity: 1;
+    color: #f5f5f5;
+    
+}
+.btn:first-child:hover, :not(.btn-check)+.btn:hover ,.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color:#f5f5f5;
+}
+.dropdown-menu{
+    background-color: rgb(32, 32, 32);  
+}
+.dropdown-item{
+    font-size: 12px;
+    color: #f5f5f5;
+    opacity: 0.6;
+    --bs-dropdown-link-hover-bg: none;
+}
+.dropdown-item:hover{
+    opacity: 1;
+    color: #f5f5f5;
+    text-decoration: underline;
+}
+.cart-link {
+    display: block;
+}

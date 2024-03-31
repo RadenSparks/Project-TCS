@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    box-sizing: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'PT sans', sans-serif;
+}
+body {
+    background-color: #000;
+}
+.container {
+    max-width: 1000px;
+    margin: 100px auto;
+    display: flex;
+}
+.nav_bar {
+    background-color: #fff;
+    width: 200px;
+    height: 88px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-right: 40px;
+    text-align: center;
+}
+.acc {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+.trans {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 10px;
+}
+.acc:hover,
+.trans:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.accountsetting {
+    background-color: #fff;
+    width: 700px;
+    border-radius: 8px;
+    padding: 20px 0 20px 30px;
+}
+.accountsetting h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.accountsetting p {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.accountsetting h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+#infor_form {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.input_username,
+.input_email {
+    width: 250px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 15px;
+    padding-left: 15px;
+    outline: none;
+}
+#infor_form button {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 8px;
+    background-color: #26BBFF;
+    color: #fff;
+    text-transform: uppercase;
+}
+#newpass_form button:hover,
+#infor_form button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.input_group {
+    display: flex;
+    flex-direction: column;
+}
+.input_group label {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.input_group input {
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 20px;
+}
+#newpass_form button {
+    width: 150px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 8px;
+    background-color: #26BBFF;
+    color: #fff;
+    text-transform: uppercase;
+}
