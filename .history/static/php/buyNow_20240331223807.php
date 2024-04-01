@@ -3,7 +3,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     if (!isset($_SESSION['email'])) {
-        header('Location: /TCS_Main/index.php?site=login');
+        header('Location: /Project_TCS/index.php?site=login');
     }
 
     $dsn = 'mysql:host=localhost;dbname=db_epicgamers';

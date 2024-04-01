@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {    
+    background-color: #121212;
+}
+
+.nav-1 {
+    text-transform: uppercase;
+    background-color: #2a2a2a;
+    width: 100%;
+    min-width: 1200px;
+    color: #cccccc;
+    font-size: 0.7em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.navIcon {
+    width: 3.9em;
+    opacity: 0.9;
+    transition: all 0.05s;
+}
+
+.navIcon:hover {
+    opacity: 1;
+}
+
+.nav-1 ul {
+    list-style: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.nav-1 ul li:hover {
+    color: #e7e7e7;
+}
+
+.nav-1-links{
+    position: relative;
+    padding: 1.5em;
+}
+
+.nav-1-links::after{
+    position: absolute;
+    content: '';
+    bottom: -2em;
+    left: 0;
+    width: 100%;
+    height: 0.5em;
+    background-color: #0078f2;
+    transition: all 0.3s ease;
+}
+
+
+.nav-1-links:hover::after {
+    bottom: 0;
+}
+
+.store-link {
+    position: relative;
+}
+
+.store-link::before{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.5em;
+    background-color: #0078f2;
+    transition: all 0.3s ease;
+}
+
+
+.symbols {
+    width: 1.7em;
+    opacity: 0.8;
+    margin-right: 2em;
+}
+
+.symbols:hover {
+    opacity: 1;
+}
+
+.nav-1 a {
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+.download {
+    color: #e7e7e7;
+    background-color: #0078f2;
+    text-transform: uppercase;
+    width: 13em;
+    height: 4.5em;
+}
+
+.download:hover {
+    background-color: #047ef8;
+}
+
+
+.main {
+    background-color: #121212;
+    width: 75%;
+    margin: auto;
+}
+
+
+/*
+second section
+*/
+
+.nav-2 {
+    background-color: #121212;
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+.nav-2 ul {
+    list-style: none;
+    cursor: pointer;
+}
+
+.input-1-box {
+    color: #cccccc;
+    width: 15.5em;
+}
+
+.input-1 {
+    background-color: #2a2a2a;
+    color: #cccccc;
+    border: none;
+    outline: none;
+    padding: 0.6em 1em;
+    width: 100%;
+}
+
+.nav-2 ul li:hover {
+    color: #e7e7e7;
+}
+
+
+
+/* carousel 1 */
+
+
+.side-line-game:hover{
+   background-color: #2b2b2b;
+}
+
+.side-line-img {
+    width: 20%;
+}
+
+sup {
+    font-size: 30%;
+}
+
+
+/*
+
+section 2, CArousel of cards
+
+*/
+.carousel-2 {
+    height: 407px;
+}
+
+.carousel-btn {
+    border-radius: 50%;
+    padding: 0.1em 0.5em;
+    vertical-align: top;
+    background-color: #2a2a2a;
+    border: none;
+    color: #cccccc;
+}
+
+.carousel-btn:hover {
+    background-color: #383838;
+    color: #fff;
+}
+
+del {
+    color: #f5f5f599;
+}
+
+.cardCover {
+    opacity: 1;
+    background-color: white;
+}
+
+.cardCover:hover {
+    opacity: 0.8;
+}
+
+.gameInfo {
+    background-color: #121212;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.ticks {
+    color: gray;
+}
+
+/* tickmark translate animation pending */
+
+
+
+/* 
+
+section 4
+
+*/
+
+.section-4-links:hover {
+    text-decoration: underline;
+}
+
+.section-4-card {
+    background-color: #121212;
+}
+
+
+
+/* 
+
+section 5 
+
+*/
+.section-5-container {
+    background-color: #ffffff1a;
+    padding: 2.2em;
+    height: 660px;
+}
+
+.section-5-container div{
+    background: none;
+}
+
+.section-5-btn {
+    padding: 0.3em 1.5em;
+    border-radius: 0.3em;
+    background-color: transparent;
+
+}
+
+.section-5-btn:hover {
+    background-color: #ffffff31;
+}
+
+.section-5-img:hover {
+   opacity: 0.8;
+}
+
+
+/* 
+
+section 6
+
+*/
+
+.section-6-1 {
+    width: 31%
+}
+
+.section-6-btn {
+    padding: 0.4em 1.6em;
+    border-radius: 0.3em;
+    background-color: transparent;
+    border: 1px solid #F5F5F599;
+    font-size: 0.8em;
+
+}
+
+.section-6-btn:hover {
+    background-color: #ffffff31;
+}
+
+
+.game-6 {
+    width: 96px;
+    height: 128px;
+    background-size: cover; 
+    border-radius: 0.5em;
+}
+
+
+/* 
+
+    section 13
+
+*/
+
+.section-13-img {
+    width: 60%;
+}
+
+.section-13-img:hover {
+    opacity: 0.9;
+}
+
+
+.section-13-btn {
+    border-radius: 0.3em;
+    font-size: 0.9em;
+    padding: 0.8em 1.5em;
+    margin-top: 2em;
+}
+
+
+/* 
+
+footer
+
+*/
+
+
+.socials {
+    color: white;
+    font-size: 2em;
+    opacity: 0.80;
+}
+
+.socialsIcons {
+    transition: all 0.5s ease;
+}
+
+.socialsIcons:hover {
+    color: #0078F2;
+    border-color: #0078F2;    
+} 
+
+
+
+.upIconBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    font-size: 1.5em;
+    color: white;
+    border: 1px solid lightblue;
+    padding: 0.20em  0em;
+    opacity: 0.85;
+    transition: all 0.5s ease;
+}
+
+.upIconBox:hover {
+    color: #0078F2;
+    border-color: #0078F2;    
+} 
+
+
+.footer {
+    background-color: #202020;
+    padding: 0.5em 4em;
+}
+
+.footer-links {
+    color: #e7e7e7;
+    font-size: 0.9em;
+    transition: all 0.5s ease;
+}
+
+.footer-links:hover {
+    color: #0078F2;
+}
+
+.footer-copyRight-container {
+    border-top: 1px solid #353535;
+}
+
+.footer-copyRight {
+    color: #cccccc;    
+    font-size: 0.7em;
+    line-height: 2em;
+}
+
+.footer-icons {
+    width: 2.4em;
+    opacity: 0.7;
+    transition: all 0.5s ease;
+}
+
+.footer-icons:hover {
+    opacity: 1;
+}
+
+
+/* 
+
+form 
+
+*/
+
+.form-container {
+    width: 470px;
+    height: 777px;
+    padding: 50px 60px 60px;
+    background-color: #202020;
+}
+
+.form-icon {
+    width: 60px;
+    margin-bottom: 50px;
+}
+
+.form-sub-icon-container {
+    width: 85px;
+    height: 50px;
+    background-color: #353535;
+}
+
+.form-sub-icon {
+    width: 25px;
+}
+
+.sign-in-container {
+    position: relative;
+    background-color: #2b2b2b;
+    margin-top: 10px;
+    border-radius: 0.2em;
+    overflow: hidden;
+}
+
+.sign-in-container::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+}
+
+.sign-in-container:hover::before {
+    opacity: 0.05;
+}
+
+.sign-in {
+    font-size: 18px;
+}
+
+.sign-in-method {
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.nintendo {
+    background-image: url(static/nintendo.png);
+    background-size: cover;
+}
+
+.sign-up-text {
+    font-size: 0.85em;
+    opacity: 80%;
+}
+
+.sign-up-link {
+    font-size: 0.85em;
+    text-decoration: underline;
+}
+
+
+
+
+/* 
+
+sign in
+
+*/
+
+.login-container {
+    width: 470px;
+    height: 689px;
+    padding: 50px 55px 60px;
+    background-color: #202020;
+}
+
+.privacy:hover {
+    text-decoration: none;
+}
+
+.submit {
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 1.8em 0em;
+}
+
+
+@media only screen and (max-width: 1250px){
+    .main {
+        width: 100%;
+        margin: auto;
+        padding: 0 2em;
+    }
+
+    body {
+        min-width: 1200px;
+    }
+}

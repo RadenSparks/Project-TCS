@@ -79,7 +79,7 @@ body {
     justify-content: center;
     margin-top: 20px;
 }
-.button_login .button{
+.button_login button{
     width: 250px;
     height: 50px;
     background-color: #26BBFF;
@@ -88,7 +88,7 @@ body {
     font-weight: 550;
     border-radius: 10px;
 }
-.button_login .button:hover {
+.button_login button:hover {
     opacity: 0.8;
     cursor: pointer;
 }

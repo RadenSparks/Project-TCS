@@ -96,7 +96,7 @@
                                     <a href="" class="user-menu__link">ACCOUNT</a>
                                 </li>
                                 <li class="user-menu__item">
-                                    <a href="/TCS_Main/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
+                                    <a href="/Project_TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
                                 </li>
                             </ul>
                         </div>

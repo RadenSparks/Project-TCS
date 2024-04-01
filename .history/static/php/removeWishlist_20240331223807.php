@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['email']) || !isset($_GET['id'])){
-    header('Location: /TCS_Main/index.php?site=login');
+    header('Location: /Project_TCS/index.php?site=login');
 }
 $email = $_SESSION['email'];
 

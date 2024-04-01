@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header('Location: /TCS_Main/index.php?site=login');
+    header('Location: /Project_TCS/index.php?site=login');
     exit;
 }
 
@@ -21,7 +21,7 @@ try {
     } else {
     }
 
-    header('Location: /TCS_Main/index.php?site=home=' . $_GET['id']);
+    header('Location: /Project_TCS/index.php?site=home=' . $_GET['id']);
     exit;
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();

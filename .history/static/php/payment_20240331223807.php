@@ -170,7 +170,7 @@ try {
                 alertify.alert("Transaction process successfully !", function () {
                     const urlParams = new URLSearchParams(window.location.search);
                     const id = urlParams.get('id');                    
-                    window.location = "/TCS_Main/static/php/buyNow.php?id=" + id;
+                    window.location = "/Project_TCS/static/php/buyNow.php?id=" + id;
                 }).set({
                     title: ''
                 }).set({

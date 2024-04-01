@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['email']) || !isset($_GET['id'])) {
-    header('Location: /TCS_Main/index.php?site=login');
+    header('Location: /Project_TCS/index.php?site=login');
     exit;
 }
 
@@ -28,7 +28,7 @@ try {
     if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     } else {
-        header('Location: /TCS_Main/index.php?site=details&id=' . $_GET['id']);
+        header('Location: /Project_TCS/index.php?site=details&id=' . $_GET['id']);
     }
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();

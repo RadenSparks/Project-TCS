@@ -35,7 +35,7 @@
                     $_SESSION['cookiePass'] = "";
                 }
                 // session_commit();
-                echo '<script type="text/javascript">window.location="/TCS_Main/index.php"</script>';
+                echo '<script type="text/javascript">window.location="/Project_TCS/index.php"</script>';
             } else {
                 echo '<script defer type="text/javascript">var errorNotify = document.querySelector(".error"); errorNotify.style.display = "block";</script>';
             }
