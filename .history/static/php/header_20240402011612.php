@@ -210,11 +210,7 @@
                             <ul class="product-list">
                                 <li>
                                     <div>
-                                        <a href="">
-                                            <div class="games-search">
-                                                
-                                            </div>
-                                        </a>
+                                        <a href=""></a>
                                     </div>
                                 </li>
                             </ul>

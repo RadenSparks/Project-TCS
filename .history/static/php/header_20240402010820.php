@@ -203,22 +203,4 @@
                 </div>
             </div>
 
-            <div class="search-product">
-                <div class="bottom-start">
-                    <span>
-                        <div class="search">
-                            <ul class="product-list">
-                                <li>
-                                    <div>
-                                        <a href="">
-                                            <div class="games-search">
-                                                
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </span>
-                </div>
-            </div>
+            <div class="seacrh"></div>

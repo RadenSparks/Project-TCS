@@ -211,9 +211,7 @@
                                 <li>
                                     <div>
                                         <a href="">
-                                            <div class="games-search">
-                                                
-                                            </div>
+                                            <div class="game-search"></div>
                                         </a>
                                     </div>
                                 </li>
