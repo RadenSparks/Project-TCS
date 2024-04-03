@@ -170,7 +170,7 @@ $search = null;
                             <input type="submit" class="icon_search" name="icon_search" value=".">
 
 
-                            <input type="text" id="search" autocomplete="" name="input-search" placeholder="Search" value="" name="content_search">
+                            <input type="text" id="search" name="input-search" placeholder="Search" value="" name="content_search">
                         </div>
                     </form>
                     <script>
@@ -178,15 +178,10 @@ $search = null;
                         const formSubmit = document.getElementById('form');
                         const iconSearch = document.querySelector('.icon_search');
 
-                        
+                        if (inputSearch.value != '') {
                             inputSearch.oninput = function() {
-                               <?php
-                                     $search = $_POST['input-search'];
-                                     $data = search($search);
-                                ?>
-
-                            }
-                        
+                            alert('HEhehehehe')
+                        }
                         
 
                             // if (isset($_POST['icon_search']) && $_POST['icon_search']) {

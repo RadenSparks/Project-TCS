@@ -170,31 +170,20 @@ $search = null;
                             <input type="submit" class="icon_search" name="icon_search" value=".">
 
 
-                            <input type="text" id="search" autocomplete="" name="input-search" placeholder="Search" value="" name="content_search">
+                            <input type="text" id="search" name="input-search" placeholder="Search" value="" name="content_search">
                         </div>
                     </form>
                     <script>
                         const inputSearch = document.getElementById('search');
                         const formSubmit = document.getElementById('form');
-                        const iconSearch = document.querySelector('.icon_search');
+                        if(in)
+                        <?php
 
-                        
-                            inputSearch.oninput = function() {
-                               <?php
-                                     $search = $_POST['input-search'];
-                                     $data = search($search);
-                                ?>
-
-                            }
-                        
-                        
-
-                            // if (isset($_POST['icon_search']) && $_POST['icon_search']) {
-                            //     $search = $_POST['input-search'];
-                            //     $data = search($search);
-                            // }
-                            // 
-                            
+                        if (isset($_POST['icon_search']) && $_POST['icon_search']) {
+                            $search = $_POST['input-search'];
+                            $data = search($search);
+                        }
+                        ?>
                     </script>
 
                     <?php

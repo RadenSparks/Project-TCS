@@ -165,37 +165,20 @@ $search = null;
             </div>
             <div class="sub-navbar_main_desktop__19-YT">
                 <div class="sub-navbar_left__1pAwu">
-                    <form id="form" method="post">
+                    <form method="post">
                         <div class="sub-navbar_search_box__8UOVU">
                             <input type="submit" class="icon_search" name="icon_search" value=".">
 
 
-                            <input type="text" id="search" autocomplete="" name="input-search" placeholder="Search" value="" name="content_search">
+                            <input type="text" name="input-search" placeholder="<?=$search != null ? $search : ''?>" name="content_search">
                         </div>
                     </form>
-                    <script>
-                        const inputSearch = document.getElementById('search');
-                        const formSubmit = document.getElementById('form');
-                        const iconSearch = document.querySelector('.icon_search');
-
-                        
-                            inputSearch.oninput = function() {
-                               <?php
-                                     $search = $_POST['input-search'];
-                                     $data = search($search);
-                                ?>
-
-                            }
-                        
-                        
-
-                            // if (isset($_POST['icon_search']) && $_POST['icon_search']) {
-                            //     $search = $_POST['input-search'];
-                            //     $data = search($search);
-                            // }
-                            // 
-                            
-                    </script>
+                    <?php
+                    if (isset($_POST['icon_search']) && $_POST['icon_search']) {
+                        $search = $_POST['input-search'];
+                        $data = search($search);
+                    }
+                    ?>
 
                     <?php
                     // if (isset($data)) {
@@ -231,16 +214,16 @@ $search = null;
                                 foreach ($data as $index => $item) {
                                     if (isset($data)) {
                                         if ($index >= 0 && $index <= 3) {
-                                            // echo '<script>let searchProduct = document.querySelector(".search-product").style.display = "block"</script>';
+                                            echo '<script>let search = document.querySelector(".search-product").style.display = "block"</script>';
                                             echo ' <li>
                                         <div>
                                             <a href="./index.php?act=detail&&id=' . $item['gameid'] . '">
                                                 <div class="games-search">
                                                     <div class="image-search">
-                                                        <img src="./static/img/icon/' . $item['icon'] . '" alt="">
+                                                        <img src="./static/img/icon/'.$item['icon'].'" alt="">
                                                     </div>
                                                     <div class="name-searchs">
-                                                        <span class="name-search-product">' . $item['gamename'] . '</span>
+                                                        <span class="name-search-product">'.$item['gamename'].'</span>
     
                                                     </div>
                                                 </div>
@@ -253,7 +236,7 @@ $search = null;
                                     }
                                 }
                                 ?>
-
+                               
                                 <li>
                                     <div>
                                         <a href="#">

@@ -170,7 +170,7 @@ $search = null;
                             <input type="submit" class="icon_search" name="icon_search" value=".">
 
 
-                            <input type="text" id="search" autocomplete="" name="input-search" placeholder="Search" value="" name="content_search">
+                            <input type="text" id="search" name="input-search" placeholder="Search" value="" name="content_search">
                         </div>
                     </form>
                     <script>
@@ -182,7 +182,6 @@ $search = null;
                             inputSearch.oninput = function() {
                                <?php
                                      $search = $_POST['input-search'];
-                                     $data = search($search);
                                 ?>
 
                             }

@@ -189,10 +189,10 @@ $search = null;
                         
                         
 
-                            // if (isset($_POST['icon_search']) && $_POST['icon_search']) {
-                            //     $search = $_POST['input-search'];
-                            //     $data = search($search);
-                            // }
+                            if (isset($_POST['icon_search']) && $_POST['icon_search']) {
+                                $search = $_POST['input-search'];
+                                $data = search($search);
+                            }
                             // 
                             
                     </script>
