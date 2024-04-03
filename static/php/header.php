@@ -1,5 +1,5 @@
 <?php
-$data = null;
+$data = [];
 ?>
 
 <html lang="en">
