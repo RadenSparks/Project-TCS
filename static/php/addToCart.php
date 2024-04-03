@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 <?php
 session_start();
 if (!isset($_SESSION['email'])) {
-    header('Location: /Project-TCS/index.php?site=login');
-    exit; // It's a good practice to add an exit after a header redirect
+    header('Location: /Project-TCS/index.php?act=signin');
+    exit; 
 }
 
 $dsn = 'mysql:host=localhost;dbname=db_epicgamers';
@@ -15,24 +14,15 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->exec("SET NAMES 'utf8'");
 
-
-<?php    
-    session_start();
-    if(!isset($_SESSION['email'])){
-        header('Location: /Project-TCS/index.php?site=login');
-    }
-    
-
     include 'addCartItem.php';
     
     if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
-<<<<<<< HEAD
     } else {
-        header('Location: /Project-TCS/index.php?site=details&id=' . $_GET['id']);
-
-    }else{
-        header('Location: /Project-TCS/index.php?site=details&id='.$_GET['id']);
-
+        header('Location: /Project-TCS/index.php?act=details&id=' . $_GET['id']);
     }
+    exit; 
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 ?>
