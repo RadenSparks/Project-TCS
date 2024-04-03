@@ -1,0 +1,127 @@
+#header {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    background-color: var(--sub-color);
+    bottom: 0px;
+    transition: height 0.2s ease-in-out;
+}
+
+.nav-item:nth-child(2)::after {
+    height: 5px;
+}
+
+.nav-item.nav-item--no-animation::after {
+    display: none;
+}
+
+.nav-item:hover.nav-item::after {
+    height: 5px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 100%;
+    padding: 16px;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.nav-link:hover .nav-logo {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.nav-logo {
+    width: 30px;
+}
+
+.nav-icon  {
+    font-size: 1.7rem;
+    margin-right: 12px;
+}
+
+.logged-in {
+}
+
+.logged-in:hover .user-menu{
+    display: block;
+}
+
+.user-menu {
+    display: none;
+    position: relative;
+    background-color: var(--primary-color);
+    z-index: 99;
+    padding-bottom: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.user-menu__list {
+    list-style: none;
+}
+
+.user-menu__item {
+
+}
+
+.user-menu__link {
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.user-menu__link:hover {
+    color: var(--white-color);
+}
+
+.bottom-start {
+    
+}
+.search-product .product-list .search {
+    width: 510px;
+    max-width: 510px;
+    background-color: ;
+}
+.search-product .product-list .games-search {
+    display: flex;
+}
+
+.search-product .product-list .image-search {
+    width: 32px;
+}
+.search-product .product-list .image-search img {
+    width: 100%;
+}
