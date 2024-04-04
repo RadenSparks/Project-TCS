@@ -1,3 +1,25 @@
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    .pagination a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+</style>
+
 <?php
 $conn = mysqli_connect("localhost", "root", "", "db_epicgamers") or die("Không thể kết nối!");
 mysqli_query($conn, "SET NAMES 'utf8'");
@@ -39,27 +61,6 @@ $pageCount = ceil($total_row / $gamePerPage);
 
 ?>
 
-<style>
-    .pagination {
-        display: inline-block;
-    }
-
-    .pagination a {
-        color: black;
-        float: left;
-        padding: 8px 16px;
-        text-decoration: none;
-    }
-
-    .pagination a.active {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    .pagination a:hover:not(.active) {
-        background-color: #ddd;
-    }
-</style>
 
 <div class="browse-page_main__by63m">
     <div class="browse-page_containter__2kkNw">
