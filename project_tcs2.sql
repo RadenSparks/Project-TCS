@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 04, 2024 at 10:07 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th4 04, 2024 lúc 05:51 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_epicgamers`
+-- Cơ sở dữ liệu: `db_epicgamers`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `accounts`
+-- Cấu trúc bảng cho bảng `accounts`
 --
 
 CREATE TABLE `accounts` (
@@ -37,7 +37,7 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `accounts`
+-- Đang đổ dữ liệu cho bảng `accounts`
 --
 
 INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displayname`, `email`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displ
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -59,18 +59,10 @@ CREATE TABLE `cart` (
   `totalprice` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cartid`, `accountid`, `purchasedate`, `status`, `paymentmethod`, `totalprice`) VALUES
-(1, 1, '2024-03-16 08:56:31', b'1', 0, 7400),
-(4, 2, '2024-03-18 02:42:13', b'1', 0, 0);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cartitem`
+-- Cấu trúc bảng cho bảng `cartitem`
 --
 
 CREATE TABLE `cartitem` (
@@ -80,19 +72,10 @@ CREATE TABLE `cartitem` (
   `gameid` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `cartitem`
---
-
-INSERT INTO `cartitem` (`cartitemid`, `cartid`, `quantity`, `gameid`) VALUES
-(2, 1, 1, 2),
-(4, 4, 1, 65),
-(5, 4, 1, 12);
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `game`
+-- Cấu trúc bảng cho bảng `game`
 --
 
 CREATE TABLE `game` (
@@ -116,7 +99,7 @@ CREATE TABLE `game` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `game`
+-- Đang đổ dữ liệu cho bảng `game`
 --
 
 INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid`, `first-img`, `developer`, `publisher`, `summary`, `tag`, `second-img`, `third-img`, `fourth-img`, `fifth-img`, `icon`, `logo`) VALUES
@@ -164,7 +147,6 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (42, 'What Lies in the Multiverse', 0, 140000, 0, 7, 'game42.jpg', 'IguanaBee SpA.', 'Untold Tales S.A.', 'Welcome to What Lies in the Multiverse – a dimension-shifting, comedic adventure about worlds turned inside out through the powers of one gifted young boy and the misguided lessons of an eccentric scientist.', '', 'game42.jpg', 'game42.jpg', 'game42.jpg', 'game42.jpg', 'icon42.jpg', 'logo42.jpg'),
 (43, 'Wildcat Gun Machine', 0, 170000, 0, 8, 'game43.jpg', 'Chunkybox Games', 'Daedalic Entertainment', 'Wildcat Gun Machine is a bullet hell dungeon crawler where you take on hordes of disgusting flesh beasts with a wide variety of guns, giant mech robots, and cute kittens.', '', 'game43.jpg', 'game43.jpg', 'game43.jpg', 'game43.jpg', 'icon43.jpg', 'logo43.jpg'),
 (44, 'Riverbond', 0, 233000, 0, 8, 'game44.jpg', 'Riverbond', 'Riverbond', 'Riverbond is a fun and frantic couch co-op adventure game for 1 to 4 players set in a stunning voxel world. Embark on a heroic journey to complete missions, battle adorable enemies, and smash everything into tiny cubes!', '', 'game44.jpg', 'game44.jpg', 'game44.jpg', 'game44.jpg', 'icon44.jpg', 'logo44.jpg'),
-(45, 'Asterigos: Curse of the Stars', 0, 390000, 0, 0, 'game45.jpg', 'Acme Gamestudio', 'tinyBuild', 'Embark on a journey full of danger in this action RPG inspired by Greek and Roman mythologies. Explore the breathtaking city of Aphes and forge your way through legions of unique foes and mythical bosses to discover the truth behind the citys curse.', '', 'game45.jpg', 'game45.jpg', 'game45.jpg', 'game45.jpg', 'icon45.jpg', 'logo45.jpg'),
 (46, 'MythForce', 0, 280000, 0, 8, 'game46.jpg', 'Beamdog', 'Aspyr Media', 'Inspired by beloved 80s cartoons, MythForce unites swords & sorcery with gripping 1st-person combat in a roguelite adventure fit for Saturday mornings. Brave the dungeon alone or join forces with friends to take on an ever-changing Castle of Evil!', 'mostplayed', 'game46.jpg', 'game46.jpg', 'game46.jpg', 'game46.jpg', 'icon46.jpg', 'logo46.jpg'),
 (47, 'Going Under', 0, 234000, 0, 8, 'game47.jpg', 'Aggro Crab Games', 'eam17 Digital Ltd', 'Going Under is a satirical dungeon crawler about exploring the ruins of failed tech startups. As an unpaid intern in the big city, you’ll wield office junk as weaponry as you make your way through the offbeat procedural dungeons beneath your company campus.', '', 'game47.jpg', 'game47.jpg', 'game47.jpg', 'game47.jpg', 'icon47.jpg', 'logo47.jpg'),
 (48, 'Barony', 0, 164000, 0, 8, 'game48.jpg', 'Turning Wheel LLC', 'Turning Wheel LLC', 'Barony is the premier first-person roguelike with co-op. Cryptic items, brutal traps and devious monsters, like those found in classic roguelikes and CRPGs, await you. Conquer the dungeons alone, or gather a party in co-op with iconic and exotic RPG classes.', '', 'game48.jpg', 'game48.jpg', 'game48.jpg', 'game48.jpg', 'icon48.jpg', 'logo48.jpg'),
@@ -200,7 +182,7 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genre`
+-- Cấu trúc bảng cho bảng `genre`
 --
 
 CREATE TABLE `genre` (
@@ -209,7 +191,7 @@ CREATE TABLE `genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `genre`
+-- Đang đổ dữ liệu cho bảng `genre`
 --
 
 INSERT INTO `genre` (`genreid`, `genrename`) VALUES
@@ -228,7 +210,7 @@ INSERT INTO `genre` (`genreid`, `genrename`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wishlist`
+-- Cấu trúc bảng cho bảng `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -238,32 +220,24 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `wishlist`
---
-
-INSERT INTO `wishlist` (`wishid`, `accountid`, `gameid`) VALUES
-(1, 1, 13),
-(2, 2, 2);
-
---
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `accounts`
+-- Chỉ mục cho bảng `accounts`
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`accountid`);
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cartid`),
   ADD KEY `cart_ibfk_1` (`accountid`);
 
 --
--- Indexes for table `cartitem`
+-- Chỉ mục cho bảng `cartitem`
 --
 ALTER TABLE `cartitem`
   ADD PRIMARY KEY (`cartitemid`),
@@ -271,20 +245,20 @@ ALTER TABLE `cartitem`
   ADD KEY `gameid` (`gameid`);
 
 --
--- Indexes for table `game`
+-- Chỉ mục cho bảng `game`
 --
 ALTER TABLE `game`
   ADD PRIMARY KEY (`gameid`),
   ADD KEY `genreid` (`genreid`);
 
 --
--- Indexes for table `genre`
+-- Chỉ mục cho bảng `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`genreid`);
 
 --
--- Indexes for table `wishlist`
+-- Chỉ mục cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`wishid`),
@@ -292,70 +266,70 @@ ALTER TABLE `wishlist`
   ADD KEY `gameid` (`gameid`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `accounts`
+-- AUTO_INCREMENT cho bảng `accounts`
 --
 ALTER TABLE `accounts`
   MODIFY `accountid` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cartid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `cartitem`
+-- AUTO_INCREMENT cho bảng `cartitem`
 --
 ALTER TABLE `cartitem`
   MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `game`
+-- AUTO_INCREMENT cho bảng `game`
 --
 ALTER TABLE `game`
   MODIFY `gameid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
--- AUTO_INCREMENT for table `genre`
+-- AUTO_INCREMENT cho bảng `genre`
 --
 ALTER TABLE `genre`
   MODIFY `genreid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `wishlist`
+-- AUTO_INCREMENT cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `cart`
+-- Các ràng buộc cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`);
 
 --
--- Constraints for table `cartitem`
+-- Các ràng buộc cho bảng `cartitem`
 --
 ALTER TABLE `cartitem`
   ADD CONSTRAINT `cartitem_ibfk_1` FOREIGN KEY (`cartid`) REFERENCES `cart` (`cartid`),
   ADD CONSTRAINT `cartitem_ibfk_2` FOREIGN KEY (`gameid`) REFERENCES `game` (`gameid`);
 
 --
--- Constraints for table `game`
+-- Các ràng buộc cho bảng `game`
 --
 ALTER TABLE `game`
   ADD CONSTRAINT `game_ibfk_1` FOREIGN KEY (`genreid`) REFERENCES `genre` (`genreid`);
 
 --
--- Constraints for table `wishlist`
+-- Các ràng buộc cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`),
