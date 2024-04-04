@@ -12,9 +12,41 @@ include_once "./static/model/account.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
-        case 'browse':
-            include_once "./static/php/header.php";
+        case 'browse':            
+            if(!isset($_GET['page'])){
+                $page = 1;
+            }else{
+                $page = $_GET['page'];
+            }            
 
+            if(!isset($_GET['keyword'])){
+                $keyword = "";
+            }else{
+                $keyword = $_GET['keyword'];
+            }     
+
+            if(!isset($_GET['genre'])){
+                $genre = "";
+            }else{
+                $genre = $_GET['genre'];
+            }  
+            
+            if(!isset($_GET['price'])){
+                $price = "";
+            }else{
+                $price = $_GET['price'];
+            }  
+
+            if(!isset($_GET['sort'])){                            
+                $sort = "gamename,asc";
+                header('Location: /Project-TCS/?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc');
+            }else{
+                $sort = $_GET['sort'];
+            }  
+
+            
+
+            include_once "./static/php/header.php";
             include_once "./static/php/games.php";
             include_once "./static/php/footer.php";
 

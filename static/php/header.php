@@ -190,7 +190,7 @@ $search = null;
                     <a href="./index.php">
                         <div class="sub-navbar_option_desktop__1z-9D">Discover</div>
                     </a>
-                    <a href="./index.php?act=browse">
+                    <a href="./index.php?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc">
                         <div class="sub-navbar_option_desktop__1z-9D">Browse</div>
                     </a>
                     <a href="/">
