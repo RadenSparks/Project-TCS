@@ -109,9 +109,7 @@ if (isset($_GET['act'])) {
             include_once "./static/php/register.php";
             break;
         case 'accountsetting':
-            include_once "./static/php/header.php";
-            include_once "./static/php/accountsetting.php";
-            include_once "./static/php/footer.php";
+            include_once "./static/php/accountsetting.php"
             break;
         default:
             include_once "./static/php/header.php";

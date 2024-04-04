@@ -20,25 +20,11 @@ $search = null;
     <link rel="stylesheet" href="./static/css/sliders.css">
     <link rel="stylesheet" href="./static/css/content.css">
     <link rel="stylesheet" href="./static/css/footer.css">
-    <title>Epic Games</title>
-    <meta name="title" content="Epic Games">
-    <meta name="description" content="A gaming platform where users can buy and get different kinds of games.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://epic-games-clone.vercel.app/">
-    <meta property="og:title" content="Epic Games">
-    <meta property="og:description" content="A gaming platform where users can buy and get different kinds of games.">
-    <meta property="og:image" content="https://epic-games-clone.vercel.app/og-image.png">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://epic-games-clone.vercel.app/">
-    <meta property="twitter:title" content="Epic Games">
-    <meta property="twitter:description" content="A gaming platform where users can buy and get different kinds of games.">
-    <meta property="twitter:image" content="https://epic-games-clone.vercel.app/og-image.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 </head>
 
 <body>
-
+   
     <div id="root">
         <div class="App">
             <div id="header" class="header_header__main__div__1miNF">
@@ -87,21 +73,22 @@ $search = null;
                                     $email = $_SESSION['email'];
                                     $username = strtoupper(explode('@', $email)[0]);
                                     echo '
-                        <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
-                            <span class="btn nav-link">Hello
-                                <i style="padding: 0 5px" class="fa-solid fa-caret-down fa-sm"></i>
-                                <div class="user-menu">
-                                    <ul class="user-menu__list">
-                                        <li class="user-menu__item">
-                                            <a href="./index.php?act=accountsetting" class="user-menu__link">ACCOUNT</a>
-                                        </li>
-                                        <li class="user-menu__item">
-                                            <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </span>
+                <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
+                    <a class="btn nav-link">
+                        <i class="nav-icon fa-solid fa-user"></i>
+                        ' . $username . '
+                        <div class="user-menu">
+                            <ul class="user-menu__list">
+                                <li class="user-menu__item">
+                                    <a href="" class="user-menu__link">ACCOUNT</a>
+                                </li>
+                                <li class="user-menu__item">
+                                    <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
+                                </li>
+                            </ul>
                         </div>
+                    </a>
+                </div>
             ';
                                 } else {
                                     echo '
@@ -264,7 +251,7 @@ $search = null;
                     const search = document.getElementById('search');
                     search.addEventListener('input', () => {
                         const inputValue = search.value;
-                        if (inputValue == '') {
+                        if(inputValue == '') {
                             searchProduct.style.display = 'none';
                         } else {
                             searchProduct.style.display = 'block';

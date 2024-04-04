@@ -65,9 +65,9 @@ $search = null;
                     </div>
                     <a href="./index.php?act=signin">
                         <div class="header_header__second__user__32ejS header_padding__left__RHyxc header_padding__right__EBNcD header_display__none__R6tIm}">
-                            <div class="header_padding__left__RHyxc header_padding__right__EBNcD header_icon__2CeRL header_onhover__color__white__3u48K header_display__none__R6tIm">
+                            <!-- <div class="header_padding__left__RHyxc header_padding__right__EBNcD header_icon__2CeRL header_onhover__color__white__3u48K header_display__none__R6tIm">
                                 <img src="https://epic-games-clone.vercel.app/icons/header_user_offline.svg" alt="offline user">
-                            </div>
+                            </div> -->
                             <!-- <div id="header_header__rewrite__2vMyA"
                                 class="header_padding__right__EBNcD header_display__none__R6tIm">
                                 <p class="header_onhover__color__white__3u48K">SIGN IN</p>
@@ -87,21 +87,22 @@ $search = null;
                                     $email = $_SESSION['email'];
                                     $username = strtoupper(explode('@', $email)[0]);
                                     echo '
-                        <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
-                            <span class="btn nav-link">Hello
-                                <i style="padding: 0 5px" class="fa-solid fa-caret-down fa-sm"></i>
-                                <div class="user-menu">
-                                    <ul class="user-menu__list">
-                                        <li class="user-menu__item">
-                                            <a href="./index.php?act=accountsetting" class="user-menu__link">ACCOUNT</a>
-                                        </li>
-                                        <li class="user-menu__item">
-                                            <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </span>
+                <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
+                    <d class="btn nav-link">
+                    <i style="padding-right: 5px" class="fa-solid fa-user fa-lg"></i>
+                        ' . $username . '
+                        <div class="user-menu">
+                            <ul class="user-menu__list">
+                                <li class="user-menu__item">
+                                    <a href="" class="user-menu__link">ACCOUNT</a>
+                                </li>
+                                <li class="user-menu__item">
+                                    <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
+                                </li>
+                            </ul>
                         </div>
+                    </d>
+                </div>
             ';
                                 } else {
                                     echo '

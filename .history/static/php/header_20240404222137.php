@@ -88,12 +88,12 @@ $search = null;
                                     $username = strtoupper(explode('@', $email)[0]);
                                     echo '
                         <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
-                            <span class="btn nav-link">Hello
+                            <span class="btn nav-link">' . $username . '
                                 <i style="padding: 0 5px" class="fa-solid fa-caret-down fa-sm"></i>
                                 <div class="user-menu">
                                     <ul class="user-menu__list">
                                         <li class="user-menu__item">
-                                            <a href="./index.php?act=accountsetting" class="user-menu__link">ACCOUNT</a>
+                                            <a href="" class="user-menu__link">ACCOUNT</a>
                                         </li>
                                         <li class="user-menu__item">
                                             <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>

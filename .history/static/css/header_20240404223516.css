@@ -37,9 +37,7 @@
 .nav-item.nav-item--no-animation::after {
     display: none;
 }
-.nav-item:hover {
-    top: 46px;
-}
+.nav
 /* .nav-item:hover.nav-item::after {
     height: 5px;
 } */

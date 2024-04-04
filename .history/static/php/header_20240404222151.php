@@ -93,7 +93,7 @@ $search = null;
                                 <div class="user-menu">
                                     <ul class="user-menu__list">
                                         <li class="user-menu__item">
-                                            <a href="./index.php?act=accountsetting" class="user-menu__link">ACCOUNT</a>
+                                            <a href="" class="user-menu__link">ACCOUNT</a>
                                         </li>
                                         <li class="user-menu__item">
                                             <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
