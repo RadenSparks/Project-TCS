@@ -61,7 +61,7 @@ $search = null;
                     <div class="header_padding__left__RHyxc header_icon__2CeRL header_padding__right__EBNcD header_display__none__R6tIm header_onhover__color__white__3u48K">
                         <img src="https://epic-games-clone.vercel.app/icons/header_global.svg" alt="global">
                     </div>
-                    <a href="./index.php?act=signin">
+                    <a >
                         <div class="header_header__second__user__32ejS header_padding__left__RHyxc header_padding__right__EBNcD header_display__none__R6tIm}">
                             <div class="header_padding__left__RHyxc header_padding__right__EBNcD header_icon__2CeRL header_onhover__color__white__3u48K header_display__none__R6tIm">
                                 <img src="https://epic-games-clone.vercel.app/icons/header_user_offline.svg" alt="offline user">
@@ -85,36 +85,35 @@ $search = null;
                                     $email = $_SESSION['email'];
                                     $username = strtoupper(explode('@', $email)[0]);
                                     echo '
-                <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
-                    <a class="btn nav-link">
-                        <i class="nav-icon fa-solid fa-user"></i>
-                        ' . $username . '
-                        <div class="user-menu">
-                            <ul class="user-menu__list">
-                                <li class="user-menu__item">
-                                    <a href="" class="user-menu__link">ACCOUNT</a>
-                                </li>
-                                <li class="user-menu__item">
-                                    <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-            ';
+                                        <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
+                                            <a class="btn nav-link">
+                                                <i class="nav-icon fa-solid fa-user"></i>
+                                                ' . $username . '
+                                                <div class="user-menu">
+                                                    <ul class="user-menu__list">
+                                                        <li class="user-menu__item">
+                                                            <a href="" class="user-menu__link">ACCOUNT</a>
+                                                        </li>
+                                                        <li class="user-menu__item">
+                                                            <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    ';
                                 } else {
                                     echo '
                                     <div id="header_header__rewrite__2vMyA"
-                                    class="header_padding__right__EBNcD header_display__none__R6tIm">
-                                    <p class="header_onhover__color__white__3u48K">SIGN IN</p>
-                                </div>
-                        ';
+                                        class="header_padding__right__EBNcD header_display__none__R6tIm">
+                                        <a class="header_onhover__color__white__3u48K" href="./index.php?act=signin">SIGN IN</a>
+                                    </div>
+                                    ';
                                 }
                             } catch (PDOException $e) {
                                 echo "Connection failed: " . $e->getMessage();
                             }
                             ?>
-
                         </div>
                     </a>
                     <div class="header_padding__left__RHyxc header_display__none__R6tIm header_download_btn__2HnRe">
@@ -191,7 +190,7 @@ $search = null;
                     <a href="./index.php">
                         <div class="sub-navbar_option_desktop__1z-9D">Discover</div>
                     </a>
-                    <a href="./index.php?act=browse">
+                    <a href="./index.php?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc">
                         <div class="sub-navbar_option_desktop__1z-9D">Browse</div>
                     </a>
                     <a href="/">
@@ -263,7 +262,7 @@ $search = null;
                     const search = document.getElementById('search');
                     search.addEventListener('input', () => {
                         const inputValue = search.value;
-                        if(inputValue == '') {
+                        if (inputValue == '') {
                             searchProduct.style.display = 'none';
                         } else {
                             searchProduct.style.display = 'block';
