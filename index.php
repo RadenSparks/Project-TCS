@@ -15,7 +15,7 @@ if (isset($_GET['act'])) {
         case 'browse':
             include_once "./static/php/header.php";
 
-            include_once "./static/php/browse.php";
+            include_once "./static/php/games.php";
             include_once "./static/php/footer.php";
 
             break;

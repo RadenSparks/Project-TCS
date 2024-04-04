@@ -72,7 +72,7 @@
                             </div>
                             <div class="browse-page_data_container__DQwrC">
                                 <div class="browse-page_card_container__3Uo6_"><a
-                                        href="/games/61c3466f194f98e8c3efef5a">
+                                        href="/games/61c3466f194f98e8c3efef5    a">
                                         <div class="game-card_card__RBJ5f">
                                             <div class="game-card_image_div__3GP6O"><img
                                                     src="https://cdn1.epicgames.com/amaranth/offer/Ancestors_EGS_PortraitProductImage_1200x1600-1200x1600-ddddb93fd9f6c66a1a34d4be4673bf17.jpg?h=854&amp;resize=1&amp;w=640"
