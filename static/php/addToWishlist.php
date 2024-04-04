@@ -10,19 +10,25 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $conn->exec("SET NAMES 'utf8'");
 
-    $stmt = $conn->prepare("SELECT * from wishlist w join accounts a on w.email = a.email where a.email = :email and w.gameid = :gameid");
+    $stmt = $conn->prepare("SELECT * from wishlist w join accounts a on w.accountid = a.accountid where a.email = :email and w.gameid = :gameid");
     $stmt->bindParam(':email', $_SESSION['email']);
     $stmt->bindParam(':gameid', $_GET['id']);
     $stmt->execute();
+    
 
-    if ($stmt->rowCount() > 0) {
-        // Record exists in the wishlist
-    } else {
-        $insert_query = "INSERT INTO `wishlist` (`email`, `gameid`) VALUES (:email, :gameid)";
-        $stmt = $conn->prepare($insert_query);
-        $stmt->bindParam(':email', $_SESSION['email']);
-        $stmt->bindParam(':gameid', $_GET['id']);
-        $stmt->execute();
+    if ($stmt->rowCount() == 0) {
+        $user_stmt = $conn->prepare("SELECT * from accounts a where a.email = :email LIMIT 1");
+        $user_stmt->bindParam(':email', $_SESSION['email']);
+        $user_stmt->execute();
+        if($user_stmt->rowCount() > 0){
+            $user_row = $user_stmt->fetch(PDO::FETCH_ASSOC);
+            $accountId = $user_row['accountid'];
+            $insert_query = "INSERT INTO `wishlist` (`accountid`, `gameid`) VALUES (:accountid, :gameid)";
+            $stmt = $conn->prepare($insert_query);
+            $stmt->bindParam(':accountid', $accountId);
+            $stmt->bindParam(':gameid', $_GET['id']);
+            $stmt->execute();
+        }        
     }
 
     if (isset($_SERVER["HTTP_REFERER"])) {

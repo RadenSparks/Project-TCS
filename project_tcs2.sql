@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 29, 2024 lúc 01:16 PM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.2.4
+-- Thời gian đã tạo: Th4 04, 2024 lúc 05:51 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `project_tcs`
+-- Cơ sở dữ liệu: `db_epicgamers`
 --
 
 -- --------------------------------------------------------
@@ -41,8 +41,8 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displayname`, `email`) VALUES
-(1, '123456', 'Phuoc', 'Le Minh', 'Le Minh Phuoc', 'ngocthanhnt04@gmail.com'),
-(2, '123456', 'Leaf', 'Koder', 'Leaf Koder', 'ngocthanhnt04@gmail.com');
+(1, '123456', 'Phuoc', 'Le Minh', 'Le Minh Phuoc', 'phuoc@gmail.com'),
+(2, '123456', 'Leaf', 'Koder', 'Leaf Koder', 'leaf@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -59,14 +59,6 @@ CREATE TABLE `cart` (
   `totalprice` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Đang đổ dữ liệu cho bảng `cart`
---
-
-INSERT INTO `cart` (`cartid`, `accountid`, `purchasedate`, `status`, `paymentmethod`, `totalprice`) VALUES
-(1, 1, '2024-03-16 08:56:31', b'1', 0, 7400),
-(4, 2, '2024-03-18 02:42:13', b'1', 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -79,15 +71,6 @@ CREATE TABLE `cartitem` (
   `quantity` int(11) DEFAULT NULL,
   `gameid` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `cartitem`
---
-
-INSERT INTO `cartitem` (`cartitemid`, `cartid`, `quantity`, `gameid`) VALUES
-(2, 1, 1, 2),
-(4, 4, 1, 65),
-(5, 4, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -121,14 +104,14 @@ CREATE TABLE `game` (
 
 INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid`, `first-img`, `developer`, `publisher`, `summary`, `tag`, `second-img`, `third-img`, `fourth-img`, `fifth-img`, `icon`, `logo`) VALUES
 (1, 'Zelter', 0, 186000, 0, 0, 'game1.jpg', 'G1 Playground', 'SuperGG.com', 'All the horrors of zombie apocalypse in adorable pixelated form! Craft explore and rescue people in a city overrun by the zombie horde. Good luck survivors!', 'topsellers', 'game1.jpg', 'game1.jpg', 'game1.jpg', 'game1.jpg', 'icon1.jpg', 'logo1.jpg'),
-(2, 'Retrowave Rider', 0.8, 37000, 47, 0, 'game2.jpg', 'Starchaser Game', 'Meridian4', 'Retrowave Rider is a 2D precision platformer where you control not only the character but also the level itself. Dive into synthwave worlds filled with retro-inspired visuals and smooth synth sounds and experience this journey with all of its trials and glories.', '', 'game2.jpg', 'game2.jpg', 'game2.jpg', 'game2.jpg', 'icon2.jpg', 'logo2.jpg'),
+(2, 'Retrowave Rider', 0.8, 37000, 37600, 0, 'game2.jpg', 'Starchaser Game', 'Meridian4', 'Retrowave Rider is a 2D precision platformer where you control not only the character but also the level itself. Dive into synthwave worlds filled with retro-inspired visuals and smooth synth sounds and experience this journey with all of its trials and glories.', '', 'game2.jpg', 'game2.jpg', 'game2.jpg', 'game2.jpg', 'icon2.jpg', 'logo2.jpg'),
 (3, 'Monster Outbreak', 0, 112000, 0, 1, 'game3.jpg', 'GameMunchers', 'Freedom Games', 'The King dimensional orb has malfunctioned bringing hordes of monsters into the Kingdom. Defend your safeground against the monsters by gathering resources building defenses upgrading your arsenal and surviving long enough to find the source of monsters and destroy it.', '', 'game3.jpg', 'game3.jpg', 'game3.jpg', 'game3.jpg', 'icon3.jpg', 'logo3.jpg'),
 (4, 'Airoheart', 0, 250000, 0, 1, 'game4.jpg', 'Pixel Heart Studios', 'SOEDESCO', 'Airoheart is a top-down action-adventure RPG inspired by the classics. Embark on an epic journey to save the world from evil and test the strength of your heart in this emotional tale of betrayal tragedy and redemption.', '', 'game4.jpg', 'game4.jpg', 'game4.jpg', 'game4.jpg', 'icon4.jpg', 'logo4.jpg'),
 (5, 'ANNO: Mutationem', 0, 203000, 0, 1, 'game5.jpg', 'ThinkingStars', 'Lightning Games', 'ANNO: Mutationem is an action-adventure game with RPG elements set in a cyberpunk world featuring a unique mix of pixelated 2D & 3D graphic style with a rich dark and bizarre plot.', '', 'game5.jpg', 'game5.jpg', 'game5.jpg', 'game5.jpg', 'icon5.jpg', 'logo5.jpg'),
 (6, 'Venice 2089', 0, 140000, 0, 2, 'game6.jpg', 'Safe Place Studio', 'Safe Place Studio', 'Explore a future Venice struggling with the effects of rising water slowly destroying the city as a bored teenager with your hoverboard and your trusty drone.', 'topsellers', 'game6.jpg', 'game6.jpg', 'game6.jpg', 'game6.jpg', 'icon6.jpg', 'logo6.jpg'),
 (7, 'Atari Mania', 0, 133000, 0, 2, 'game7.jpg', 'iLLOGIKA Studios', 'Atari Inc', 'A wild journey through videogame history, Atari Mania is a microgame collection wrapped in a hilarious retro-driven narrative of exploration and surprise.', '', 'game7.jpg', 'game7.jpg', 'game7.jpg', 'game7.jpg', 'icon7.jpg', 'logo7.jpg'),
 (8, 'Asterigos: Curse of the Stars', 0, 390000, 0, 2, 'game8.jpg', 'Acme Gamestudio', 'tinyBuild', 'Embark on a journey full of danger in this action RPG, inspired by Greek and Roman mythologies. Explore the breathtaking city of Aphes and forge your way through legions of unique foes and mythical bosses to discover the truth behind the citys curse.', '', 'game8.jpg', 'game8.jpg', 'game8.jpg', 'game8.jpg', 'icon8.jpg', 'logo8.jpg'),
-(9, 'The Complex', 0.9, 108900, 121, 2, 'game9.jpg', 'Wales Interactive, Good Gate Media', 'Wales Interactive', 'After a major bio-weapon attack on London two scientists find themselves in a locked-down laboratory with time and air running out. The Complex is an interactive sci-fi thriller movie where your decisions lead to one of eight suspenseful endings.', '', 'game9.jpg', 'game9.jpg', 'game9.jpg', 'game9.jpg', 'icon9.jpg', 'logo9.jpg'),
+(9, 'The Complex', 0.9, 108900, 108900, 2, 'game9.jpg', 'Wales Interactive, Good Gate Media', 'Wales Interactive', 'After a major bio-weapon attack on London two scientists find themselves in a locked-down laboratory with time and air running out. The Complex is an interactive sci-fi thriller movie where your decisions lead to one of eight suspenseful endings.', '', 'game9.jpg', 'game9.jpg', 'game9.jpg', 'game9.jpg', 'icon9.jpg', 'logo9.jpg'),
 (10, 'Call of Cthulhu', 0, 260000, 0, 2, 'game10.jpg', 'Cyanide Studio', 'Focus Entertainment', '1924. Private Investigator Pierce is sent to look into the tragic death of the Hawkins. Plunge into a world of creeping madness and cosmic horror. Cryptic clues shadowy figures and pure terror bar your way as you fight to retain your sanity and solve an otherworldly mystery.', '', 'game10.jpg', 'game10.jpg', 'game10.jpg', 'game10.jpg', 'icon10.jpg', 'logo10.jpg'),
 (11, 'Little Orpheus', 0, 150000, 0, 2, 'game11.jpg', 'The Chinese Room', 'Secret Mode', 'This definitive edition of the multiple-award-winning Apple Arcade hit by master storytellers The Chinese Room is remastered for the big screen and includes all bonus content of the original. A HERO WILL EMERGE!', '', 'game11.jpg', 'game11.jpg', 'game11.jpg', 'game11.jpg', 'icon11.jpg', 'logo11.jpg'),
 (12, 'Destiny 2', 0, 0, 0, 2, 'game12.jpg', 'Bungie', 'Bungie', 'Destiny 2 is an action MMO with a single evolving world that you and your friends can join anytime anywhere absolutely free.', 'mostplayed', 'game12.jpg', 'game12.jpg', 'game12.jpg', 'game12.jpg', 'icon12.jpg', 'logo12.jpg'),
@@ -164,8 +147,7 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (42, 'What Lies in the Multiverse', 0, 140000, 0, 7, 'game42.jpg', 'IguanaBee SpA.', 'Untold Tales S.A.', 'Welcome to What Lies in the Multiverse – a dimension-shifting, comedic adventure about worlds turned inside out through the powers of one gifted young boy and the misguided lessons of an eccentric scientist.', '', 'game42.jpg', 'game42.jpg', 'game42.jpg', 'game42.jpg', 'icon42.jpg', 'logo42.jpg'),
 (43, 'Wildcat Gun Machine', 0, 170000, 0, 8, 'game43.jpg', 'Chunkybox Games', 'Daedalic Entertainment', 'Wildcat Gun Machine is a bullet hell dungeon crawler where you take on hordes of disgusting flesh beasts with a wide variety of guns, giant mech robots, and cute kittens.', '', 'game43.jpg', 'game43.jpg', 'game43.jpg', 'game43.jpg', 'icon43.jpg', 'logo43.jpg'),
 (44, 'Riverbond', 0, 233000, 0, 8, 'game44.jpg', 'Riverbond', 'Riverbond', 'Riverbond is a fun and frantic couch co-op adventure game for 1 to 4 players set in a stunning voxel world. Embark on a heroic journey to complete missions, battle adorable enemies, and smash everything into tiny cubes!', '', 'game44.jpg', 'game44.jpg', 'game44.jpg', 'game44.jpg', 'icon44.jpg', 'logo44.jpg'),
-(45, 'Asterigos: Curse of the Stars', 0, 390000, 0, 0, 'game45.jpg', 'Acme Gamestudio', 'tinyBuild', 'Embark on a journey full of danger in this action RPG inspired by Greek and Roman mythologies. Explore the breathtaking city of Aphes and forge your way through legions of unique foes and mythical bosses to discover the truth behind the citys curse.', '', 'game45.jpg', 'game45.jpg', 'game45.jpg', 'game45.jpg', 'icon45.jpg', 'logo45.jpg'),
-(46, 'MythForce', 0, 280000, 0, 8, 'game46.jpg', 'Beamdog', 'Aspyr Media', 'Inspired by beloved 80s cartoons, MythForce unites swords & sorcery with gripping 1st-person combat in a roguelite adventure fit for Saturday mornings. Brave the dungeon alone or join forces with friends to take on an ever-changing Castle of Evil!', 'mostplayed', 'game46.jpg', 'game46.jpg', 'game46.jpg', 'game46.jpg', 'icon46', 'logo46'),
+(46, 'MythForce', 0, 280000, 0, 8, 'game46.jpg', 'Beamdog', 'Aspyr Media', 'Inspired by beloved 80s cartoons, MythForce unites swords & sorcery with gripping 1st-person combat in a roguelite adventure fit for Saturday mornings. Brave the dungeon alone or join forces with friends to take on an ever-changing Castle of Evil!', 'mostplayed', 'game46.jpg', 'game46.jpg', 'game46.jpg', 'game46.jpg', 'icon46.jpg', 'logo46.jpg'),
 (47, 'Going Under', 0, 234000, 0, 8, 'game47.jpg', 'Aggro Crab Games', 'eam17 Digital Ltd', 'Going Under is a satirical dungeon crawler about exploring the ruins of failed tech startups. As an unpaid intern in the big city, you’ll wield office junk as weaponry as you make your way through the offbeat procedural dungeons beneath your company campus.', '', 'game47.jpg', 'game47.jpg', 'game47.jpg', 'game47.jpg', 'icon47.jpg', 'logo47.jpg'),
 (48, 'Barony', 0, 164000, 0, 8, 'game48.jpg', 'Turning Wheel LLC', 'Turning Wheel LLC', 'Barony is the premier first-person roguelike with co-op. Cryptic items, brutal traps and devious monsters, like those found in classic roguelikes and CRPGs, await you. Conquer the dungeons alone, or gather a party in co-op with iconic and exotic RPG classes.', '', 'game48.jpg', 'game48.jpg', 'game48.jpg', 'game48.jpg', 'icon48.jpg', 'logo48.jpg'),
 (49, 'Next Up Hero', 0, 186000, 0, 8, 'game49.jpg', 'Digital Continue', 'Aspyr Media, Inc.', '', '', 'game49.jpg', 'game49.jpg', 'game49.jpg', 'game49.jpg', 'icon49.jpg', 'logo49.jpg'),
@@ -175,7 +157,7 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (53, 'Kena: Bridge of Spirits', 0, 370000, 0, 9, 'game53.jpg', 'Exploration', 'Ember Lab', 'A story-driven, action adventure combining exploration with fast-paced combat. As Kena, players find and grow a team of charming spirit companions called the Rot, enhancing their abilities and creating new ways to manipulate the environment.', '', 'game53.jpg', 'game53.jpg', 'game53.jpg', 'game53.jpg', 'icon53.jpg', 'logo53.jpg'),
 (54, 'TOEM', 0, 186000, 0, 9, 'game54.jpg', 'Something We Made', 'Something We Made', 'Set off on a delightful expedition and use your photographic eye to uncover the mysteries of the magical TOEM in this hand-drawn adventure game. Chat with quirky characters and solve their problems by snapping neat photos!', '', 'game54.jpg', 'game54.jpg', 'game54.jpg', 'game54.jpg', 'icon54.jpg', 'logo54.jpg'),
 (55, 'JETT : The Far Shore', 0, 250000, 0, 9, 'game55.jpg', 'Superbrothers + Pine Scented', 'Superbrothers + Pine Scented', 'JETT : The Far Shore invites you on an interstellar expedition to carve out a future for a people haunted by oblivion in this cinematic action adventure.', '', 'game55.jpg', 'game55.jpg', 'game55.jpg', 'game55.jpg', 'icon55.jpg', 'logo55.jpg'),
-(56, 'Source of Madness', 0.7, 131600, 188, 0, 'game56.jpg', 'Carry Castle', 'Thunderful Publishing', 'Source of Madness is a side-scrolling dark action roguelite set in a twisted Lovecraftian inspired world powered by procedural generation and AI machine learning. Take on the role of a new Acolyte as they embark on a nightmarish odyssey.', '', 'game56.jpg', 'game56.jpg', 'game56.jpg', 'game56.jpg', 'icon56.jpg', 'logo56.jpg'),
+(56, 'Source of Madness', 0.7, 131600, 131600, 0, 'game56.jpg', 'Carry Castle', 'Thunderful Publishing', 'Source of Madness is a side-scrolling dark action roguelite set in a twisted Lovecraftian inspired world powered by procedural generation and AI machine learning. Take on the role of a new Acolyte as they embark on a nightmarish odyssey.', '', 'game56.jpg', 'game56.jpg', 'game56.jpg', 'game56.jpg', 'icon56.jpg', 'logo56.jpg'),
 (57, 'GigaBash', 0, 326000, 0, 10, 'game57.jpg', 'PassionRepublic Games', 'PassionRepublic Games', 'Claim your place as king among Titans! GigaBash is a multiplayer arena brawler with gigantic film-inspired kaiju, larger than life heroes, earth-shattering special attacks and fully destructible environments.', '', 'game57.jpg', 'game57.jpg', 'game57.jpg', 'game57.jpg', 'icon57.jpg', 'logo57.jpg'),
 (58, 'THE KING OF FIGHTERS XV', 0, 630000, 0, 10, 'game58.jpg', 'SNK CORPORATION', 'SNK CORPORATION', 'SHATTER ALL EXPECTATIONS! The new \"XV\" that transcends everything!', 'topsellers', 'game58.jpg', 'game58.jpg', 'game58.jpg', 'game58.jpg', 'icon58.jpg', 'logo58.jpg'),
 (59, 'Sifu', 0, 373000, 0, 10, 'game59.jpg', 'Sloclap', 'Sloclap', 'Sifu is the new game of Sloclap, the independent studio behind Absolver. A third person action game featuring intense hand-to-hand combat, it puts you in control of a young Kung-Fu student on a path of revenge.', 'topsellers', 'game59.jpg', 'game59.jpg', 'game59.jpg', 'game59.jpg', 'icon59.jpg', 'logo59.jpg'),
@@ -186,7 +168,7 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (64, 'Assassin Creed® Mirage', 0, 0, 0, 0, 'game64.jpg', 'Ubisoft', 'Ubisoft', 'Experience the story of Basim, a cunning street thief seeking answers and justice as he navigates the bustling streets of ninth–century Baghdad.', 'upcoming', 'game64.jpg', 'game64.jpg', 'game64.jpg', 'game64.jpg', 'icon64.jpg', 'logo64.jpg'),
 (65, 'Tower of Fantasy', 0, 0, 0, 2, 'game65.jpg', 'HOTTA STUDIO', 'LEVEL INFINITE', 'Embark together on your fantasy adventure! Set hundreds of years in the future on the distant planet of Aida, the shared open-world RPG, anime-infused sci-fi adventure Tower of Fantasy will be coming soon to Epic.', 'upcoming', 'game65.jpg', 'game65.jpg', 'game65.jpg', 'game65.jpg', 'icon65.jpg', 'logo65.jpg'),
 (66, 'Dead Island 2', 0, 0, 0, 10, 'game66.jpg', 'Deep Silver Dambuster Studios', 'Deep Silver', 'A deadly virus is spreading across Los Angeles, turning inhabitants into zombies. Bitten, infected, but more than just immune, uncover the truth behind the outbreak and discover who -or what- you are. Pre-purchase now and get the Memories of Banoi!', 'upcoming', 'game66.jpg', 'game66.jpg', 'game66.jpg', 'game66.jpg', 'icon66.jpg', 'logo66.jpg'),
-(67, 'Trifox', 0.9, 167400, 186, 1, 'game67.jpg', 'Glowfish Interactive', 'Big Sugar', 'Trifox is a colourful and cartoonish action-adventure featuring a phenomenal fox with a multitude of talents! Choose from a trio of classes – Warrior Mage Engineer – or mix-and-match abilities to create a tailor-made hero! Inspired by the golden age of 3D platformers.', '', 'game67.jpg', 'game67.jpg', 'game67.jpg', 'game67.jpg', 'icon67.jpg', 'logo67.jpg'),
+(67, 'Trifox', 0.9, 167400, 167400, 1, 'game67.jpg', 'Glowfish Interactive', 'Big Sugar', 'Trifox is a colourful and cartoonish action-adventure featuring a phenomenal fox with a multitude of talents! Choose from a trio of classes – Warrior Mage Engineer – or mix-and-match abilities to create a tailor-made hero! Inspired by the golden age of 3D platformers.', '', 'game67.jpg', 'game67.jpg', 'game67.jpg', 'game67.jpg', 'icon67.jpg', 'logo67.jpg'),
 (68, 'Eville', 0, 0, 0, 5, 'game68.jpg', 'VestGames\r\n', 'Versus Evil', 'Betray your friends - and lie your way to victory. In the multiplayer social deduction game Eville you find yourself in a village riddled by a series of murders. Some say it might have been you - or was it? Convince others you\re not a murderer to stay alive!', 'upcoming', 'game68.jpg', 'game68.jpg', 'game68.jpg', 'game68.jpg', 'icon68.jpg', 'logo68.jpg'),
 (69, 'Frontier Hunter: Erza Wheel of Fortune', 0, 0, 0, 1, 'game69.jpg', 'IceSitruuna', 'IceSitruuna', 'Frontier Hunter is a genuine Metroidvania game. Compared to our last work, Frontier Hunter has fuller stories, content, monsters, more exquisite scenes, smoother actions, and a more diversified, personalized cultivation system.', 'upcoming', 'game69.jpg', 'game69.jpg', 'game69.jpg', 'game69.jpg', 'icon69.jpg', 'logo69.jpg'),
 (70, 'Evoland Legendary Edition', 0, 0, 0, 1, 'game70.jpg', 'Shiro Games', 'Shiro Unlimited', 'Evoland Legendary Edition brings you two great and unique RPGs, with their graphic style and gameplay changing as you progress through the game!', 'free', 'game70.jpg', 'game70.jpg', 'game70.jpg', 'game70.jpg', 'icon70.jpg', 'logo70.jpg'),
@@ -236,14 +218,6 @@ CREATE TABLE `wishlist` (
   `accountid` bigint(10) NOT NULL,
   `gameid` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `wishlist`
---
-
-INSERT INTO `wishlist` (`wishid`, `accountid`, `gameid`) VALUES
-(1, 1, 13),
-(2, 2, 2);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -329,7 +303,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

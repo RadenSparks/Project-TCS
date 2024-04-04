@@ -189,7 +189,7 @@ $data = product();
                     <?php
                     foreach ($data as $index => $item) {
                         if ($index <= 5) {
-                            echo ' <a href="./index.php?act=detail&&id=' . $item['gameid'] . '">
+                            echo ' <a href="./index.php?act=detail&id=' . $item['gameid'] . '">
                                         <div class="card_bar__2Jnqx"><img src="./static/img/icon/' . $item['icon'] . '" alt="">
                                             <p>' . $item['gamename'] . '</p>
                                         </div>
