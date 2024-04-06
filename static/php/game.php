@@ -52,7 +52,6 @@ if (isset($_SESSION['email'])) {
                     <?php
                     if ($gamePrice == 0) {
                         echo '<div class="price-component_blue_button__13OKH">Free</div>';
-                        
                     } else {
                         if ($sale != 0) {
                             $newPrice = $sale * $gamePrice;

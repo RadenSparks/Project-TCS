@@ -25,11 +25,9 @@ $conn = mysqli_connect("localhost", "root", "", "db_epicgamers") or die("Không 
 mysqli_query($conn, "SET NAMES 'utf8'");
 
 $sortArr = explode(",", $sort);
-echo var_dump($sortArr);
 
 $sortBy = $sortArr[0];
 $sortDir = $sortArr[1];
-echo $sortDir;
 
 $gamePerPage = 12;
 $pagination = ($page * $gamePerPage) - $gamePerPage;
@@ -37,7 +35,7 @@ $pagination = ($page * $gamePerPage) - $gamePerPage;
 $gamesQuery = 'SELECT g.* from game g';
 $gameQueryPagination = $gamesQuery .' ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
 
-// "SELECT g.* from game g ORDER BY gamename ASC LIMIT 0, 12";
+
 
 if ($keyword != "") {
     $gamesQuery = 'SELECT g.* from game g where g.gamename LIKE "%' . $keyword . '%" ORDER BY '.$sortBy.' '.$sortDir;
