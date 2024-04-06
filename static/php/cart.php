@@ -1,67 +1,211 @@
-<div class="container">
-    <h2 class="title_cart">My cart</h2>
-    <div class="cart">
-        <div class="left_cart">
-            <?php
-            if (isset($_SESSION['giohang']) && count($_SESSION['giohang']) > 0) {
-                foreach ($cart as $item) {
+<?php
+session_start();
+if (isset($_SESSION['cookieEmail']) && isset($_SESSION['cookiePass'])) {
+    $expire = time() + 60 * 60 * 24 * 30;
+    setcookie("email", $_SESSION['cookieEmail'], $expire);
+    setcookie("password", $_SESSION['cookiePass'], $expire);
+}
 
+$dsn = 'mysql:host=localhost;dbname=db_epicgamers';
+$username = 'root';
+$password = '';
+$options = array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+);
 
-                    echo ' 
-                    <div class="item">
-                        <div class="about_games">
-                            <div class="image_game">
-                                <img src="'.$item[1].'" alt="">
-                                <div class="operasys_icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="currentcolor" d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    // Set the PDO error mode to exception
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://static-assets-prod.epicgames.com/epic-store/static/webpack/../favicon.ico"
+        type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.2.0-web/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./static/css/header.css">
+    <link rel="stylesheet" href="./static/css/base.css">
+    <link rel="stylesheet" href="./static/css/cart.css">
+    <link rel="stylesheet" href="./static/css/footer.css">
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script>
+    <title>Cart</title>
+</head>
+<div id="main">
+    <div class="container px-5">
+        <div class="cart">
+            <h4 class="cart__title">My Cart</h4>
+            <div class="row cart__content">
+                <div class="col-8">
+                    <?php
+                    if (isset($_SESSION['email'])) {
+                        // Display cart
+                        $email = $_SESSION['email'];
+
+                        $stmt = $pdo->prepare("SELECT * FROM cart c JOIN cartitem ci ON c.cartid = ci.cartid WHERE status = 1 and email = :email");
+                        $stmt->bindParam(':email', $email);
+                        $stmt->execute();
+
+                        $totalprice = 0;
+                        $totalsale = 0;
+
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            $gameid = $row['gameid'];
+                            $gameDetailStmt = $pdo->prepare("SELECT * FROM game WHERE gameid = :gameid");
+                            $gameDetailStmt->bindParam(':gameid', $gameid);
+                            $gameDetailStmt->execute();
+
+                            while ($info = $gameDetailStmt->fetch(PDO::FETCH_ASSOC)) {
+                                $name = $info['gamename'];
+                                $icon = $info['icon'];
+                                $sale = $info['sale'] * 100;
+                                $salePrice = $info['saleprice'];
+                                $price = $info['price'];
+
+                                // Calculate total price
+                                $totalprice += $price;
+                                if ($sale != 0) {
+                                    $totalsale += $price * $sale / 100;
+                                }
+
+                                if ($price == 0) {
+                                    echo '
+                <div class="card mb-3 cart-card">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="' . $icon . '" class="img-fluid rounded-start cart-card__img" alt="...">
+                        </div>
+                        <div class="col-md-10 cart-card__detail">
+                            <div class="card-body">
+                                <div class="cart-card__header">
+                                    <span class="card-title cart-card__title">Base Game</span>
+                                    <div class="cart-card__price">
+                                        <span class="cart-card__lastcost">Free</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="info_game">
-                                <div class="type_game">Base game</div>
-                                <div class="name_game">'.$item[2].'</div>
-                                <div class="gift_game">Earn 5% back in Epic Rewards</div>
-                                <div class="more_game">
-                                    Self-Refundable
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="currentcolor" d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24V250.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1H222.6c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
-                                </div>
+                                <a href="/Project-TCS/index.php?act=details&id=' . $gameid . '" class="card-text cart-card__name">' . $name . '</a>
+                                <a href="/Project-TCS/static/php/removeGame.php?id=' . $gameid . '" class="card-text cart-card__remove">Remove</a>
                             </div>
                         </div>
-                        <div class="price_game">
-                            <div class="prices">
-                                <div class="discount">%30</div>
-                                <div class="del_price"><del>₫1,399,000</del></div>
-                                <div class="real_price">₫979,300</div>
-                            </div>
-                            <div class="options">
-                                <a href="" class="remove_game">Remove</a>
-                                <button><a href="">Move to wishlist</a></button>
+                    </div>
+                </div>
+                ';
+                                } else if ($sale == 0) {
+                                    echo '
+                <div class="card mb-3 cart-card">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="' . $icon . '" class="img-fluid rounded-start cart-card__img" alt="...">
+                        </div>
+                        <div class="col-md-10 cart-card__detail">
+                            <div class="card-body">
+                                <div class="cart-card__header">
+                                    <span class="card-title cart-card__title">Base Game</span>
+                                    <div class="cart-card__price">
+                                        <span class="cart-card__lastcost">đ' . number_format($price) . '</span>
+                                    </div>
+                                </div>
+                                <a href="/Project-TCS/index.php?act=details&id=' . $gameid . '" class="card-text cart-card__name">' . $name . '</a>
+                                <a href="/Project-TCS/static/php/removeGame.php?id=' . $gameid . '" class="card-text cart-card__remove">Remove</a>
                             </div>
                         </div>
-                    </div>';
-                }
-            }
-
-            ?>
+                    </div>
+                </div>
+                ';
+                                } else {
+                                    echo '
+                <div class="card mb-3 cart-card">
+                    <div class="row g-0">
+                        <div class="col-md-2">
+                            <img src="' . $icon . '" class="img-fluid rounded-start cart-card__img" alt="...">
+                        </div>
+                        <div class="col-md-10 cart-card__detail">
+                            <div class="card-body">
+                                <div class="cart-card__header">
+                                    <span class="card-title cart-card__title">Base Game</span>
+                                    <div class="cart-card__price">
+                                        <span class="cart-card__sale">-' . $sale . '%</span>
+                                        <span class="cart-card__cost">đ' . number_format($price) . '</span>
+                                        <span class="cart-card__lastcost">đ' . number_format($salePrice) . '</span>
+                                    </div>
+                                </div>
+                                <a href="/Project-TCS/index.php?act=details&id=' . $gameid . '" class="card-text cart-card__name">' . $name . '</a>
+                                <a href="/Project-TCS/static/php/removeGame.php?id=' . $gameid . '" class="card-text cart-card__remove">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ';
+                                }
+                            }
+                        }
+                        $total = $totalprice - $totalsale;
+                        if ($totalprice == 0) {
+                            echo '
+        <div class="cart__content cart__content--NOGAME">
+            <span class="cart__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg css-uwwqev" viewBox="0 0 45 52"><g fill="none" fill-rule="evenodd"><path d="M4.058 0C1.094 0 0 1.098 0 4.075v35.922c0 .338.013.65.043.94.068.65-.043 1.934 2.285 2.96 1.553.683 7.62 3.208 18.203 7.573 1.024.428 1.313.529 2.081.529.685.013 1.137-.099 2.072-.53 10.59-4.227 16.66-6.752 18.213-7.573 2.327-1.23 2.097-3.561 2.097-3.899V4.075C44.994 1.098 44.13 0 41.166 0H4.058z" fill="currentColor"></path><path stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 18l4.91 2.545-2.455 4M25.544 28.705c-1.056-.131-1.806-.14-2.25-.025-.444.115-1.209.514-2.294 1.197M29.09 21.727L25 19.5l2.045-3.5"></path></g></svg>
+            </span>
+            <h4 class="cart__desc">Your cart is empty</h4>
+            <a href="index.php?act=products&page=1" class="cart__link">Shop for Game</a>
         </div>
+        ';
+                        }
 
-        <div class="right_cart">
-            <p class="title_pay">
-                Games and Apps Summary
-            </p>
-            <div class="price">
-                <p>Price</p>
-                <span>₫979,300</span>
+                    } else {
+                        echo '<script>window.location = "/Project-TCS/index.php?act=signin"</script>';
+                    }
+                    ?>
+
+                </div>
+                <div class="col-4">
+                    <div class="cart-summary">
+                        <div class="card-body">
+                            <h5 class="card-title cart-summary__title">Games and Apps Summary</h5>
+                            <div class="payment-price cart-summary__order">
+                                <div class="payment-price__label">Price</div>
+                                <div class="payment-price__value">
+                                    <?php echo 'đ' . number_format($totalprice) ?>
+                                </div>
+                            </div>
+                            <div class="payment-price cart-summary__order">
+                                <div class="payment-price__label">Sale Discount</div>
+                                <div class="payment-price__value">
+                                    <?php echo '-đ' . number_format($totalsale) ?>
+                                </div>
+                            </div>
+                            <div class="payment-price cart-summary__order">
+                                <div class="payment-price__label payment-price__label--PAY">Total</div>
+                                <div class="payment-price__value payment-price__value--PAY">
+                                    <?php echo 'đ' . number_format($total) ?>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-primary confirm-btn cart-summary__btn">CHECK OUT</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="tax">
-                <p>Taxes</p>
-                <span>Calculated at Checkout</span>
-            </div>
-            <div class="border_line"></div>
-            <div class="total">
-                <p>Subtotal</p>
-                <span>₫979,300</span>
-            </div>
-            <button><a href="">Check out</a></button>
         </div>
     </div>
 </div>
+</body>
+
+</html>
