@@ -91,6 +91,8 @@ if (isset($_SESSION['email'])) {
             }
             ?>
         </div>
+        ';
+                        }
 
         <div class="right_cart"  >
             <p class="title_pay">
