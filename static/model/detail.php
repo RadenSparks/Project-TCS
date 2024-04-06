@@ -6,7 +6,7 @@ function detail($id)
 
     $conn = connectDb();
     // Khai báo câu truy vấn SQL để lấy tất cả các dữ liệu từ bảng 
-    $sql = "SELECT * FROM game WHERE gameid=" . $id;
+    $sql = "SELECT * FROM game g join genre gnr on g.genreid = gnr.genreid WHERE gameid=" . $id . ' LIMIT 1';
     // Sử dụng đối tượng PDO để chuẩn bị câu truy vấn SQL.
     // Chuẩn bị câu truy vấn để thực thi, tránh tình trạng SQL injection
     $stmt = $conn->prepare($sql);
@@ -19,6 +19,6 @@ function detail($id)
 
     $data = $stmt->fetchAll();
     $conn = null;
-    return $data;
+    return $data[0];
 }
 ?>
