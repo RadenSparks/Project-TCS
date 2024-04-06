@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+
+        <div class="container">
+            <!-- cột trái -->
+            <div class="left">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="img/logo.jfif" alt="LOGO"><br>
+                        <h2> TCS SHOP</h2>
+                    </a>
+                </div>
+
+                <!-- left_menu -->
+                <nav class="menu">
+                    <hr>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-home-alt-2'></i>
+                                <span>Dashboards</span>
+                            </a>
+                        </li>
+                        <li><a href="">
+                                <i class='bx bx-cart'></i>
+                                <span>Order management</span>
+                            </a></li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-folder-open'></i>
+                                <span>Manage categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-cube-alt'></i>
+                                <span>Product management</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class='bx bx-user'></i>
+                                <span>Customer management</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                </nav>
+
+            </div>
+
+            <!-- cột phải -->
+            <!-- thanh nav  -->
+            <div class="right">
+                <div class="nav-right">
+                    <div class="header-top">
+                        <span class="title">TCS SHOP WEBSITE ADMIN PAGE</span>
+                        <div class="Account">
+
+                            <a href="#">
+                                <img src="img/logo.jfif" alt="">
+                            </a>
+                            <a href="#">admin</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!-- Thêm sản phẩm -->
+
+<div class="main-content">
+    
+    <form method="post" action="#" enctype="multipart/form-data">
+            <h2>Add Product</h2>
+            <div class="row-content">
+                <div class="col-md-1">
+                    <div>
+                        <label class="form-label" for="productName">Name product</label>
+                        <input class="form-control" type="text" name="gamename" id="productName">
+                    </div>
+                    <div>
+                        <label class="form-label" for="productName">Id product</label>
+                        <input class="form-control" type="text" name="gameid" id="gameid">
+                    </div>
+                    <div>
+                        <label class="form-label" for="developer">developer</label>
+                        <input class="form-control" type="text" name="developer" id="developer">
+                    </div>
+                    <div>
+                        <label class="form-label" for="publisher">publisher</label>
+                        <input class="form-control" type="text" name="publisher" id="publisher">
+                    </div>
+                    <div>
+                        <label class="form-label" for="category">Genre</label>
+                        <select class="form-select" name="genre" id="genre">
+                            <option value="hello"></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label" for="price">Price</label>
+                        <input class="form-control" type="number" name="price" id="price">
+                    </div>
+                    <div>
+                        <label class="form-label" for="salePrice">Sale</label>
+                        <input class="form-control" type="number" name="sale" id="salePrice" step="0.01">
+                     </div>
+
+                    <div>
+                        <label class="form-label" for="description">Summary</label>
+                        <textarea class="form-control" name="summary" id="description" cols="30" rows="10"></textarea>
+                    </div>
+
+                    
+                </div>
+                <div class="col-md-2">
+                     <div>
+                        <label class="form-label" for="image1">Image1</label>
+                        <input class="form-control" type="file" name="image1" id="image1">
+                    </div>
+                    <div>
+                        <label class="form-label" for="image2">Image2</label>
+                        <input class="form-control" type="file" name="image2" id="image2">
+                    </div>
+                    <div>
+                        <label class="form-label" for="image3">Image3</label>
+                        <input class="form-control" type="file" name="image3" id="image3">
+                    </div>
+                    <div>
+                        <label class="form-label" for="image4">Image4</label>
+                        <input class="form-control" type="file" name="image4" id="image4">
+                    </div>
+                    <div>
+                        <label class="form-label" for="image5">Image5</label>
+                        <input class="form-control" type="file" name="image5" id="image5">
+                    </div>
+
+                    <div>
+                        <label class="form-label" for="Icon">Icon</label>
+                        <input class="form-control" type="file" name="icon" id="icon">
+                    </div>
+                    <div>
+                        <label class="form-label" for="Logo">Logo</label>
+                        <input class="form-control" type="file" name="logo" id="logo">
+                    </div>
+
+                    <div>   
+                        <label class="form-label" for="status">Status</label>
+                        <select class="form-select" name="status" id="status">
+                            <option value="Đang hoạt động">Active</option>
+                            <option value="Tạm ngưng">Inactive</option>
+                        </select>
+                        <!-- Move the text-right class here -->
+                        <div class="text-right">
+                            <input type="submit" name="addProduct_submit" value="Add" class="btn-danger m-5">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    
+</div>
+
+</div>
