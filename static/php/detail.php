@@ -429,7 +429,7 @@ mysqli_query($conn, "SET NAMES 'utf8'");
                             $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
                             $account = $accountResult->fetch_assoc();
                             $accountId = $account["accountid"];
-                            $cartItemResult = queryResult($conn, 'SELECT * FROM cart c join cartitem ci on c.cartid = ci.cartid join accounts a on c.accountid = a.accountid WHERE status = 1 and a.accountid = ? LIMIT 1', 'i', $accountId);
+                            $cartItemResult = queryResult($conn, 'SELECT * FROM cart c join cartitem ci on c.cartid = ci.cartid join accounts a on c.accountid = a.accountid WHERE status = 1 and a.accountid = ? and ci.gameid = ?  LIMIT 1', 'ii', $accountId, $gameDetail['gameid']);
 
                             if ($cartItemResult->num_rows == 0) {
                                 echo '<button id="buy-now-btn" class="paymentCard_buy_btn__32saJ">BUY NOW</button>';

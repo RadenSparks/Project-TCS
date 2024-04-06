@@ -882,11 +882,26 @@
     letter-spacing: 5px;
 }
 .cart {
-    width: 100%;
+    width: 1000px;
     margin-top: 50px;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: row; */
+    flex: 0 0 auto;
+}
+
+.scroll-item{
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    /* align-items: center; */
+}
+
+.scroll-item:-webkit-scrollbar {
+    display: block;
+    width: 7px;
 }
 
 .main_cart {
@@ -898,7 +913,7 @@
 }
 
 .left_cart {
-    width: 1000px;
+    width: 100%;
     height: 250px;
     background-color: #202020;
     border-radius: 4px;

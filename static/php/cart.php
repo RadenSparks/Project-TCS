@@ -29,8 +29,8 @@ if (isset($_SESSION['email'])) {
 ?>
 <div class="container" >
     <h2 class="title_cart">My cart</h2>
-    <div class="main_cart">
-        <div id="main-container">
+    <!-- <div class="main_cart"> -->
+        <div id="main-container" class="scroll-item">
             <?php
             if ($cartItemResult->num_rows > 0) {
                 $canCheckOut = true;
@@ -91,9 +91,7 @@ if (isset($_SESSION['email'])) {
             }
             ?>
         </div>
-        ';
-                        }
-
+        
         <div class="right_cart"  >
             <p class="title_pay">
                 Games and Apps Summary
@@ -117,7 +115,7 @@ if (isset($_SESSION['email'])) {
             </div>
             <button <?php if($cartItemResult->num_rows == 0) echo "disabled='true'"?>>Check out</button>
         </div>
-    </div>
+    <!-- </div> -->
 </div>
 <script>
     document.getElementsByName("cart-remove-btn")
