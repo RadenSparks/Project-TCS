@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2024 at 11:29 AM
+-- Generation Time: Apr 07, 2024 at 08:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -58,6 +58,13 @@ CREATE TABLE `cart` (
   `paymentmethod` int(11) NOT NULL,
   `totalprice` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cartid`, `accountid`, `purchasedate`, `status`, `paymentmethod`, `totalprice`) VALUES
+(5, 2, '2024-04-06 13:49:08', b'1', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -122,12 +129,12 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (17, 'Nowhere Prophet', 0, 233000, 0, 4, 'game17.jpg', 'Sharkbomb Studios', 'No More Robots', 'Prepare your decks and go on a pilgrimage through the wasteland! Nowhere Prophet is a unique single-player card game. Travel across randomly generated maps and lead your followers in deep tactical combat. Discover new cards and build your deck as you explore this strange world', '', 'game17.jpg', 'game17.jpg', 'game17.jpg', 'game17.jpg', 'icon17.jpg', 'logo17.jpg'),
 (18, 'Guild of Dungeoneering Ultimate Edition', 0, 186000, 0, 4, 'game18.jpg', 'Gambrinous', 'Gambrinous', 'Now fully rebuilt and remastered Guild of Dungeoneering Ultimate Edition is a turn-based dungeon crawler with a twist: instead of controlling the hero you build the dungeon around them.', '', 'game18.jpg', 'game18.jpg', 'game18.jpg', 'game18.jpg', 'icon18.jpg', 'logo18.jpg'),
 (19, 'Roguebook', 0, 520000, 0, 4, 'game19.jpg', 'Abrakam Entertainment SA', 'Nacon', 'Embrace the challenge of a roguelike deckbuilder with unique mechanics from the developers of Faeria and Richard Garfield creator of Magic: The Gathering™. Build a team of two heroes unleash powerful combos and defeat the legends of the Roguebook!', '', 'game19.jpg', 'game19.jpg', 'game19.jpg', 'game19.jpg', 'icon19.jpg', 'logo19.jpg'),
-(20, 'Void Tyrant', 0, 180000, 0, 4, 'game20.jpg', 'Quite Fresh Games', 'Armor Games Studios', 'Collect an intergalactic bounty of eccentric allies and deadly weapons explore vibrant planets and engage in risky turn-based battles to restore the Eyes of Chronos and save the galaxy in this strategic roguelike deckbuilder!', '', 'game20.jpg', 'game20.jpg', 'game20.jpg', 'game20.jpg', 'icon20.jpg', 'logo20.jpg'),
+(20, 'Void Tyrant', 0.4, 180000, 0, 4, 'game20.jpg', 'Quite Fresh Games', 'Armor Games Studios', 'Collect an intergalactic bounty of eccentric allies and deadly weapons explore vibrant planets and engage in risky turn-based battles to restore the Eyes of Chronos and save the galaxy in this strategic roguelike deckbuilder!', '', 'game20.jpg', 'game20.jpg', 'game20.jpg', 'game20.jpg', 'icon20.jpg', 'logo20.jpg'),
 (21, 'Call of the Wild:The Angler', 0, 280000, 0, 5, 'game21.jpg', 'Expansive Worlds', 'Expansive Worlds', 'From the creators of theHunter: Call of the Wild comes a genre-defying fishing experience! Explore a vast open world in search of the perfect fishing spot. Ride the waters on your own or with friends as you embark on the journey to become a master angler.', '', 'game21.jpg', 'game21.jpg', 'game21.jpg', 'game21.jpg', 'icon21.jpg', 'logo21.jpg'),
 (22, 'Bear and Breakfast', 0, 180000, 0, 5, 'game22.jpg', 'Gummy Cat', 'Armor Games Studios', 'Bear and Breakfast is a laid-back management adventure game where you build and run a bed and breakfast...but you’re a bear.', '', 'game22.jpg', 'game22.jpg', 'game22.jpg', 'game22.jpg', 'icon22.jpg', 'icon22.jpg'),
 (23, 'Are You Smarter Than A 5th Grader?', 0, 330000, 0, 5, 'game23.jpg', 'Massive Miniteam', 'HandyGames', 'Based on the popular TV franchise this charming couch co-op quiz game for 1-8 players will have you face more than 6800 fully English-voiced questions. Prove how much you still know from school and that you are in fact smarter than a 5th grader.', '', 'game23.jpg', 'game23.jpg', 'game23.jpg', 'game23.jpg', 'icon23.jpg', 'logo23.jpg'),
 (24, 'Terror of Hemasaurus', 0, 96800, 0, 0, 'game24.jpg', 'LorenLemcke', 'Digerati', 'A retro city smash em up with satisfying destruction physics. Play as a Giant Monster unleashing terror upon mankind in this modern arcade experience with the action turned up to eleven.', '', 'game24.jpg', 'game24.jpg', 'game24.jpg', 'game24.jpg', 'icon24.jpg', 'logo24.jpg'),
-(25, 'GigaBash', 0, 326000, 0, 5, 'game25.jpg', 'PassionRepublic Games', 'PassionRepublic Games', 'Claim your place as king among Titans! GigaBash is a multiplayer arena brawler with gigantic film-inspired kaiju larger than life heroes, earth-shattering special attacks and fully destructible environments', '', 'game25.jpg', 'game25.jpg', 'game25.jpg', 'game25.jpg', 'icon25.jpg', 'logo25.jpg'),
+(25, 'GigaBash', 0.4, 326000, 0, 5, 'game25.jpg', 'PassionRepublic Games', 'PassionRepublic Games', 'Claim your place as king among Titans! GigaBash is a multiplayer arena brawler with gigantic film-inspired kaiju larger than life heroes, earth-shattering special attacks and fully destructible environments', '', 'game25.jpg', 'game25.jpg', 'game25.jpg', 'game25.jpg', 'icon25.jpg', 'logo25.jpg'),
 (26, 'Dark Matter', 0, 19000, 0, 5, 'game26.jpg', 'Meridian4', 'Meridian4', 'Dark Matter is a retro 2D shoot ‘em up inspired by the 1980’s arcade classic Asteroids. The action will get frantic as you battle waves of enemy alien ships and deadly asteroids. When ready take the space carnage to Challenge Mode and rack up your score!', 'mostplayed', 'game26.jpg', 'game26.jpg', 'game26.jpg', 'game26.jpg', 'icon26.jpg', 'logo26.jpg'),
 (27, 'Travellers Rest', 0, 140000, 0, 5, 'game27.jpg', 'Isolated Games', 'Isolated Games', 'You are an innkeeper on a journey to transform a run-down inn into a bustling social space. Brew your own beer run a farm explore the world and build relationships with your customers to create your own fantasy tavern!', '', 'game27.jpg', 'game27.jpg', 'game27.jpg', 'game27.jpg', 'icon27.jpg', 'logo27.jpg'),
 (28, 'A Hero Rest', 0, 230000, 0, 6, 'game28.jpg', 'Vanargand Games', 'Vanargand Games', 'Build shops craft items with hundreds of customization options and manage your resources wisely to lead your Heroes to success. Immerse yourself as proprietor of a medieval fantasy town in a world abounding with Heroes and Monsters.', '', 'game28.jpg', 'game28.jpg', 'game28.jpg', 'game28.jpg', 'icon28.jpg', 'logo28.jpg'),
@@ -151,7 +158,7 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (47, 'Going Under', 0, 234000, 0, 8, 'game47.jpg', 'Aggro Crab Games', 'eam17 Digital Ltd', 'Going Under is a satirical dungeon crawler about exploring the ruins of failed tech startups. As an unpaid intern in the big city, you’ll wield office junk as weaponry as you make your way through the offbeat procedural dungeons beneath your company campus.', '', 'game47.jpg', 'game47.jpg', 'game47.jpg', 'game47.jpg', 'icon47.jpg', 'logo47.jpg'),
 (48, 'Barony', 0, 164000, 0, 8, 'game48.jpg', 'Turning Wheel LLC', 'Turning Wheel LLC', 'Barony is the premier first-person roguelike with co-op. Cryptic items, brutal traps and devious monsters, like those found in classic roguelikes and CRPGs, await you. Conquer the dungeons alone, or gather a party in co-op with iconic and exotic RPG classes.', '', 'game48.jpg', 'game48.jpg', 'game48.jpg', 'game48.jpg', 'icon48.jpg', 'logo48.jpg'),
 (49, 'Next Up Hero', 0, 186000, 0, 8, 'game49.jpg', 'Digital Continue', 'Aspyr Media, Inc.', '', '', 'game49.jpg', 'game49.jpg', 'game49.jpg', 'game49.jpg', 'icon49.jpg', 'logo49.jpg'),
-(50, 'Kredolis', 0, 188000, 0, 9, 'game50.jpg', 'Pharos Interactive', 'Pharos Interactive', 'You find yourself shipwrecked on a beautiful unsunken island that was once part of Atlantis. Explore the mysteries of the island, and solve unique puzzles to enter the sunken lighthouse into the depths of Atlantis.', '', 'game50.jpg', 'game50.jpg', 'game50.jpg', 'game50.jpg', 'icon50.jpg', 'logo50.jpg'),
+(50, 'Kredolis', 0.4, 188000, 0, 9, 'game50.jpg', 'Pharos Interactive', 'Pharos Interactive', 'You find yourself shipwrecked on a beautiful unsunken island that was once part of Atlantis. Explore the mysteries of the island, and solve unique puzzles to enter the sunken lighthouse into the depths of Atlantis.', '', 'game50.jpg', 'game50.jpg', 'game50.jpg', 'game50.jpg', 'icon50.jpg', 'logo50.jpg'),
 (51, 'Slime Rancher 2', 0, 288000, 0, 9, 'game51.jpg', 'Monomi Park', 'Monomi Park', 'Continue the adventures of Beatrix LeBeau as she journeys across the Slime Sea to Rainbow Island, a land brimming with ancient mysteries, and bursting with wiggly, new slimes to wrangle in this sequel to the smash-hit, Slime Rancher.', '', 'game51.jpg', 'game51.jpg', 'game51.jpg', 'game51.jpg', 'icon51.jpg', 'logo51.jpg'),
 (52, 'Islets', 0, 186000, 0, 9, 'game52.jpg', 'Kyle Thompson', 'Armor Games Studios', 'Take to the sky and reunite a fragmented world in this surprisingly wholesome metroidvania! Help Iko adventure across beautiful hand-painted islands, receive letters from a quirky cast of characters, and face powerful monstrous adversaries.', '', 'game52.jpg', 'game52.jpg', 'game52.jpg', 'game52.jpg', 'icon52.jpg', 'logo52.jpg'),
 (53, 'Kena: Bridge of Spirits', 0, 370000, 0, 9, 'game53.jpg', 'Exploration', 'Ember Lab', 'A story-driven, action adventure combining exploration with fast-paced combat. As Kena, players find and grow a team of charming spirit companions called the Rot, enhancing their abilities and creating new ways to manipulate the environment.', '', 'game53.jpg', 'game53.jpg', 'game53.jpg', 'game53.jpg', 'icon53.jpg', 'logo53.jpg'),
@@ -224,10 +231,7 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`wishid`, `accountid`, `gameid`) VALUES
-(13, 2, 1),
-(14, 2, 13),
-(15, 2, 28),
-(16, 2, 41);
+(31, 2, 41);
 
 --
 -- Indexes for dumped tables
@@ -290,13 +294,13 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cartid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `cartitem`
 --
 ALTER TABLE `cartitem`
-  MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `game`
@@ -314,7 +318,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Constraints for dumped tables
