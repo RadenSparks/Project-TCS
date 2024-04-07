@@ -426,17 +426,23 @@ mysqli_query($conn, "SET NAMES 'utf8'");
                         <div>
                             <?php
                             include_once "./static/model/query.php";
-                            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
-                            $account = $accountResult->fetch_assoc();
-                            $accountId = $account["accountid"];
-                            $cartItemResult = queryResult($conn, 'SELECT * FROM cart c join cartitem ci on c.cartid = ci.cartid join accounts a on c.accountid = a.accountid WHERE status = 1 and a.accountid = ? LIMIT 1', 'i', $accountId);
+                            if(isset($_SESSION['email'])){
+                                $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                                $account = $accountResult->fetch_assoc();
+                                $accountId = $account["accountid"];
+                                $cartItemResult = queryResult($conn, 'SELECT * FROM cart c join cartitem ci on c.cartid = ci.cartid join accounts a on c.accountid = a.accountid WHERE status = 1 and a.accountid = ? LIMIT 1', 'i', $accountId);
 
-                            if ($cartItemResult->num_rows == 0) {
-                                echo '<button id="buy-now-btn" class="paymentCard_buy_btn__32saJ">BUY NOW</button>';
-                                echo '<button id="add-to-cart-btn" class="paymentCard_buy_btn__32saJ">ADD TO CART</button>';
-                            } else {
-                                echo '<button id="go-to-cart-btn" class="paymentCard_buy_btn__32saJ">GO TO CART</button>';
+                                if ($cartItemResult->num_rows == 0) {
+                                    echo '<button id="buy-now-btn" class="paymentCard_buy_btn__32saJ">BUY NOW</button>';
+                                    echo '<button id="add-to-cart-btn" class="paymentCard_buy_btn__32saJ">ADD TO CART</button>';
+                                } else {
+                                    echo '<button id="go-to-cart-btn" class="paymentCard_buy_btn__32saJ">GO TO CART</button>';
+                                }
+                            }else{
+                                echo '<button name="signin-btn" class="paymentCard_buy_btn__32saJ">BUY NOW</button>';
+                                echo '<button name="signin-btn" class="paymentCard_buy_btn__32saJ">ADD TO CART</button>';
                             }
+                            
                             ?>
 
                             <?php
@@ -451,12 +457,22 @@ mysqli_query($conn, "SET NAMES 'utf8'");
                             }
 
                             if (!$inWishlist) {
-                                echo '
+                                if(isset($_SESSION['email'])){
+                                    echo '
                                         <a href="./static/php/addToWishlist.php?id=' . $gameDetail['gameid'] . '" class="paymentCard_wishlist_btn__1zyUQ">
                                             <img src="./static/icon/add-to-wishlist.png" alt="logo">   
                                             <p>ADD TO WISHLIST</p>
                                         </a>
                                     ';
+                                }else{
+                                    echo '
+                                        <a href="index.php?act=signin" class="paymentCard_wishlist_btn__1zyUQ">
+                                            <img src="./static/icon/add-to-wishlist.png" alt="logo">   
+                                            <p>ADD TO WISHLIST</p>
+                                        </a>
+                                    ';
+                                }
+                                
                             } else {
                                 echo '
                                     <a href="./index.php?act=wishlist" class="paymentCard_wishlist_btn__1zyUQ">
@@ -530,6 +546,15 @@ mysqli_query($conn, "SET NAMES 'utf8'");
         goBtn.onclick = function (e) {
             location.href = 'index.php?act=cart';
         }
+    }
+
+    let goToSignInBtn = document.getElementsByName("signin-btn");
+    if(goToSignInBtn){
+        goToSignInBtn.forEach(e => {
+            e.onclick = function(){
+                location.href = 'index.php?act=signin';
+            }
+        })
     }
     
 
