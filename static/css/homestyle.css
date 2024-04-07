@@ -898,7 +898,7 @@ html {
 .landingPage_mainCardContainer__1UAMb,
 .landingPage_miniCardContainer__HWJY-,
 .landingPage_secondaryCardContainer__3EDw7 {
-    padding: 10px;
+    padding: 50px;
 }
 
 .landingPage_freeCardContainer__23pUH {
@@ -932,7 +932,11 @@ html {
 
     .landingPage_mainCardContainer__1UAMb {
         padding: 5px;
-        margin: auto;
+        margin-top: auto;
+    }
+
+    .landingPage_mainCardContainer__1UAMb.pb30{
+        padding-bottom: 20px !important;
     }
 
     .landingPage_secondaryCardContainer__3EDw7 {

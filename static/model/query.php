@@ -13,9 +13,11 @@
         return $result;
     }
 
-    function query($conn, $query, $types, $var, ...$vars){
+
+    function query($conn, $query){
         $stmt = $conn->prepare($query);
-        $stmt->bind_param($types, $var, ...$vars);
         $stmt->execute();
+        $result = $stmt->get_result();
+        return $result;
     }
 ?>
