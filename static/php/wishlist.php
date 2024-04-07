@@ -9,7 +9,6 @@ $noItemHtml = '
     <a class="emptyCard_link__2XDV-" href="./index.php?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc">Shop for Apps &amp; Games</a>
 </div> ';
 if (isset($_SESSION['email'])) {
-    $totalCart = 0;
     $conn = openConnection();
     $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
     if ($accountResult->num_rows > 0) {
@@ -23,7 +22,7 @@ if (isset($_SESSION['email'])) {
 <div class="container" id="main-container">
     <h2 class="title_cart">Wishlist</h2>
     <?php
-        if ($wishItemResult->num_rows > 0) {
+        if (isset($wishItemResult) && $wishItemResult->num_rows > 0) {
             while ($wishItem = $wishItemResult->fetch_assoc()) {
                 $sale = $wishItem['sale'];
                 $gamePrice = $wishItem['price'];
@@ -34,12 +33,10 @@ if (isset($_SESSION['email'])) {
                     if ($sale != 0) {
                         $newPrice = $sale * $gamePrice;
                         $salePercent = 100 - $sale * 100;
-                        $totalCart += $newPrice;
                         $priceHtml = '<div class="discount">-' . $salePercent . '%</div>'
                             . '<div class="del_price"><del>' . number_format($gamePrice) . '<a class="currency">vnđ</a></del></div>'
                             . '<div class="real_price">' . number_format($newPrice) . '<a class="currency">vnđ</a></div>';
                     } else {
-                        $totalCart += $gamePrice;
                         $priceHtml = '<div class="real_price">' . number_format($gamePrice) . '<a class="currency">vnđ</a></div>';
                     }
                 }

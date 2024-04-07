@@ -9,8 +9,8 @@ $noItemHtml = '
         <a class="emptyCard_link__2XDV-" href="./index.php?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc">Shop for Apps &amp; Games</a>
     </div> ';
 $canCheckOut = false;
-if (isset($_SESSION['email'])) {
-    $totalCart = 0;
+$totalCart = 0;
+if (isset($_SESSION['email'])) {    
     $conn = openConnection();
     $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
     if ($accountResult->num_rows > 0) {
@@ -32,7 +32,7 @@ if (isset($_SESSION['email'])) {
     <div class="main_cart">
         <div id="main-container">
             <?php
-            if ($cartItemResult->num_rows > 0) {
+            if (isset($cartItemResult) && $cartItemResult->num_rows > 0) {
                 $canCheckOut = true;
                 while ($cartItem = $cartItemResult->fetch_assoc()) {
                     $sale = $cartItem['sale'];
@@ -113,7 +113,7 @@ if (isset($_SESSION['email'])) {
                     <?php echo number_format($totalCart * 1.1) ?> vnđ
                 </span>
             </div>
-            <button <?php if($cartItemResult->num_rows == 0) echo "disabled='true'"?>>Check out</button>
+            <button <?php if(isset($cartItemResult) && $cartItemResult->num_rows == 0) echo "disabled='true'"?>>Check out</button>
         </div>
     </div>
 </div>
