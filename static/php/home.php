@@ -3,6 +3,8 @@ include_once "./static/model/connectdb.php";
 include_once "./static/model/product.php";
 include_once "./static/model/query.php";
 $data = product();
+
+$conn = openConnection();
 ?>
 
 <div class="landingPage_main__27pL-">
@@ -107,11 +109,12 @@ $data = product();
                     <div class="mainCardContainer_mainCardContainer__308RZ">
                         <div class="mainCardContainer_container__j2ttT">
                             <?php
-                            foreach ($data as $index => $item) {
-                                if ($index >= 6 && $index <= 10) {
-                                    $gameName = $item['gamename'];
-                                    $sale = $item['sale'];
-                                    $gamePrice = $item['price'];
+                            $saleGameResult = query($conn, 'SELECT * from game g where sale != 0 LIMIT 5');
+                            if ($saleGameResult->num_rows > 0) {
+                                while ($saleGame = $saleGameResult->fetch_assoc()) {
+                                    $gameName = $saleGame['gamename'];
+                                    $sale = $saleGame['sale'];
+                                    $gamePrice = $saleGame['price'];
                                     $priceHtml = "";
                                     if ($gamePrice == 0) {
                                         $priceHtml = '<div class="price-component_blue_button__13OKH">Free</div>';
@@ -127,18 +130,18 @@ $data = product();
                                         }
                                     }
                                     echo ' <div class="mainCardContainer_card__2_wdK">
-                                                <a href="./index.php?act=detail&&id=' . $item['gameid'] . '">                                                
+                                                <a href="./index.php?act=detail&&id=' . $saleGame['gameid'] . '">                                                
                                                     <div class="game-card_card__RBJ5f">
                                                         <div class="game-card_image_div__3GP6O">
-                                                        <img src="./static/img/icon/' . $item['icon'] . '">
+                                                        <img src="./static/img/icon/' . $saleGame['icon'] . '">
                                                         <div class="game-card_icon__o86Ds">
                                                             <input type="submit" id="submit" name="submit" value=".">
                                                         </div>
                                                         </div>
                                                         <div class="game-card_info__3_mzD">
-                                                            <p class="game-card_title__3klhw">' . $item['gamename'] . '</p>
+                                                            <p class="game-card_title__3klhw">' . $saleGame['gamename'] . '</p>
                                                             <div class="game-card_tagline_cont__2bz4d">
-                                                                <p class="game-card_tagline__22z9K">' . $item['developer'] . ' |
+                                                                <p class="game-card_tagline__22z9K">' . $saleGame['developer'] . ' |
                                                                     Private Division</p>
                                                             </div>
                                                         </div>
@@ -228,7 +231,7 @@ $data = product();
                     </div>
                     <div class="freeCardContainer_lower__1ykxY">
                         <?php
-                        $conn = openConnection();
+
                         $freeGameResult = query($conn, 'SELECT * from game g where price = 0 LIMIT 5');
                         if ($freeGameResult->num_rows > 0) {
                             while ($freeGame = $freeGameResult->fetch_assoc()) {
@@ -251,11 +254,6 @@ $data = product();
                                             </div>
                                     </a>
                                     ';
-                            }
-                        }
-                        foreach ($data as $index => $item) {
-                            if ($index >= 13 && $index <= 17) {
-
                             }
                         }
                         ?>
