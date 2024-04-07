@@ -12,39 +12,39 @@ include_once "./static/model/account.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
-        case 'browse':            
-            if(!isset($_GET['page'])){
+        case 'browse':
+            if (!isset($_GET['page'])) {
                 $page = 1;
-            }else{
+            } else {
                 $page = $_GET['page'];
-            }            
+            }
 
-            if(!isset($_GET['keyword'])){
+            if (!isset($_GET['keyword'])) {
                 $keyword = "";
-            }else{
+            } else {
                 $keyword = $_GET['keyword'];
-            }     
+            }
 
-            if(!isset($_GET['genre'])){
+            if (!isset($_GET['genre'])) {
                 $genre = "";
-            }else{
+            } else {
                 $genre = $_GET['genre'];
-            }  
-            
-            if(!isset($_GET['price'])){
-                $price = "";
-            }else{
-                $price = $_GET['price'];
-            }  
+            }
 
-            if(!isset($_GET['sort'])){                            
+            if (!isset($_GET['price'])) {
+                $price = "";
+            } else {
+                $price = $_GET['price'];
+            }
+
+            if (!isset($_GET['sort'])) {
                 $sort = "gamename,asc";
                 header('Location: /Project-TCS/?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc');
-            }else{
+            } else {
                 $sort = $_GET['sort'];
-            }  
+            }
 
-            
+
 
             include_once "./static/php/header.php";
             include_once "./static/php/games.php";
@@ -58,12 +58,11 @@ if (isset($_GET['act'])) {
             include_once "./static/php/footer.php";
             break;
 
-        case 'wishlist':    
+        case 'wishlist':
             include_once "./static/php/header.php";
             include_once "./static/php/wishlist.php";
             include_once "./static/php/footer.php";
             break;
-
 
         case 'addcart':
             include_once "./static/php/header.php";
@@ -109,7 +108,6 @@ if (isset($_GET['act'])) {
             include_once "./static/php/footer.php";
 
             break;
-
         case 'detail':
             include_once "./static/php/header.php";
 
@@ -122,6 +120,7 @@ if (isset($_GET['act'])) {
             include_once "./static/php/footer.php";
 
             break;
+
 
         case 'login':
             include_once "./static/php/header.php";
@@ -155,7 +154,21 @@ if (isset($_GET['act'])) {
         case 'register':
             include_once "./static/php/register.php";
             break;
-        
+        case 'accountsetting':
+            include_once "./static/php/header.php";
+            echo '<script>const nav = document.querySelector(".sub-navbar_main_desktop__19-YT").style.display = "none"</script>';
+            include_once "./static/php/accountAside.php";
+            include_once "./static/php/accountsetting.php";
+            // include_once "./static/php/footer.php";
+            break;
+        case 'transaction':
+            include_once "./static/php/header.php";
+            echo '<script>const nav = document.querySelector(".sub-navbar_main_desktop__19-YT").style.display = "none"</script>';
+            include_once "./static/php/accountAside.php";
+            include_once "./static/php/transactions.php";
+            include_once "./static/php/footer.php";
+            break;
+
         default:
             include_once "./static/php/header.php";
             include_once "./static/php/home.php";

@@ -1,0 +1,118 @@
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #000;
+}
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #202020;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: -8px; */
+}
+header, .head-left, .head-right {
+    display: flex;
+}
+header img {
+    padding: 10px;
+    
+}
+.head-left {
+    font-size: 20px;
+    margin-left: -1300px;
+}
+.head-left a {
+    margin-right: 15px;
+    color: #A5A5A5;
+    text-decoration: none;
+}
+.head-left a:hover {
+    color: white;
+    font-weight: bold;
+}
+.head-right {
+    align-items: center;
+    margin-top: 0;
+    font-size: 16px;
+    color: #A5A5A5;
+}
+.head-right a {
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    margin-left: 40px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.container {
+    color: #000;
+    max-width: 1000px;
+    margin: 100px auto;
+    display: flex;
+}
+.nav_bar {
+    background-color: #fff;
+    width: 200px;
+    height: 88px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-right: 40px;
+    text-align: center;
+}
+.acc {
+    height: 25px;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 10px;
+    margin-bottom: -2px;
+    /* background-color: aqua; */
+}
+.trans {
+    height: 25px;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 10px;
+    /* background-color: antiquewhite; */
+}
+.acc:hover,
+.trans:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.transaction {
+    background-color: #fff;
+    width: 700px;
+    border-radius: 8px;
+    padding: 20px 20px 20px 30px;
+}
+.transaction h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.transaction p {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.table {
+    width: 100%;    
+    color: #000;
+}
+.table th,
+.table td {
+    text-align: center;
+    padding: 30px;
+}
+.table th {
+    font-size: 14px;
+}
+.table td {
+    font-size: 11px;
+}
+.table .description {
+    color: #26BBFF;
+}
