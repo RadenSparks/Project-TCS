@@ -155,6 +155,17 @@ if (isset($_GET['act'])) {
         case 'register':
             include_once "./static/php/register.php";
             break;
+        case 'accountsetting':
+            include_once "./static/php/header.php";
+            echo '<script>const nav = document.querySelector(".sub-navbar_main_desktop__19-YT").style.display = "none"</script>';
+            include_once "./static/php/accountsetting.php";
+            // include_once "./static/php/footer.php";
+            break;
+        case 'transaction':
+            include_once "./static/php/header.php";
+            include_once "./static/php/transactions.php";
+            include_once "./static/php/footer.php";
+            break;
         
         default:
             include_once "./static/php/header.php";

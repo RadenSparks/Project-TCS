@@ -58,6 +58,58 @@ mysqli_query($conn, "SET NAMES 'utf8'");
                                     </ul>
                                 </div><button type="button" aria-label="next slide / item"
                                     class="control-arrow control-next"></button>
+                                                        src="./static/img/fifth-img/'.$item['fifth-img'].'">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div><button type="button" aria-label="next slide / item"
+                                        class="control-arrow control-next"></button>
+                                </div>
+                                <div class="carousel">
+                                    <div class="thumbs-wrapper axis-vertical"><button type="button"
+                                            class="control-arrow control-prev control-disabled"
+                                            aria-label="previous slide / item"></button>
+                                        <ul class="thumbs animated"
+                                            style="transform: translate3d(0px, 0px, 0px); transition-duration: 350ms;">
+                                            <li class="thumb selected" aria-label="slide item 1" role="button"
+                                                tabindex="0" style="width: 80px;"><img alt="slider1"
+                                                    src="./static/img/first-img/'.$item['first-img'].'">
+                                            </li>
+                                            <li class="thumb" aria-label="slide item 2" role="button"
+                                                tabindex="0" style="width: 80px;"><img alt="slider2"
+                                                    src="./static/img/second-img/'.$item['second-img'].'">
+                                            </li>
+                                            <li class="thumb" aria-label="slide item 3" role="button"
+                                                tabindex="0" style="width: 80px;"><img alt="slider3"
+                                                    src="./static/img/third-img/'.$item['third-img'].'">
+                                            </li>
+                                            <li class="thumb" aria-label="slide item 4" role="button"
+                                                tabindex="0" style="width: 80px;"><img alt="slider4"
+                                                    src="./static/img/fourth-img/'.$item['fourth-img'].'">
+                                            </li>
+                                            <li class="thumb" aria-label="slide item 5" role="button"
+                                                tabindex="0" style="width: 80px;"><img alt="slider5"
+                                                    src="./static/img/fifth-img/'.$item['fifth-img'].'">
+                                            </li>
+                                        </ul><button type="button"
+                                            class="control-arrow control-next control-disabled"
+                                            aria-label="next slide / item"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="gameCard_description__2JFej">Embark on the incredible odyssey of human
+                                evolution and begin your journey 10 million years ago in this new adventure from
+                                the creator of Assassin Creed.</p>
+                        </div>
+                        <div class="gameCard_features_div__3tlE0">
+                            <div class="gameCard_genres__2WKpv">
+                                <p class="gameCard_features_title__1Bnmo">Genre</p>
+                                <div class="gameCard_features_points_div__2zBc9">
+                                    <p class="gameCard_features_points__2PKnh">Survival </p>
+                                    <p class="gameCard_features_points__2PKnh">Causal </p>
+                                </div>
                             </div>
                             <div class="carousel">
                                 <div class="thumbs-wrapper axis-vertical"><button type="button"

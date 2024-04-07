@@ -1367,10 +1367,13 @@ html {
     border: 1px solid transparent !important;
 }
 
-.carousel .thumb.selected,
-.carousel .thumb:focus,
-.carousel .thumb:hover {
+.carousel .thumb.selected {
     border: 1px solid #fff !important;
+
+}
+
+.carousel .thumb:hover {
+    cursor: pointer;
 }
 
 .carousel .thumb img {
