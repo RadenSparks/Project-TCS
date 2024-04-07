@@ -1,17 +1,11 @@
 <?php
 include_once "./static/model/account.php";
-include_once "./static/model/query.php";
 if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
     $email = $_SESSION['email'];
-    $conn = openConnection();
-    $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
-    if ($accountResult->num_rows > 0) {
-        $account = $accountResult->fetch_assoc();
-    }
-    // $password = $_SESSION['password'];
-    // // $data = getInfoAccount($email, $password);
-    // // extract($data[0]);
-    // // echo $displayname;
+    $password = $_SESSION['password'];
+    $data = getInfoAccount($email, $password);
+    extract($data[0]);
+    echo $displayname;
 }
 ?>
 
@@ -19,10 +13,10 @@ if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
     <h2>Account Settings</h2>
     <p>Manage your account details</p>
     <h3>Account Information</h3>
-    <p><strong>ID: </strong><?php echo $account['accountid'] ?></p>
+    <p><strong>ID: </strong><?= $accountid, session_id() ?></p>
     <form id="infor_form" action="">
-        <input type="text" class="input_username" value="<?php echo $account['displayname']?>" required>
-        <input type="email" class="input_email" disabled value="<?php echo $account['email']?>" required>
+        <input type="text" class="input_username" disabled value="<?= $displayname != "" ? $displayname : "" ?>" required>
+        <input type="email" class="input_email" disabled value="<?= $email != "" ? $email : "" ?>" required>
         <button type="submit">Save changes</button>
     </form>
     <h2>Change your password</h2>
@@ -70,7 +64,7 @@ if (isset($_POST['save-btn']) && $_POST['save-btn']) {
 }
 ?>
 
-<!-- <script>
+<script>
     const form = document.getElementById('newpass_form');
     const inputs = form.querySelectorAll('input[type="password"]');
     
@@ -87,4 +81,4 @@ if (isset($_POST['save-btn']) && $_POST['save-btn']) {
         })
     })
   
-</script> -->
+</script>
