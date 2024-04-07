@@ -410,6 +410,14 @@ $pageCount = ceil($total_row / $gamePerPage);
     </div>
 </div>
 <script>
+    
+
+    document.getElementsByName("game-thumbnail").forEach(tag => {
+        tag.onclick = function () {
+            location.href = "./index.php?act=detail&id=" + tag.id;
+        }
+    });
+
     document.getElementsByName("wishlist-icon").forEach(tag => {
         tag.onclick = function () {
             location.href = "./static/php/addToWishlist.php?id=" + tag.id;
@@ -439,7 +447,6 @@ $pageCount = ceil($total_row / $gamePerPage);
     document.getElementsByName("game-search-sort").forEach(tag => {
         tag.onclick = function () {
             const searchParams = new URLSearchParams(window.location.search);
-            console.log(searchParams.values());
             location.href = "index.php?act=browse&page=1&keyword="+searchParams.get('keyword')
             +"&genre="+searchParams.get('genre')
             +"&price="+searchParams.get('price')

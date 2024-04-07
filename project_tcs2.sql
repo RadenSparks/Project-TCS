@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 04, 2024 lúc 05:51 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Apr 06, 2024 at 11:29 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `db_epicgamers`
+-- Database: `db_epicgamers`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `accounts`
+-- Table structure for table `accounts`
 --
 
 CREATE TABLE `accounts` (
@@ -37,7 +37,7 @@ CREATE TABLE `accounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `accounts`
+-- Dumping data for table `accounts`
 --
 
 INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displayname`, `email`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displ
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -62,7 +62,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `cartitem`
+-- Table structure for table `cartitem`
 --
 
 CREATE TABLE `cartitem` (
@@ -75,7 +75,7 @@ CREATE TABLE `cartitem` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `game`
+-- Table structure for table `game`
 --
 
 CREATE TABLE `game` (
@@ -99,7 +99,7 @@ CREATE TABLE `game` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `game`
+-- Dumping data for table `game`
 --
 
 INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid`, `first-img`, `developer`, `publisher`, `summary`, `tag`, `second-img`, `third-img`, `fourth-img`, `fifth-img`, `icon`, `logo`) VALUES
@@ -182,7 +182,7 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `genre`
+-- Table structure for table `genre`
 --
 
 CREATE TABLE `genre` (
@@ -191,7 +191,7 @@ CREATE TABLE `genre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `genre`
+-- Dumping data for table `genre`
 --
 
 INSERT INTO `genre` (`genreid`, `genrename`) VALUES
@@ -210,7 +210,7 @@ INSERT INTO `genre` (`genreid`, `genrename`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `wishlist`
+-- Table structure for table `wishlist`
 --
 
 CREATE TABLE `wishlist` (
@@ -220,24 +220,35 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Dumping data for table `wishlist`
+--
+
+INSERT INTO `wishlist` (`wishid`, `accountid`, `gameid`) VALUES
+(13, 2, 1),
+(14, 2, 13),
+(15, 2, 28),
+(16, 2, 41);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `accounts`
+-- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
-  ADD PRIMARY KEY (`accountid`);
+  ADD PRIMARY KEY (`accountid`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
--- Chỉ mục cho bảng `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cartid`),
   ADD KEY `cart_ibfk_1` (`accountid`);
 
 --
--- Chỉ mục cho bảng `cartitem`
+-- Indexes for table `cartitem`
 --
 ALTER TABLE `cartitem`
   ADD PRIMARY KEY (`cartitemid`),
@@ -245,20 +256,20 @@ ALTER TABLE `cartitem`
   ADD KEY `gameid` (`gameid`);
 
 --
--- Chỉ mục cho bảng `game`
+-- Indexes for table `game`
 --
 ALTER TABLE `game`
   ADD PRIMARY KEY (`gameid`),
   ADD KEY `genreid` (`genreid`);
 
 --
--- Chỉ mục cho bảng `genre`
+-- Indexes for table `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`genreid`);
 
 --
--- Chỉ mục cho bảng `wishlist`
+-- Indexes for table `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD PRIMARY KEY (`wishid`),
@@ -266,70 +277,70 @@ ALTER TABLE `wishlist`
   ADD KEY `gameid` (`gameid`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `accounts`
+-- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
   MODIFY `accountid` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `cart`
+-- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cartid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `cartitem`
+-- AUTO_INCREMENT for table `cartitem`
 --
 ALTER TABLE `cartitem`
   MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `game`
+-- AUTO_INCREMENT for table `game`
 --
 ALTER TABLE `game`
   MODIFY `gameid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
--- AUTO_INCREMENT cho bảng `genre`
+-- AUTO_INCREMENT for table `genre`
 --
 ALTER TABLE `genre`
   MODIFY `genreid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `wishlist`
+-- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `cart`
+-- Constraints for table `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`);
 
 --
--- Các ràng buộc cho bảng `cartitem`
+-- Constraints for table `cartitem`
 --
 ALTER TABLE `cartitem`
   ADD CONSTRAINT `cartitem_ibfk_1` FOREIGN KEY (`cartid`) REFERENCES `cart` (`cartid`),
   ADD CONSTRAINT `cartitem_ibfk_2` FOREIGN KEY (`gameid`) REFERENCES `game` (`gameid`);
 
 --
--- Các ràng buộc cho bảng `game`
+-- Constraints for table `game`
 --
 ALTER TABLE `game`
   ADD CONSTRAINT `game_ibfk_1` FOREIGN KEY (`genreid`) REFERENCES `genre` (`genreid`);
 
 --
--- Các ràng buộc cho bảng `wishlist`
+-- Constraints for table `wishlist`
 --
 ALTER TABLE `wishlist`
   ADD CONSTRAINT `wishlist_ibfk_1` FOREIGN KEY (`accountid`) REFERENCES `accounts` (`accountid`),

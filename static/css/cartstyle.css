@@ -886,9 +886,19 @@
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
 }
+
+.main_cart {
+    width: fit-content;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 .left_cart {
-    width: 800px;
+    width: 1000px;
     height: 250px;
     background-color: #202020;
     border-radius: 4px;
@@ -951,6 +961,11 @@
     justify-content: space-between;
     margin-left: 50px;
 }
+
+.currency {
+    margin-left: 4px;
+}
+
 .discount {
     width: 45px;
     height: 25px;
@@ -977,8 +992,9 @@
 }
 .remove_game {
     font-size: 15px;
-    color: #9d9d9d;
+    color: white;
     text-decoration: none;
+    padding: 5px !important;
 }
 .remove_game:hover {
     text-decoration: underline;
@@ -1001,7 +1017,9 @@
     color: #fff;
 }
 .right_cart {
-    width: 350px;
+    margin-top: 50px;
+    width: 350px;    
+    margin-left: 20px;
 }
 .title_pay {
     font-size: 45px;

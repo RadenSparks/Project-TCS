@@ -174,21 +174,6 @@ $search = null;
                             <input type="text" id="search" autocomplete="" name="search" placeholder="Search" value="" name="content_search">
                         </div>
                     </form>
-
-
-
-
-
-
-
-                    <?php
-
-                    // if (isset($_POST['icon_search']) && $_POST['icon_search']) {
-                    //     $search = $_POST['input-search'];
-
-                    //     $data = search($search);
-                    // }
-                    ?>
                     <a href="./index.php">
                         <div class="sub-navbar_option_desktop__1z-9D">Discover</div>
                     </a>
@@ -199,11 +184,11 @@ $search = null;
                         <div class="sub-navbar_option_desktop__1z-9D">News</div>
                     </a>
                 </div>
-<div class="sub-navbar_right__1pAwu">
-                    <a href="/cart">
+                <div class="sub-navbar_right__1pAwu">
+                    <a href="./index.php?act=cart">
                         <div class="sub-navbar_cart__RmSJY">Cart</div>
                     </a>
-                    <a href="/wishlist">
+                    <a href="./index.php?act=wishlist">
                         <div class="sub-navbar_wishlist__RmSJY">Wishlist</div>
                     </a>
                 </div>

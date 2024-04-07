@@ -51,6 +51,20 @@ if (isset($_GET['act'])) {
             include_once "./static/php/footer.php";
 
             break;
+
+        case 'cart':
+            include_once "./static/php/header.php";
+            include_once "./static/php/cart.php";
+            include_once "./static/php/footer.php";
+            break;
+
+        case 'wishlist':    
+            include_once "./static/php/header.php";
+            include_once "./static/php/wishlist.php";
+            include_once "./static/php/footer.php";
+            break;
+
+
         case 'addcart':
             include_once "./static/php/header.php";
 
@@ -95,12 +109,13 @@ if (isset($_GET['act'])) {
             include_once "./static/php/footer.php";
 
             break;
+
         case 'detail':
             include_once "./static/php/header.php";
 
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
-                $data1 = detail($id);
+                $gameDetail = detail($id);
                 // echo var_dump($data1);
                 include_once "./static/php/detail.php";
             }

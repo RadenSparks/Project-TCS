@@ -624,6 +624,7 @@ html {
     --main-gray: #2b2b2b;
     --gray-text: hsla(0, 0%, 100%, 0.72);
     --main-blue: #0074e4;
+    --main-green: #3cd400;
     --disabled-state-opacity: 0.5;
     --seconday-text: hsla(0, 0%, 96.1%, 0.6);
 }
@@ -676,6 +677,22 @@ html {
 
 .paymentCard_buy_btn__32saJ:hover {
     background-color: #1085fa;
+}
+
+.paymentCard_add_btn {
+    height: 48px;
+    width: 100%;
+    background: var(--main-green);
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    margin-top: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.paymentCard_add_btn:hover {
+    background-color: #48ff00;
 }
 
 .paymentCard_wishlist_btn__1zyUQ {
@@ -780,6 +797,22 @@ html {
 
     .paymentCard_buy_btn__32saJ:hover {
         background-color: #1085fa;
+    }
+
+    .paymentCard_add_btn {
+        height: 48px;
+        width: 100%;
+        background: var(--main-green);
+        border-radius: 4px;
+        border: none;
+        color: #fff;
+        margin-top: 10px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+    
+    .paymentCard_add_btn:hover {
+        background-color: #48ff00;
     }
 
     .paymentCard_wishlist_btn__1zyUQ {
