@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="static/css/base.css">
     <link rel="stylesheet" href="static/css/login.css">
     <link rel="stylesheet" href="static/css/registration.css">
-    <title>Register for an Epic Games account</title>
+    <title>Register for an TCS account</title>
 </head>
 <body>
 <div class="registration-form">
@@ -44,7 +44,7 @@
 
     <h6 class="registration-title">Sign Up</h6>
     <div class="error">
-        <h3 class="notification">This email is already in use by another Epic Games account.</h3>
+        <h3 class="notification">This email is already in use by another TCS account.</h3>
     </div>
 
     <form  method="post">
@@ -76,7 +76,7 @@
     </form>
 
     <div class="loginnow">
-        Already have an Epic Games account? 
+        Already have an TCS account? 
         <a href="login.php">Login now</a>
     </div>
 </div>

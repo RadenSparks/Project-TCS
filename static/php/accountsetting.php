@@ -27,7 +27,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
         <div class="input_group">
             <label for="currentpass">Current Password</label>
             <div class="grouppass">
-                <input id="currentpass" type="password" name="currentpass" title="Mật khẩu hiện tại của bạn không đúng" pattern="<?php echo $account['password'] ?>" required>
+                <input id="currentpass" type="password" name="currentpass" title="Your current password is incorrect" pattern="<?php echo $account['password'] ?>" required>
                 <span class="showpassword" onclick="showPassword(this)"><i class="fa-solid fa-eye"></i></span>
             </div>
             <div class="error"></div>

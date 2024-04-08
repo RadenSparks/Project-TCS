@@ -20,17 +20,17 @@ $search = null;
     <link rel="stylesheet" href="./static/css/sliders.css">
     <link rel="stylesheet" href="./static/css/content.css">
     <link rel="stylesheet" href="./static/css/footer.css">
-    <title>Epic Games</title>
-    <meta name="title" content="Epic Games">
+    <title>TCS</title>
+    <meta name="title" content="TCS">
     <meta name="description" content="A gaming platform where users can buy and get different kinds of games.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://epic-games-clone.vercel.app/">
-    <meta property="og:title" content="Epic Games">
+    <meta property="og:title" content="TCS">
     <meta property="og:description" content="A gaming platform where users can buy and get different kinds of games.">
     <meta property="og:image" content="https://epic-games-clone.vercel.app/og-image.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://epic-games-clone.vercel.app/">
-    <meta property="twitter:title" content="Epic Games">
+    <meta property="twitter:title" content="TCS">
     <meta property="twitter:description" content="A gaming platform where users can buy and get different kinds of games.">
     <meta property="twitter:image" content="https://epic-games-clone.vercel.app/og-image.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,10 +43,10 @@ $search = null;
         <div class="App">
             <div id="header" class="header_header__main__div__1miNF">
                 <div class="header_header__first__3S80d"><a href="./index.php">
-                        <div class="header_header__logo__36Cdj"><img src="https://epic-games-clone.vercel.app/icons/Epic_Games_white.svg" alt="epic" style="height: 36px;"></div>
+                        <div class="header_header__logo__36Cdj"><img src="./static/image/img-layoutold/TCSlogo.JFIF" alt="epic" style="height: 36px;"></div>
                     </a>
                     <div class="header_header__navigations__wRzWm">
-                        <div class="header_header__navigations__div__2pSIS"><a href="/">
+                        <div class="header_header__navigations__div__2pSIS"><a href="./static/php/home.php">
                                 <p class="header_onhover__color__white__3u48K">STORE</p>
                             </a></div>
                         <div class="header_header__navigations__div__2pSIS">

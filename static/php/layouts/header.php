@@ -22,7 +22,7 @@
     <!-- font-awsome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Epic Games Store</title>
+    <title>TCS Store</title>
     <link rel="icon" type="image/x-icon" href="epicFavIcon.ico">
 </head>
 

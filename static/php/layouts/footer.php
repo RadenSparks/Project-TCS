@@ -24,7 +24,7 @@
             <div class="d-flex justify-content-start gap-3 text-dark">
                 <div class="d-flex flex-column gap-1">
                     <a href="#" class="footer-links">Support-A-Creator</a>
-                    <a href="#" class="footer-links">Distribte on Epic Games</a>
+                    <a href="#" class="footer-links">Distribte on TCS</a>
                     <a href="#" class="footer-links">Careers</a>
                     <a href="#" class="footer-links">Company</a>
                 </div>
@@ -45,7 +45,7 @@
             <!-- resources links 2-->
             <div>
                 <div>
-                    <p class="text-secondary my-1">Made by Epic Games</p>
+                    <p class="text-secondary my-1">Made by TCS</p>
                 </div>
                 <div class="d-flex justify-content-start gap-3 text-dark">
                     <div class="d-flex flex-column gap-1">
@@ -64,12 +64,12 @@
     </div>
     <!-- copyright -->
     <div class="footer-copyRight-container w-50 my-4 py-4">
-        <p class="footer-copyRight m-0">© 2023, Epic Games, Inc. All rights reserved. Epic, Epic Games, the Epic
+        <p class="footer-copyRight m-0">© 2023, TCS, Inc. All rights reserved. Epic, TCS, the Epic
             Games logo, Fortnite, the
             Fortnite logo, Unreal, Unreal Engine, the Unreal Engine logo, Unreal Tournament, and the Unreal
-            Tournament logo are trademarks or registered trademarks of Epic Games, Inc. in the United States of
+            Tournament logo are trademarks or registered trademarks of TCS, Inc. in the United States of
             America and elsewhere. Other brands or product names are the trademarks of their respective owners.
-            Non-US transactions through Epic Games International, S.à r.l. </p>
+            Non-US transactions through TCS International, S.à r.l. </p>
     </div>
 
     <!-- terms, conditions & logos -->

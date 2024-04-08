@@ -16,38 +16,38 @@
                                     <p>Support-A-Creator</p>
                                     <p>Company</p>
                                     <p>Store EULA </p>
-                                    <p>Publish on Epic Games</p>
+                                    <p>Publish on TCS</p>
                                     <p>Fan art Policy</p>
-                                    <p>Russian</p>
-                                    <p>Polish</p>
+                                    <p>Vietnamese</p>
+                                    <p>Germany</p>
                                     <p>Online Services</p>
                                     <p>Careers</p>
-                                    <p>UX Research</p>
+                                    <p>Membership</p>
                                     <p>Community Rules</p>
                                 </div>
                             </div>
                             <div class="Footer_epicgames__naHC7">
-                                <p class="Footer_footer_heading__ia8-f">Made By Epic Games</p>
+                                <p class="Footer_footer_heading__ia8-f">Made By TCS</p>
                                 <div class="Footer_links__2pI3S">
-                                    <p>Battle Breakers</p>
-                                    <p>Shadow Complex</p>
-                                    <p> Fortnite</p>
-                                    <p>Spyjinx</p>
-                                    <p>Wolfstride</p>
-                                    <p>Unspottable</p>
-                                    <p>Shadow tactics</p>
-                                    <p>Dead by daylight</p>
-                                    <p>ChromaGun</p>
-                                    <p>Chivalry</p>
+                                    <p>Vrising</p>
+                                    <p>Stunlock Studio</p>
+                                    <p>Yuzu</p>
+                                    <p>Penguinz0</p>
+                                    <p>True Cyber Syndicate</p>
+                                    <p>Project TCS</p>
+                                    <p>Leaf Koder</p>
+                                    <p>Fatalis</p>
+                                    <p>Core Keeper</p>
+                                    <p>R&D Department</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <p class="Footer_bottom_text__3-S6d">© 2021, Epic Games, Inc. All rights reserved. Epic, Epic Games,
-                        the Epic Games logo, Fortnite, the Fortnite logo, Unreal, Unreal Engine, the Unreal Engine logo,
-                        Unreal Tournament, and the Unreal Tournament logo are trademarks or registered trademarks of
-                        Epic Games, Inc. in the United States of America and elsewhere. Other brands or product names
-                        are the trademarks of their respective owners. Non-US transactions through Epic Games
+                    <p class="Footer_bottom_text__3-S6d">© 2024, TCS, Inc. All rights reserved. TCS, TCS,
+                        the TCS logo, WCS, the StrongArmStance logo, GS, True Cyber, the True Cyber logo,
+                        True Cyber Syndicate, and the True Cyber Syndicate logo are trademarks or registered trademarks of
+                        TCS, Inc. in the United States of America and elsewhere. Other brands or product names
+                        are the trademarks of their respective owners. Non-US transactions through TCS
                         International, S.à r.l.</p>
                     <div class="Footer_bottom_footer__224bY">
                         <div class="Footer_left__4fSdk">

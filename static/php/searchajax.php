@@ -27,7 +27,7 @@ if ($search != '') {
         }
         // Check nếu sản phẩm không có 
     } else {
-        $data .= '<h3 style="color: red">Không có sản phẩm này<h3>';
+        $data .= '<h3 style="color: red">There is nothing to match your search result<h3>';
     }
     // Nối chuỗi để hiển thị View More
     $data .= '  <li>
