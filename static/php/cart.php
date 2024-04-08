@@ -117,6 +117,11 @@ if (isset($_SESSION['email'])) {
         </div>
     </div>
 </div>
+<?php
+        include('payment.php');
+        ?>
+    </div>
+
 <script>
     document.getElementsByName("cart-remove-btn")
         .forEach(tag => {

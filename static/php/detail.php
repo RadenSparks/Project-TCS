@@ -579,4 +579,39 @@ mysqli_query($conn, "SET NAMES 'utf8'");
             console.log(err);
         });
     }
+
+    // Display payment modal
+    let buyBtn = document.querySelector('.game-aside__btn--buynow')
+    buyBtn?.addEventListener('click', function() {
+        paymentModal.style.display = "block";
+    })
+
+    let getBtn = document.querySelector('.game-aside__btn--get')
+    getBtn?.addEventListener('click', function() {
+        paymentModal.style.display = "block";
+    })
+
+    let addBtn = document.querySelector('.game-aside__btn--add')
+    if (addBtn?.getAttribute("gameid") != null) {
+        addBtn.addEventListener('click', function() {
+            let gameid = addBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/static/php/addToCart.php?id=" + gameid;
+        })
+    }
+
+    let wishlistBtn = document.querySelector('.game-aside__btn__wishlist')
+    if (wishlistBtn?.getAttribute("gameid") != null) {
+        wishlistBtn.addEventListener('click', function() {
+            let gameid = wishlistBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/static/php/addToWishlist.php?id=" + gameid;
+        })
+    }
+
+    let removeWishlistBtn = document.querySelector('.game-aside__btn__wishlist__remove')
+    if (removeWishlistBtn?.getAttribute("gameid") != null) {
+        removeWishlistBtn.addEventListener('click', function() {
+            let gameid = removeWishlistBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/static/php/removefromWishlist.php?id=" + gameid;
+        })
+    }
 </script>
