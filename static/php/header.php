@@ -88,7 +88,7 @@ $search = null;
                                     $username = strtoupper(explode('@', $email)[0]);
                                     echo '
                         <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
-                            <span class="btn nav-link">'.$username.'
+                            <span class="btn nav-link">' . $username . '
                                 <i style="padding: 0 5px" class="fa-solid fa-caret-down fa-sm"></i>
                                 <div class="user-menu">
                                     <ul class="user-menu__list">
@@ -200,11 +200,14 @@ $search = null;
                     </a>
                 </div>
                 <div class="sub-navbar_right__1pAwu">
-                <a href="./index.php?act=cart">
-                        <div class="sub-navbar_cart__RmSJY">Cart</div>
-                    </a>
                     <a href="./index.php?act=wishlist">
                         <div class="sub-navbar_wishlist__RmSJY">Wishlist</div>
+                    </a>
+                    <a href="./index.php?act=cart">
+                        <div class="sub-navbar_cart__RmSJY">Cart
+
+                            <span class="count-product">1</span>
+                        </div>
                     </a>
                 </div>
             </div>
