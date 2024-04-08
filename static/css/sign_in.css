@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    box-sizing: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.login_container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #202020;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.tilte_login {
+    text-align: center;
+    margin: 25px 0 50px 0;
+}
+.tilte_login h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.tilte_login p {
+    font-size: 12px;
+}
+.input_group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input_email {
+    width: 300px;
+    height: 50px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    color: #fff;
+    background-color: #202020;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+.input_password {
+    width: 300px;
+    height: 50px;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    color: #fff;
+    background-color: #202020;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+.options_login {
+    font-size: 12px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.remember {
+    margin-right: 75px;
+}
+.remember input {
+    margin-right: 5px;
+}
+.options_login a {
+    text-decoration: none;
+    color: #fff;
+}
+.options_login a:hover {
+    text-decoration: underline;
+}
+.button_login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+.btn_gg {
+    display: flex;
+    justify-content: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.btn_gg img {
+    width: 30px;
+    height: 30px;
+    margin-right: 25px;
+}
+.btn_gg,
+.button_login .button {
+    width: 250px;
+    height: 40px;
+    background-color: #26BBFF;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 550;
+    border-radius: 10px;
+}
+.btn_gg:hover,
+.button_login button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.policy_swapfunc {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.policy_swapfunc .policy {
+    margin-bottom: 15px;
+}
+.policy_swapfunc .policy a {
+    text-decoration: none;
+    font-style: italic;
+    color: #ccc;
+}
+.policy_swapfunc p {
+    color: #ccc;
+}
+.policy_swapfunc a{
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+.policy_swapfunc .policy a:hover {
+    color: #fff;
+}
+.policy_swapfunc .policy a:hover,
+.policy_swapfunc a:hover {
+    text-decoration: underline;
+}

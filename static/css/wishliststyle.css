@@ -1,0 +1,713 @@
+body {
+    font-size: 100%;
+}
+
+/*! CSS Used from: https://epic-games-clone.vercel.app/static/css/main.e42f4e14.chunk.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Brutal Type";
+}
+
+body {
+    background-color: #121212;
+    background-color: var(--main-black);
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header_padding__left__RHyxc {
+    padding-left: 15px;
+}
+
+.header_padding__right__EBNcD {
+    padding-right: 15px;
+}
+
+.header_onhover__color__white__3u48K {
+    color: var(--gray-text);
+}
+
+.header_header__navigations__div__2pSIS:hover .header_onhover__color__white__3u48K {
+    color: #fff;
+}
+
+.header_onhover__color__blue__3o3Va:hover {
+    background-color: #2e8ef0;
+}
+
+.header_icon__2CeRL>img {
+    height: 20px;
+}
+
+.header_download_btn__2HnRe {
+    height: 100%;
+}
+
+.header_sidemenu__3TRGT {
+    display: none;
+}
+
+.header_header__main__div__1miNF {
+    display: flex;
+    height: 56px;
+    background-color: #2a2a2a;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_header__first__3S80d {
+    display: flex;
+    align-items: center;
+}
+
+.header_header__logo__36Cdj {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.header_header__navigations__wRzWm {
+    display: flex;
+    height: 56px;
+    align-items: center;
+    color: #ccc;
+    margin-left: 15px;
+}
+
+.header_header__navigations__wRzWm div {
+    height: 100%;
+}
+
+.header_header__navigations__wRzWm p {
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px;
+}
+
+.header_header__navigations__div__2pSIS:hover {
+    border-bottom: 5px solid #0078f2;
+    cursor: pointer;
+    color: #fff;
+}
+
+.header_header__second__2Cbwd {
+    display: flex;
+    height: 56px;
+    align-items: center;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.header_header__button__Icswa {
+    background-color: #0078f2;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+
+.header_header__second__user__32ejS {
+    display: flex;
+    align-items: center;
+}
+
+#header_header__rewrite__2vMyA {
+    font-size: 12px;
+}
+
+@media only screen and (max-width:768px) {
+
+    .header_display__none__R6tIm,
+    .header_header__navigations__wRzWm {
+        display: none;
+    }
+
+    .header_toggle__3WbMr {
+        position: relative;
+        width: 56px;
+        height: 55px;
+        background-color: #0078f2;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .header_toggle__3WbMr span {
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 3px;
+        transition: .2s;
+    }
+
+    .header_toggle__3WbMr span:first-child {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+        width: 40px;
+        left: 8px;
+    }
+
+    .header_toggle__3WbMr span:nth-child(2) {
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+        width: 40px;
+        left: 8px;
+    }
+
+    .header_sidemenu__3TRGT {
+        display: block;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        background: #2a2a2a;
+        overflow-x: hidden;
+        transition: .5s;
+        padding-top: 60px;
+    }
+
+    .header_mainMenu__3pxnB {
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header_mainMenu__3pxnB p {
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .header_mainMenu__3pxnB p:hover {
+        color: #fff;
+    }
+
+    .header_sidebar__info__34xIO p {
+        border-bottom: 1px solid #3f3e3e;
+        padding: 10px;
+        font-size: 14px;
+        margin-left: 14px;
+        color: #e7e7e7;
+    }
+
+    #header_btn__revoke__3Gy5L {
+        padding: 20px 152px;
+        color: #fff;
+        font-size: 9px;
+    }
+
+    .header_slider__botton__3XiId {
+        width: 100%;
+        height: 47px;
+        display: flex;
+        box-shadow: 10px 0 20px rgba(161, 160, 160, .08);
+    }
+
+    .header_slider__botton__first__aj91T {
+        display: flex;
+        width: 70%;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid #3f3e3e;
+    }
+
+    .header_slider__botton__first__aj91T p {
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+    .header_slider__botton__first__aj91T img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .header_slider__botton__second__3ykZy {
+        display: flex;
+        width: 30%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header_slider__botton__second__3ykZy img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.sub-navbar_main__hR7Dc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 8px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--main-black);
+}
+
+.sub-navbar_accordion__3sUXA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-text);
+    font-size: 14px;
+    grid-gap: 4px;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.sub-navbar_icon__lKP2r {
+    font-size: 22px;
+    color: var(--gray-text);
+}
+
+.sub-navbar_icon_a__cW4aE {
+    font-size: 14px;
+}
+
+.sub-navbar_main_desktop__19-YT {
+    display: none;
+}
+
+@media (min-width:768px) {
+    .sub-navbar_main__hR7Dc {
+        display: none;
+    }
+
+    .sub-navbar_main_desktop__19-YT {
+        color: var(--gray-text);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        line-height: 20px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background-color: var(--main-black);
+        z-index: 10;
+        padding: 35px 74px;
+    }
+
+    .sub-navbar_search_box__8UOVU {
+        color: #f5f5f5;
+        background-color: #202020;
+        border-radius: 24px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        grid-gap: 16px;
+        gap: 16px;
+        padding-left: 16px;
+    }
+
+    .sub-navbar_search_box__8UOVU>input {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .sub-navbar_search_box__8UOVU>input:focus {
+        outline: none;
+    }
+
+    .sub-navbar_left__1pAwu {
+        display: flex;
+        grid-gap: 20px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .sub-navbar_option_desktop__1z-9D,
+    .sub-navbar_wishlist__RmSJY {
+        cursor: pointer;
+        color: var(--gray-text);
+    }
+
+    .sub-navbar_option_desktop__1z-9D:hover,
+    .sub-navbar_wishlist__RmSJY:hover {
+        color: #fff;
+    }
+}
+
+@media (min-width:1120px) {
+    .sub-navbar_main_desktop__19-YT {
+        padding: 35px 132px;
+        max-width: 1600px;
+        margin: auto;
+    }
+}
+
+:root {
+    --hover: hsla(0, 0%, 100%, 0.836);
+}
+
+:root {
+    --main-black: #121212;
+    --light-black: #202020;
+    --main-gray: #2b2b2b;
+    --gray-text: hsla(0, 0%, 100%, 0.72);
+    --main-blue: #0074e4;
+    --disabled-state-opacity: 0.5;
+    --seconday-text: hsla(0, 0%, 96.1%, 0.6);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wishlist_main_container__2Nwa6 {
+    margin: 0 15px;
+}
+
+.wishlist_sub_navbar__2rEX4 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+@media (min-width:768px) {
+    .wishlist_main__1knbg {
+        max-width: 1600px;
+        margin: auto;
+    }
+
+    .wishlist_containter__21Ms2 {
+        margin: 0 74px;
+    }
+}
+
+@media (min-width:1120px) {
+    .wishlist_containter__21Ms2 {
+        margin: 0 132px;
+    }
+}
+
+.notificationbar_container__2Alh2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    grid-gap: 12px;
+    gap: 12px;
+}
+
+.notificationbar_externalLink__2ANju {
+    display: flex;
+    grid-gap: 10px;
+    gap: 10px;
+    border-bottom: .5px solid hsla(0, 0%, 100%, .6509803921568628);
+}
+
+.notificationbar_icon__35Gvp {
+    font-size: 16px;
+    padding-top: 3px;
+}
+
+.notificationbar_heading__2E240 {
+    font-size: 14px;
+}
+
+@media (min-width:768px) {
+    .notificationbar_container__2Alh2 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .notificationbar_externalLink__2ANju {
+        display: flex;
+        grid-gap: 10px;
+        gap: 10px;
+        border-bottom: .5px solid hsla(0, 0%, 100%, .6509803921568628);
+    }
+
+    .notificationbar_icon__35Gvp {
+        font-size: 16px;
+        padding-top: 3px;
+    }
+}
+
+.emptyCard_container__22WzV {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+}
+
+.emptyCard_image_div__7U0eU {
+    margin-top: 100px;
+}
+
+.emptyCard_image_div__7U0eU img {
+    width: 60%;
+}
+
+.emptyCard_heading__1HdDn {
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+.emptyCard_link__2XDV- {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #ccc;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+@media (min-width:768px) {
+    .emptyCard_container__22WzV {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .emptyCard_image_div__7U0eU {
+        margin-top: 100px;
+    }
+
+    .emptyCard_image_div__7U0eU img {
+        width: 60%;
+    }
+
+    .emptyCard_heading__1HdDn {
+        font-size: 50px;
+        margin-top: 30px;
+    }
+
+    .emptyCard_link__2XDV- {
+        font-size: 20px;
+        margin-top: 20px;
+        color: #ccc;
+        border-bottom: 1px solid #3d3d3d;
+    }
+}
+
+/*! CSS Used from: Embedded */
+.css-1jaw3da {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    margin-left: -11px;
+    margin-right: 16px;
+}
+
+.css-lk1uhh {
+    display: inline-flex;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 0;
+    vertical-align: middle;
+    width: 42px;
+    height: 26px;
+    padding: 0px;
+    margin: 8px;
+}
+
+@media print {
+    .css-lk1uhh {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+.css-lk1uhh .MuiSwitch-switchBase {
+    padding: 0px;
+    margin: 2px;
+    transition-duration: 300ms;
+}
+
+.css-lk1uhh .MuiSwitch-thumb {
+    box-sizing: border-box;
+    width: 22px;
+    height: 22px;
+}
+
+.css-lk1uhh .MuiSwitch-track {
+    border-radius: 13px;
+    background-color: rgb(233, 233, 234);
+    opacity: 1;
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.css-1nr2wod {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    padding: 9px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    color: rgb(255, 255, 255);
+    transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+@media print {
+    .css-1nr2wod {
+        -webkit-print-color-adjust: exact;
+    }
+}
+
+.css-1nr2wod .MuiSwitch-input {
+    left: -100%;
+    width: 300%;
+}
+
+.css-1nr2wod:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+@media (hover: none) {
+    .css-1nr2wod:hover {
+        background-color: transparent;
+    }
+}
+
+.css-1m9pwf3 {
+    cursor: inherit;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+}
+
+.css-19gndve {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    background-color: currentcolor;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.css-1ju1kxc {
+    height: 100%;
+    width: 100%;
+    border-radius: 7px;
+    z-index: -1;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.38;
+}
+
+.css-9l3uo3 {
+    margin: 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+}
+
+/*! CSS Used fontfaces */
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraLight.eot");
+    src: local("Brutal Type Extra Light"), local("BrutalType-ExtraLight"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraLight.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraLight.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraLight.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType-Medium.eot");
+    src: local("Brutal Type Medium"), local("BrutalType-Medium"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Medium.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Medium.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Medium.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType-Bold.eot");
+    src: local("Brutal Type Bold"), local("BrutalType-Bold"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Bold.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Bold.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Bold.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType-Thin.eot");
+    src: local("Brutal Type Thin"), local("BrutalType-Thin"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Thin.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Thin.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Thin.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Thin.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraBold.eot");
+    src: local("Brutal Type Extra Bold"), local("BrutalType-ExtraBold"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraBold.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraBold.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraBold.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType-Black.eot");
+    src: local("Brutal Type Black"), local("BrutalType-Black"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Black.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Black.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Black.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType-Light.eot");
+    src: local("Brutal Type Light"), local("BrutalType-Light"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Light.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Light.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Light.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Brutal Type";
+    src: url("https://epic-games-clone.vercel.app/fonts/BrutalType.eot");
+    src: local("Brutal Type"), local("BrutalType"), url("https://epic-games-clone.vercel.app/fonts/BrutalType.eot?#iefix") format("embedded-opentype"), url("https://epic-games-clone.vercel.app/fonts/BrutalType.woff2") format("woff2"), url("https://epic-games-clone.vercel.app/fonts/BrutalType.woff") format("woff"), url("https://epic-games-clone.vercel.app/fonts/BrutalType.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
