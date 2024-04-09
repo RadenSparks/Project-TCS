@@ -52,7 +52,7 @@
                         <a href="">Forgot your password</a>
                     </div>
                     <div class="error">
-                        <h3 class="notification">Sorry the credentials you are using are invalid.</h3>
+                        <h3 class="notification">Wrong username or password. Please try again.</h3>
                     </div>
                     <button type="submit" value="Log In Now" class="btn btn-primary login-btn" id="submitBtn">
                         <span class="spinner-border " role="status" aria-hidden="true" id="loader"></span>
