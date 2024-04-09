@@ -149,7 +149,7 @@ if (isset($_SESSION['email'])) {
                     ).then(response => {
                         if (response.status) {
                             alertify.alert("Transaction process successfully ! You can check the transaction in your account settings.", function () {                                
-                                window.location = "/Project-TCS/static/php/buyNow.php?id=" + id;
+                                window.location = "index.php?act=cart";
                             }).set({
                                 title: ''
                             }).set({
