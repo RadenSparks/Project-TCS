@@ -46,7 +46,7 @@ $search = null;
                         <div class="header_header__logo__36Cdj"><img src="./static/image/img-layoutold/logo.png" alt="epic" style="height: 55px;"></div>
                     </a>
                     <div class="header_header__navigations__wRzWm">
-                        <div class="header_header__navigations__div__2pSIS"><a href="./static/php/home.php">
+                        <div class="header_header__navigations__div__2pSIS"><a href="./index.php">
                                 <p class="header_onhover__color__white__3u48K">STORE</p>
                             </a></div>
                         <div class="header_header__navigations__div__2pSIS">
