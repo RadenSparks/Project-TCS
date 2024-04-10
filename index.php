@@ -49,7 +49,6 @@ if (isset($_GET['act'])) {
             include_once "./static/php/header.php";
             include_once "./static/php/games.php";
             include_once "./static/php/footer.php";
-
             break;
 
         case 'cart':

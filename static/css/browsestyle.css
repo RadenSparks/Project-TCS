@@ -260,8 +260,11 @@
         }
 
         .game-card_image_div__3GP6O {
+            /* width: 232px;
+            height: 309px; */
             position: relative;
             display: inline-block;
+            
         }
 
         .game-card_icon__o86Ds {
@@ -270,6 +273,7 @@
             position: absolute;
             right: 0;
             top: 0;
+            z-index: 1000;
         }
 
         .game-card_image_div__3GP6O>img {
