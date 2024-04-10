@@ -36,7 +36,7 @@ if (isset($_GET['act'])) {
 
             if (!isset($_GET['sort'])) {
                 $sort = "gamename,asc";
-                header('Location: /Project-TCS/?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc');
+                header('Location: /Project-TCS/index.php?act=browse&page=1&keyword=&genre=&price=&sort=gamename,asc');
             } else {
                 $sort = $_GET['sort'];
             }

@@ -74,19 +74,24 @@ $search = null;
                                 <p class="header_onhover__color__white__3u48K">SIGN IN</p>
                             </div> -->
                             <?php
-                            $servername = "localhost";
-                            $dbuser = "root";
-                            $password = "";
-                            $dbname = "db_epicgamers";
+                            
                             try {
-                                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $dbuser, $password);
-                                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-                                $conn->exec("SET NAMES utf8");
+                                $conn = openConnection();
 
                                 if (isset($_SESSION['email'])) {
                                     $email = $_SESSION['email'];
                                     $username = strtoupper(explode('@', $email)[0]);
+                                    $dashboardHtml = "";
+                                    
+                                    $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                                    if ($accountResult->num_rows > 0) {
+                                        $account = $accountResult->fetch_assoc();
+                                        if($account['isadmin']){
+                                            $dashboardHtml = '<li class="user-menu__item">
+                                            <a href="./index.php?act=dashboard" class="user-menu__link">DASHBOARD</a>
+                                        </li>';
+                                        }
+                                    }
                                     echo '
                                     <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
                                         <span class="btn nav-link">' . $username . '
@@ -96,6 +101,7 @@ $search = null;
                                                     <li class="user-menu__item">
                                                         <a href="./index.php?act=accountsetting" class="user-menu__link">ACCOUNT</a>
                                                     </li>
+                                                    '.$dashboardHtml.'
                                                     <li class="user-menu__item">
                                                         <a href="/Project-TCS/static/php/logout.php" class="user-menu__link">SIGN OUT</a>
                                                     </li>
