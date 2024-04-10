@@ -127,6 +127,9 @@ if (isset($_SESSION['email'])) {
 </div>
 
 <script>
+    const cartItemCount = document.getElementById("cart-item-count");
+
+
     const checkoutBtn = document.getElementById('paypal-button-container');
     if (checkoutBtn) {
         paypal.Buttons({
@@ -219,6 +222,9 @@ if (isset($_SESSION['email'])) {
                 ).then(response => {
                     if (response.status) {
                         document.getElementById("item-" + id)?.remove();
+                        if(cartItemCount){
+                            cartItemCount.innerHTML = response.amount;
+                        }
                     }
                     if (response.showNoResult) {
                         if (response.showNoResult) {

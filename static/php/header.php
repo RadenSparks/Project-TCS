@@ -1,4 +1,5 @@
 <?php
+include_once "./static/model/query.php";
 $data = [];
 $search = null;
 ?>
@@ -124,29 +125,6 @@ $search = null;
                     <div class="header_toggle__3WbMr" style="background-color: rgb(0, 120, 242);">
                         <span></span><span></span><span></span>
                     </div>
-                    <!-- <div id="side-menu" class="header_sidemenu__3TRGT">
-                        <div class="header_mainMenu__3pxnB" id="main__menu">
-                            <div class="header_sidebar__info__34xIO">
-                                <p>STORE</p>
-                                <p>FAQ</p>
-                                <p>HELP</p>
-                            </div>
-                            <div>
-                                <ul class="nav-list">
-                                    <li class="nav-item nav-item--no-animation">
-                                        <a href="" class="nav-link">
-                                            <i class="nav-icon fa-solid fa-globe"></i>
-                                        </a>
-                                    </li>
-                                    
-
-                                    <li class="nav-item nav-item--no-animation">
-                                        <a href="" class="btn btn-primary nav-link">DOWNLOAD</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="sub-navbar_main__hR7Dc"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="sub-navbar_icon__lKP2r" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -174,21 +152,6 @@ $search = null;
                             <input type="text" id="search" autocomplete="" name="search" placeholder="Search" value="" name="content_search">
                         </div>
                     </form>
-
-
-
-
-
-
-
-                    <?php
-
-                    // if (isset($_POST['icon_search']) && $_POST['icon_search']) {
-                    //     $search = $_POST['input-search'];
-
-                    //     $data = search($search);
-                    // }
-                    ?>
                     <a href="./index.php">
                         <div class="sub-navbar_option_desktop__1z-9D">Discover</div>
                     </a>
@@ -203,10 +166,54 @@ $search = null;
                     <a href="./index.php?act=wishlist">
                         <div class="sub-navbar_wishlist__RmSJY">Wishlist</div>
                     </a>
+                    <span class="count-product" id="wish-item-count">
+                        <?php
+
+                        if (!isset($_SESSION['email'])) {
+                            echo 0;
+                        } else {
+                            $conn = openConnection();
+
+                            $conn->begin_transaction();
+
+                            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                            $account = $accountResult->fetch_assoc();
+                            $accountId = $account["accountid"];
+                            $wishItemResult = queryResult($conn, 'SELECT * from wishlist w WHERE w.accountid = ?', 'i', $accountId);
+                            echo $wishItemResult->num_rows;
+                        }
+                        ?>
+                    </span>
                     <a href="./index.php?act=cart">
                         <div class="sub-navbar_cart__RmSJY">Cart</div>
                     </a>
-                    <span class="count-product">1</span>
+                    <span class="count-product" id="cart-item-count">
+                        <?php
+
+                        if (!isset($_SESSION['email'])) {
+                            echo 0;
+                        } else {
+                            $conn = openConnection();
+
+                            $conn->begin_transaction();
+
+                            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                            $account = $accountResult->fetch_assoc();
+                            $accountId = $account["accountid"];
+
+                            $cartResult = queryResult($conn, 'SELECT * FROM cart c join accounts a on c.accountid = a.accountid WHERE status = 1 and a.accountid = ? LIMIT 1', 'i', $accountId);
+                            $cart = $cartResult->fetch_assoc();
+
+                            if ($cartResult->num_rows > 0) {
+                                $cartId = $cart['cartid'];
+                                $cartItemResult = queryResult($conn, 'SELECT * FROM cartitem ci join game g on ci.gameid = g.gameid WHERE ci.cartid = ?', 'i', $cartId);
+                                echo $cartItemResult->num_rows;
+                            }else{
+                                echo 0;
+                            }
+                        }
+                        ?>
+                    </span>
                 </div>
             </div>
 

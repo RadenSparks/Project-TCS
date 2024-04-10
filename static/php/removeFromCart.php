@@ -22,15 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if($cartItemResult->num_rows > 0){
                 $cartId = $cartItemResult->fetch_assoc()['cartid'];
-                queryResult($conn, 'DELETE FROM cartitem WHERE cartitemid = ?', 'i', $cartItemId);    
-                $cartItemResult = queryResult($conn, 'SELECT * FROM cartitem ci WHERE ci.cartId = ?', 'i', $cartId);
-                if($cartItemResult->num_rows == 0){
+                queryResult($conn, 'DELETE FROM cartitem WHERE cartitemid = ?', 'i', $cartItemId);  
+                $conn->commit();       
+                $newCartItemResult = queryResult($conn, 'SELECT * FROM cartitem ci WHERE ci.cartId = ?', 'i', $cartId);
+                $result->amount = $newCartItemResult->num_rows;
+                if($newCartItemResult->num_rows == 0){
                     $result->showNoResult = true;
                 }
-
             }
-            
-            $conn->commit();            
         }        
         echo json_encode($result);
     } catch (Exception $e) {

@@ -80,6 +80,8 @@ if (isset($_SESSION['email'])) {
 </div>
 </div>
 <script>
+    const wishCount = document.getElementById("wish-item-count");
+
     document.getElementsByName("wishlist-remove-btn")
         .forEach(tag => {
             tag.onclick = async function () {
@@ -94,6 +96,9 @@ if (isset($_SESSION['email'])) {
                 ).then(response => {
                     if (response.status) {
                         document.getElementById("item-" + id)?.remove();
+                        if(wishCount){
+                            wishCount.innerHTML = response.amount;
+                        }
                     }
                     if(response.showNoResult){
                         location.href = 'index.php?act=wishlist';
