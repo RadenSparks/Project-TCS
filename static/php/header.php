@@ -43,7 +43,7 @@ $search = null;
         <div class="App">
             <div id="header" class="header_header__main__div__1miNF">
                 <div class="header_header__first__3S80d"><a href="./index.php">
-                <div class="header_header__logo__36Cdj"><img src="./static/image/img-layoutold/logo.jpg" alt="epic" style="height: 55px;"></div>
+                        <div class="header_header__logo__36Cdj"><img src="./static/image/img-layoutold/logo.png" alt="epic" style="height: 55px;"></div>
                     </a>
                     <div class="header_header__navigations__wRzWm">
                         <div class="header_header__navigations__div__2pSIS"><a href="./static/php/home.php">
@@ -88,7 +88,7 @@ $search = null;
                                     $username = strtoupper(explode('@', $email)[0]);
                                     echo '
                         <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
-                            <span class="btn nav-link">'.$username.'
+                            <span class="btn nav-link">' . $username . '
                                 <i style="padding: 0 5px" class="fa-solid fa-caret-down fa-sm"></i>
                                 <div class="user-menu">
                                     <ul class="user-menu__list">

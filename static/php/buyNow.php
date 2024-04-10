@@ -1,59 +1,41 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     if (!isset($_SESSION['email'])) {
-        header('Location: /Project-TCS/index.php?act=login');
-        exit;
+        header('Location: /Project-TCS/index.php?site=login');
     }
 
-    try {
-        $conn = new PDO("mysql:host=localhost;dbname=db_epicgamers", "root", "");
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $conn->exec("SET NAMES utf8");
+    $conn = mysqli_connect("localhost", "root", "", "db_epicgamers") or die("Không thể kết nối!");
+    mysqli_query($conn, "SET NAMES 'utf8'");
 
-        $email = $_SESSION['email'];
-        $id = $_POST['id'];
+    $email = $_SESSION['email'];
+    $id = $_POST['id'];
 
-        $searchPrice = $conn->prepare("SELECT price FROM game WHERE gameid = :id");
-        $searchPrice->bindParam(':id', $id);
-        $searchPrice->execute();
 
-        if ($searchPrice->rowCount() > 0) {
-            $total = $searchPrice->fetchColumn();
-            $date = date('Y-m-d H:i:s');
+    $searchPrice = mysqli_query($conn, "SELECT price FROM game WHERE gameid = '$id'");
+    if (mysqli_num_rows($searchPrice) > 0) {
+        $total = mysqli_fetch_array($searchPrice)['price'];
+        $date = date('Y-m-d H:i:s');
+        $insertCartQuery = "INSERT INTO `cart`(`email`, `purchasedate`, `status`) values ('" . $email . "','" . $date . "', 0)";
+        mysqli_query($conn, $insertCartQuery) or die(mysqli_error($conn));
+        $newCartId = mysqli_insert_id($conn);
 
-            $insertCartQuery = $conn->prepare("INSERT INTO `cart`(`email`, `purchasedate`, `status`) values (:email, :date, 0)");
-            $insertCartQuery->bindParam(':email', $email);
-            $insertCartQuery->bindParam(':date', $date);
-            $insertCartQuery->execute();
-            $newCartId = $conn->lastInsertId();
+        $insertCartItemQuery = "INSERT INTO `cartitem`(`cartid`, `quantity`, `gameid`) VALUES ('" . $newCartId . "', 1,'" . $id . "')";
+        mysqli_query($conn, $insertCartItemQuery) or die(mysqli_error($conn));
 
-            $insertCartItemQuery = $conn->prepare("INSERT INTO `cartitem`(`cartid`, `quantity`, `gameid`) VALUES (:cartid, 1, :gameid)");
-            $insertCartItemQuery->bindParam(':cartid', $newCartId);
-            $insertCartItemQuery->bindParam(':gameid', $id);
-            $insertCartItemQuery->execute();
+        $insertPaymentQuery = "INSERT INTO `payment` (`email`, `cartid`, `total`, `paymentdate`) VALUES ('" . $email . "', '" . $newCartId . "', " . $total . ", current_timestamp())";
+        mysqli_query($conn, $insertPaymentQuery) or die(mysqli_error($conn));
 
-            $insertPaymentQuery = $conn->prepare("INSERT INTO `payment` (`email`, `cartid`, `total`, `paymentdate`) VALUES (:email, :cartid, :total, current_timestamp())");
-            $insertPaymentQuery->bindParam(':email', $email);
-            $insertPaymentQuery->bindParam(':cartid', $newCartId);
-            $insertPaymentQuery->bindParam(':total', $total);
-            $insertPaymentQuery->execute();
-
-            header('Location: /Project-TCS/index.php?act=home');
-            exit;
-        } else {
-            if (isset($_SERVER["HTTP_REFERER"])) {
-                header("Location: " . $_SERVER["HTTP_REFERER"]);
-                exit;
-            }
+        header('Location: /Project-TCS/index.php?site=home');
+    } else {
+        if (isset($_SERVER["HTTP_REFERER"])) {
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
         }
-    } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
     }
-} else {
+}else{
     if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
-        exit;
     }
 }
 ?>

@@ -1,29 +1,19 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://static-assets-prod.epicgames.com/epic-store/static/webpack/../favicon.ico"
-        type="image/x-icon">
+    <link rel="shortcut icon" href="https://static-assets-prod.epicgames.com/epic-store/static/webpack/../favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="static/css/base.css">
     <link rel="stylesheet" href="static/css/login.css">
     <title>Sign in to Your TCS account</title>
 </head>
-
 <body>
-    <?php
-    if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
-        header('Location: /Project-TCS/index.php');
-    }
-
+<?php
     if (isset($_COOKIE['email']) && isset($_COOKIE['password'])) {
         echo '
             <div class="login-form">
@@ -32,13 +22,13 @@
                 <div class="error">
                     <h3 class="notification">Sorry the credentials you are using are invalid.</h3>
                 </div>
-                <form id="loginModal">
+                <form action="./static/php/login.php" method="post" id="loginModal">
                     <div class="textbox">
-                        <input name="email" type="email" placeholder="Email Adress" value="' . $_COOKIE['email'] . '" required>
+                        <input name="email" type="email" placeholder="Email Adress" value="'.$_COOKIE['email'].'" required>
                         <span class="check-message hidden">Required</span>
                     </div>
                     <div class="textbox">
-                        <input name="pass" type="password" placeholder="Password" id="password" value="' . $_COOKIE['password'] . '" required>
+                        <input name="pass" type="password" placeholder="Password" id="password" value="'.$_COOKIE['password'].'" required>
                         <span class="check-message hidden">Required</span>
                     </div>
                     <div class="options">
@@ -51,13 +41,7 @@
                         </label>
                         <a href="">Forgot your password</a>
                     </div>
-                    <div class="error">
-                        <h3 class="notification">Wrong username or password. Please try again.</h3>
-                    </div>
-                    <button type="submit" value="Log In Now" class="btn btn-primary login-btn" id="submitBtn">
-                        <span class="spinner-border " role="status" aria-hidden="true" id="loader"></span>
-                        <div id="signInLabel">Sign In</div>
-                    </button>
+                    <input type="submit" value="Log In Now" class="btn btn-primary login-btn">
                     <div class="privacy-link">
                         <a href="">Private Policy</a>
                     </div>
@@ -76,7 +60,7 @@
                 <div class="error">
                     <h3 class="notification">Sorry the credentials you are using are invalid.</h3>
                 </div>
-                <form id="loginModal">
+                <form action="./static/php/login.php" method="post" id="loginModal">
                     <div class="textbox">
                         <input name="email" type="email" placeholder="Email Adress" required>
                         <span class="check-message hidden">Required</span>
@@ -95,13 +79,7 @@
                         </label>
                         <a href="">Forgot your password</a>
                     </div>
-                    <div class="error">
-                        <h3 class="notification">Wrong username or password. Please try again.</h3>
-                    </div>
-                    <button type="submit" value="Log In Now" class="btn btn-primary login-btn" id="submitBtn">
-                        <span class="spinner-border " role="status" aria-hidden="true" id="loader"></span>
-                        <div id="signInLabel">Sign In</div>
-                    </button>
+                    <input type="submit" value="Log In Now" class="btn btn-primary login-btn">
                     <div class="privacy-link">
                         <a href="">Private Policy</a>
                     </div>
@@ -113,53 +91,10 @@
             </div>
         ';
     }
-    ?>
-    <script>
-        var errorNotify = document.querySelector(".error");
-        var submitBtn = document.getElementById("submitBtn");
-        var signInLabel = document.getElementById("signInLabel");
-        var loader = document.getElementById("loader");
-        if(loader){
-            loader.style.display = 'none';
-        }
-        let signinForm = document.getElementById("loginModal");
-        if (signinForm) {
-            signinForm.onsubmit = async (e) => {
-                loader.style.display = 'block';
-                signInLabel.style.display = 'none';
-                submitBtn.disabled = true;
-                e.preventDefault();
-                let form = e.target;
-                let body = new FormData(form);
-
-                await fetch('./static/php/login.php', {
-                    method: 'POST',
-                    body: body,
-                }).then(response =>
-                    response.json()
-                ).then(response => {
-                    if (response.status) {
-                        errorNotify.style.display = "none";                        
-                        setTimeout(function() {
-                            location.href = "index.php";
-                        }, 2)          
-                    } else {
-                        setTimeout(function() {
-                            submitBtn.disabled = false;
-                            errorNotify.style.display = "block";
-                            loader.style.display = 'none';
-                            signInLabel.style.display = 'block';
-                        }, 2);                        
-                    }
-                }).catch(function (err) {
-                    console.log(err);
-                });
-            }
-        }
-    </script>
+?>
 
 
 
 </body>
-
 </html>
+    
