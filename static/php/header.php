@@ -43,7 +43,7 @@ $search = null;
         <div class="App">
             <div id="header" class="header_header__main__div__1miNF">
                 <div class="header_header__first__3S80d"><a href="./index.php">
-                        <div class="header_header__logo__36Cdj"><img src="./static/image/img-layoutold/TCSlogo.JFIF" alt="epic" style="height: 36px;"></div>
+                <div class="header_header__logo__36Cdj"><img src="./static/image/img-layoutold/logo.png" alt="epic" style="height: 55px;"></div>
                     </a>
                     <div class="header_header__navigations__wRzWm">
                         <div class="header_header__navigations__div__2pSIS"><a href="./static/php/home.php">
@@ -200,12 +200,13 @@ $search = null;
                     </a>
                 </div>
                 <div class="sub-navbar_right__1pAwu">
-                <a href="./index.php?act=cart">
-                        <div class="sub-navbar_cart__RmSJY">Cart</div>
-                    </a>
                     <a href="./index.php?act=wishlist">
                         <div class="sub-navbar_wishlist__RmSJY">Wishlist</div>
                     </a>
+                    <a href="./index.php?act=cart">
+                        <div class="sub-navbar_cart__RmSJY">Cart</div>
+                    </a>
+                    <span class="count-product">1</span>
                 </div>
             </div>
 
