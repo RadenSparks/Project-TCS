@@ -32,7 +32,7 @@ if (isset($_SESSION['email'])) {
                 echo '</div>';
             } else {
                 echo '<div class="game-card_image_div__3GP6O"><img name="game-thumbnail" id="'.$gameid.'" src="' . $icon . '" alt="' . $gameName . '">';
-                echo '<div class="game-card_icon__o86Ds"><img name="wishlist-icon" id="'.$gameid.'" src="https://epic-games-clone.vercel.app/icons/Add_to_Wishlist.svg" alt="icon"></div>';
+                echo '<div class="game-card_icon__o86Ds"><img name="wishlist-icon" id="'.$gameid.'" src="./static/icon/add-to-wishlist.png" alt="icon"></div>';
                 echo '</div>';
             }
             ?>

@@ -32,7 +32,7 @@ if ($search != '') {
     // Nối chuỗi để hiển thị View More
     $data .= '  <li>
 <div>
-    <a href="./index.php?act=browse">
+    <a href="./index.php">
         <div class="games-search">
 
             <div class="name-searchs">

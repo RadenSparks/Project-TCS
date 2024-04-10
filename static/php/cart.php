@@ -10,7 +10,8 @@ $noItemHtml = '
     </div> ';
 $canCheckOut = false;
 $totalCart = 0;
-if (isset($_SESSION['email'])) {    
+$cartId = "";
+if (isset($_SESSION['email'])) {
     $conn = openConnection();
     $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
     if ($accountResult->num_rows > 0) {
@@ -20,15 +21,17 @@ if (isset($_SESSION['email'])) {
 
         if ($cartResult->num_rows > 0) {
             $cart = $cartResult->fetch_assoc();
-               
             $cartId = $cart['cartid'];
-            $cartItemResult = queryResult($conn, 'SELECT * FROM cartitem ci join game g on ci.gameid = g.gameid WHERE ci.cartid = ?', 'i', $cartId);            
+            $cartItemResult = queryResult($conn, 'SELECT * FROM cartitem ci join game g on ci.gameid = g.gameid WHERE ci.cartid = ?', 'i', $cartId);
         }
     }
 }
-
 ?>
-<div class="container" >
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&commit=true&disable-funding=paylater"></script>
+<link rel="stylesheet" href="./static/js/css/themes/semantic.css">
+<link rel="stylesheet" href="./static/js/css/alertify.css">
+<script src="./static/js/alertify.js"></script>
+<div class="container">
     <h2 class="title_cart">My cart</h2>
     <div class="main_cart">
         <div id="main-container">
@@ -60,7 +63,7 @@ if (isset($_SESSION['email'])) {
                         <div class="left_cart">                         
                             <div class="item">
                                 <div class="about_games">
-                                    <a class="image_game" href="index.php?act=detail&id='.$cartItem['gameid'].'">
+                                    <a class="image_game" href="index.php?act=detail&id=' . $cartItem['gameid'] . '">
                                         <img src="./static/img/icon/' . $cartItem['icon'] . '" alt="">
                                         <div class="operasys_icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="currentcolor" d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg>
@@ -68,7 +71,7 @@ if (isset($_SESSION['email'])) {
                                     </a>
                                     <div class="info_game">
                                         <div class="type_game">Base game</div>
-                                        <div class="name_game"><a href="index.php?act=detail&id='.$cartItem['gameid'].'">' . $cartItem['gamename'] . '</a></div>
+                                        <div class="name_game"><a href="index.php?act=detail&id=' . $cartItem['gameid'] . '">' . $cartItem['gamename'] . '</a></div>
                                         <div class="gift_game">Earn 5% back in TCS Rewards</div>
                                         <div class="more_game">
                                             Self-Refundable
@@ -93,8 +96,8 @@ if (isset($_SESSION['email'])) {
             ?>
         </div>
 
-        <div class="right_cart" style="<?php echo $canCheckOut ? "display: block" : "display: none"?>"> 
-            <p class="title_pay" style="display: block;">
+        <div class="right_cart">
+            <p class="title_pay">
                 Games and Apps Summary
             </p>
             <div class="price">
@@ -114,11 +117,94 @@ if (isset($_SESSION['email'])) {
                     <?php echo number_format($totalCart * 1.1) ?> vnđ
                 </span>
             </div>
-            <button <?php if(isset($cartItemResult) && $cartItemResult->num_rows == 0) echo "disabled='true'"?>>Check out</button>
+            <?php
+            if (isset($cartItemResult) && $cartItemResult->num_rows > 0) {
+                echo '<div id="paypal-button-container"></div>';
+            }
+            ?>
         </div>
     </div>
 </div>
+
 <script>
+    const checkoutBtn = document.getElementById('paypal-button-container');
+    if (checkoutBtn) {
+        paypal.Buttons({
+            style: {
+                layout: 'horizontal',
+                color: 'blue',
+                shape: 'rect',
+                tagline: false
+            },
+            onApprove: async function (data, actions) {
+                return actions.order.capture().then(async function (details) {
+                    const cartId = details.purchase_units[0].reference_id.split("-")[5];
+                    let body = new FormData();
+                    body.append('cartid', cartId);
+                    await fetch('./static/php/finishCheckout.php', {
+                        method: 'POST',
+                        body: body,
+                    }).then(response =>
+                        response.json()
+                    ).then(response => {
+                        if (response.status) {
+                            alertify.alert("Transaction process successfully ! You can check the transaction in your account settings.", function () {                                
+                                window.location = "index.php?act=cart";
+                            }).set({
+                                title: ''
+                            }).set({
+                                labels: {
+                                    ok: 'Ok'
+                                }
+                            });
+                        }
+                    }).catch(function (err) {
+                        console.log(err);
+                        alertify.alert("Transaction process fail ! Try again later.").set({
+                            title: ''
+                        }).set({
+                            labels: {
+                                ok: 'Ok'
+                            }
+                        });
+                    });
+
+                    // Call your backend to save the transaction details
+                });
+
+            },
+            onCancel: function (data) {
+                alertify.alert('Cancel payment! You can checkout later.').set({
+                    title: ''
+                }).set({
+                    labels: {
+                        ok: 'Ok'
+                    }
+                });
+            },
+            onError: function (err) {
+                let errMsg = 'Error during processing payment! Please try again later.';
+                if (err.message == 'Detected popup close') {
+                    errMsg = 'Cancel payment! You can checkout later.';
+                }
+                alertify.alert(errMsg).set({
+                    title: ''
+                }).set({
+                    labels: {
+                        ok: 'Ok'
+                    }
+                });
+            },
+            createOrder: async function (data, actions) {
+                const response = await fetch("./static/php/getCurrentCart.php", {
+                    method: 'POST'
+                });
+                const orderData = await response.json();
+                return actions.order.create(orderData);
+            }
+        }).render('#paypal-button-container');
+    }
+
     document.getElementsByName("cart-remove-btn")
         .forEach(tag => {
             tag.onclick = async function () {
@@ -134,14 +220,48 @@ if (isset($_SESSION['email'])) {
                     if (response.status) {
                         document.getElementById("item-" + id)?.remove();
                     }
-                    if(response.showNoResult){
-                        if(response.showNoResult){
-                        location.href = 'index.php?act=cart';
-                    }
+                    if (response.showNoResult) {
+                        if (response.showNoResult) {
+                            location.href = 'index.php?act=cart';
+                        }
                     }
                 }).catch(function (err) {
                     console.log(err);
                 });
             }
         });
+    // Display payment modal
+    let buyBtn = document.querySelector('.game-aside__btn--buynow')
+    buyBtn?.addEventListener('click', function () {
+        paymentModal.style.display = "block";
+    })
+
+    let getBtn = document.querySelector('.game-aside__btn--get')
+    getBtn?.addEventListener('click', function () {
+        paymentModal.style.display = "block";
+    })
+
+    let addBtn = document.querySelector('.game-aside__btn--add')
+    if (addBtn?.getAttribute("gameid") != null) {
+        addBtn.addEventListener('click', function () {
+            let gameid = addBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/assets/php/addToCart.php?id=" + gameid;
+        })
+    }
+
+    let wishlistBtn = document.querySelector('.game-aside__btn__wishlist')
+    if (wishlistBtn?.getAttribute("gameid") != null) {
+        wishlistBtn.addEventListener('click', function () {
+            let gameid = wishlistBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/assets/php/addToWishlist.php?id=" + gameid;
+        })
+    }
+
+    let removeWishlistBtn = document.querySelector('.game-aside__btn__wishlist__remove')
+    if (removeWishlistBtn?.getAttribute("gameid") != null) {
+        removeWishlistBtn.addEventListener('click', function () {
+            let gameid = removeWishlistBtn.getAttribute("gameid");
+            window.location = "/Project-TCS/assets/php/removeWishlist.php?id=" + gameid;
+        })
+    }
 </script>

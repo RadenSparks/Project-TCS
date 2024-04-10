@@ -54,11 +54,9 @@ if($price != ""){
 // echo $gamesQuery;
 // echo $gameQueryPagination;
 $gamesPage = mysqli_query($conn, $gameQueryPagination);
-// echo '<h1 style="color: red;">'.var_dump($gamesPage).'</h1>';
 
 $allGame = mysqli_query($conn, $gamesQuery);
 $total_row = mysqli_num_rows($allGame);
-// echo '<h1 style="color: red;">'.$total_row.'</h1>';
 $pageCount = ceil($total_row / $gamePerPage);
 
 ?>
@@ -146,7 +144,6 @@ $pageCount = ceil($total_row / $gamePerPage);
                         echo "<h3 class='text-white'>No item found.</h3>";
                     }else{
                         while ($row_sql = mysqli_fetch_assoc($gamesPage)) {
-                            // echo var_dump(mysqli_fetch_assoc($gamesPage));
                             include ('game.php');
                         }
                     }                    
@@ -430,7 +427,6 @@ $pageCount = ceil($total_row / $gamePerPage);
     document.getElementById("game-search-button").onclick = function () {
         let keyword = document.getElementById("game-search-keyword").value;
         const searchParams = new URLSearchParams(window.location.search);
-        
         location.href = "index.php?act=browse&page=1&keyword=" + keyword+"&genre=&price=&sort="+searchParams.get('sort');
     }
 
