@@ -96,8 +96,8 @@ if (isset($_SESSION['email'])) {
             ?>
         </div>
 
-        <div class="right_cart">
-            <p class="title_pay">
+<div class="right_cart" style="<?php echo $canCheckOut ? "display: block" : "display: none"?>"> 
+<p class="title_pay" style="display: block;">
                 Games and Apps Summary
             </p>
             <div class="price">
