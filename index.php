@@ -105,6 +105,42 @@ if (isset($_GET['act'])) {
             include_once "./static/php/footer.php";
             break;
 
+        case 'dashboard':
+            include_once "./static/model/query.php";
+            if (!isset($_SESSION['email'])) {
+                header('Location: /Project-TCS/index.php');
+                exit;
+            }
+            $conn = openConnection();
+            $canAccess = false;
+            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+            if($accountResult->num_rows > 0){
+                $dashboardAccount = $accountResult->fetch_assoc();
+                if($dashboardAccount['isadmin']){
+                    $canAccess = true;
+                }
+            }
+
+            if(!$canAccess){
+                header('Location: /Project-TCS/index.php');
+                exit;
+            }     
+            
+            if (!isset($_GET['page'])) {
+                $page = "1";
+            } else {
+                $page = $_GET['page'];
+            } 
+
+            if (!isset($_GET['entity'])) {
+                $entity = "game";
+            } else {
+                $genre = $_GET['entity'];
+            } 
+
+            include_once "./static/php/dashboard/gameDashboard.php";
+            break;
+
         default:
             include_once "./static/php/header.php";
             include_once "./static/php/home.php";

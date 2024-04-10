@@ -32,24 +32,24 @@ $sortDir = $sortArr[1];
 $gamePerPage = 12;
 $pagination = ($page * $gamePerPage) - $gamePerPage;
 
-$gamesQuery = 'SELECT g.* from game g';
+$gamesQuery = 'SELECT g.* from game g where retired = 0';
 $gameQueryPagination = $gamesQuery .' ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
 
 
 
 if ($keyword != "") {
-    $gamesQuery = 'SELECT g.* from game g where g.gamename LIKE "%' . $keyword . '%" ORDER BY '.$sortBy.' '.$sortDir;
-    $gameQueryPagination = 'SELECT g.* from game g where g.gamename LIKE "%' . $keyword . '%" ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
+    $gamesQuery = 'SELECT g.* from game g where retired = 0 and g.gamename LIKE "%' . $keyword . '%" ORDER BY '.$sortBy.' '.$sortDir;
+    $gameQueryPagination = 'SELECT g.* from game g where retired = 0 and g.gamename LIKE "%' . $keyword . '%" ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
 }
 
 if ($genre != "") {
-    $gamesQuery = 'SELECT g.* from game g where g.genreid = "' . $genre . '" ORDER BY '.$sortBy.' '.$sortDir;
-    $gameQueryPagination = 'SELECT g.* from game g where g.genreid = "' . $genre . '" ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
+    $gamesQuery = 'SELECT g.* from game g where retired = 0 and g.genreid = "' . $genre . '" ORDER BY '.$sortBy.' '.$sortDir;
+    $gameQueryPagination = 'SELECT g.* from game g where retired = 0 and g.genreid = "' . $genre . '" ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
 }
 
 if($price != ""){
-    $gamesQuery = 'SELECT g.* from game g where g.price between 0 and ' . $price. ' ORDER BY '.$sortBy.' '.$sortDir;
-    $gameQueryPagination = 'SELECT g.* from game g where g.price between 0 and ' . $price . ' ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
+    $gamesQuery = 'SELECT g.* from game g where retired = 0 and g.price between 0 and ' . $price. ' ORDER BY '.$sortBy.' '.$sortDir;
+    $gameQueryPagination = 'SELECT g.* from game g where retired = 0 and g.price between 0 and ' . $price . ' ORDER BY '.$sortBy.' '.$sortDir.' LIMIT ' . $pagination . ',' . $gamePerPage;
 }
 // echo $gamesQuery;
 // echo $gameQueryPagination;

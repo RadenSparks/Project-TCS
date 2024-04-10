@@ -88,7 +88,7 @@ $search = null;
                                         $account = $accountResult->fetch_assoc();
                                         if($account['isadmin']){
                                             $dashboardHtml = '<li class="user-menu__item">
-                                            <a href="./index.php?act=dashboard" class="user-menu__link">DASHBOARD</a>
+                                            <a href="./index.php?act=dashboard&entity=game&page=1" class="user-menu__link">DASHBOARD</a>
                                         </li>';
                                         }
                                     }
