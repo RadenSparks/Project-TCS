@@ -1,0 +1,540 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto; 
+}
+
+
+/* Color */
+:root {
+    --primary-color: #ff6347;
+    --secondary-color: #333333;
+    --accent-color: #32cd32;
+}
+
+.container {
+    /* max-width: 1900px; */
+    margin: 0 auto;
+    display: flex;
+}
+
+.left {
+    flex: 1; 
+    width: 18%;
+    display: flex;
+    color: #ffffff;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-radius: 2px;
+    padding-right: 20px;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+}
+
+
+/* logo */
+.logo {
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo a {
+    color: #ffffff;
+    text-decoration: none   ;
+}
+
+.logo img {
+    height: 80px;
+    width: 80px;
+    
+}
+
+.logo h2 {
+    margin: 0;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+/* Menu */
+.menu {
+    width: 90%;
+    margin-top: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menu li {
+    margin-bottom: 20px;
+    /* transition: background-color 0.3s, color 0.3s; */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+.menu .logout-btn {
+    text-align: center;
+}
+
+.menu .logout-btn button {
+    width: 50%;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+}
+
+.menu .logout-btn button a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu li:hover {
+    color: aqua;
+    cursor: pointer;
+}
+
+/* Right-Menu */
+.right {
+    width: 82%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* thanh trên cùng */
+.nav-right {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1.5px solid var(--accent-color);
+}
+
+.header-top {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    color: #ffffff;
+    border-radius: 2px;
+    white-space: nowrap;
+    background: var(--primary-color);
+    justify-content: space-between;
+}
+
+.title {
+    color: #ffffff;
+    margin-left: 80px;
+}
+
+.Account {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.Account a img {
+    margin-left: 150px;
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.Account a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: #000000;
+}
+
+.Account:hover .submenu {
+    display: block;
+}
+
+.title {
+    color: #ffffff;
+    margin-right: 10px; 
+}
+/* =============================== main ===================== */
+
+ .main-content {
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+} 
+
+.main-content .title-page {
+    color: black;
+    padding-top: 20px;
+}
+
+.card {
+    background-color: #ffffff; 
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.col-sm-12 {
+    margin: 0 10px; 
+}
+
+.widget h5 {
+    color: #e6c82a ;
+}
+
+.widget-numbers {
+    color: #000000; 
+}
+
+/* CSS for form styling */
+.input-group {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.input-group input[type="date"],
+.input-group button {
+    border: none;
+    padding: 10px;
+}
+
+.input-group input[type="date"] {
+    border-right: 1px solid #000;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-group .input-divider {
+    padding: 0 10px;
+}
+
+.input-group button {
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+    background-color: #333;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.row .col-md-6 {
+    flex: 0 0 calc(50% - 20px);
+    padding: 0 10px;
+}
+.col-md-7{
+    margin: 0 auto;
+    width: 60%;
+}
+/* .img-1 img{
+    width: 20px;
+    height: 20px;
+} */
+ .cart-chat {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%; 
+} 
+.row .col-md-4
+.large-table {
+    display: flex;
+    flex-wrap: wrap;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.33%;
+    padding: 0 10px;
+}
+.cart-chat {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.row.horizontal {
+    display: flex;
+    flex-direction: row;
+    margin-left: -10px;
+    margin-bottom: 20px;
+}
+
+.row.horizontal .col-md-4 {
+    flex: 1;
+    width: auto;
+    margin: 0 10px;
+}
+table .list{
+    text-align: center;
+    width: 100%;
+}.cart-chat table {
+    width: 100%;
+}
+
+.cart-chat table th,
+.cart-chat table td {
+    text-align: center; 
+}
+
+
+/* ++------------------ Cate-list ----------------------------++ */
+
+.form {
+    width: 100%;
+    margin: auto;
+}
+
+
+.form-label {
+    font-weight: lighter;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-weight: bolder;
+    background-color: white;
+    font-weight: lighter;
+    
+    
+
+}
+
+.form-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    background-color:white;
+
+}
+
+.form-control input[type="radio"] {
+    margin-right: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.text-center {
+    text-align: center;
+}
+.tittle-cate-edit{
+    padding-bottom: 50px;
+}
+.row-content{
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 50px;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.col-md-5{
+    flex: 0 0 calc(48% - 5px);
+    padding-bottom: 50px;
+}
+
+
+.col-md-2, .col-md-1 {
+    flex: 0 0 calc(48% - 5px);
+    color:black;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 2.9); */
+}
+.col-md-1 {
+    margin-right: 10px;
+}
+
+.col-md-2 {
+    
+        margin-left: 10px;
+}
+
+.text-right{
+
+    text-align: center;
+}
+.text-right input{
+    color: #ffffff;
+    border-radius: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--primary-color);
+}
+
+/* ++=============================== phần product ==========================+ */
+.on-cate {    
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline; /* Đổi từ 'center' sang 'baseline' */
+    margin-bottom: 20px; 
+}
+
+.btn-primary {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* margin-left: auto; 
+    margin-right: 20px;  */
+}
+table{
+    width: 100%;
+}
+.each-list{
+    width: 100%;
+}
+.each-list th {
+    text-align: center; 
+    padding: 20px; 
+}
+.each-list td {
+    text-align: center; 
+    padding: 10px; 
+}
+.each-list .img-list{
+    width: 30%;
+    height: 30%;
+}
+.each-list tbody tr td img{
+    width: 50%;
+    height: 40%;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 5px; 
+}
+.operation {
+    text-align: center; 
+}
+
+.btn-success {
+    text-decoration: none;
+    color: #ffffff; 
+    background-color: #28a745;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-danger {
+    text-decoration: none;
+    color: #ffffff; 
+    background-color: #dc3545;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.pagination {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.page-item {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.page-link {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+}
+
+.page-link:hover {
+    background-color: #f0f0f0; 
+}
+
+
+/* CSS cho các nút phân trang */
+
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    margin: 0 4px;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+.pagination a:focus {
+    outline: none;
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+    border: 1px solid #4CAF50;
+}
