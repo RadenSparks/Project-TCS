@@ -1,0 +1,236 @@
+/* Free table design */
+.free-table {
+    background-color: var(--primary-color);
+    margin-top: var(--header-height);
+    padding: 30px 40px;
+    border-radius: 4px;
+}
+
+.free-table__title {
+    font-size: 1.8rem;
+}
+
+.free-table__icon {
+    font-size: 3rem;
+    margin-right: 8px;
+    color: rgb(245, 245, 245);
+}
+
+.free-table__btn {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600; 
+    padding: 5px 20px;  
+    border-color: rgba(245, 245, 245, 0.6);
+    color: var(--white-color);
+    transition: background-color 0.2s ease-out;
+}
+
+.free-table__btn:hover {
+    background-color: #4b4b4b;
+    color: var(--white-color);
+    border-color: rgba(245, 245, 245, 0.6);
+}
+
+.game-card {
+    background-color: var(--primary-color);
+    border: none;
+    text-decoration: none;
+    display: block;
+}
+
+.game-card__img {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    vertical-align: bottom;
+    transition: opacity 0.2s ease-out;
+}
+
+.game-card__img:hover {
+    opacity: 0.8;
+}
+
+.game-card__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-color);
+    background-color: #0078f2;
+    height: 25px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.game-card__body--black {
+    background-color: var(--black-color);
+}
+
+.game-card__content {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.game-card__title {
+    color: var(--white-color);
+    margin-bottom: 10px;
+}
+
+/* Games table design */
+
+.games-table {
+    padding: 40px 0 0;
+    display: flex;
+}
+
+.games-table__column {
+}
+
+.games-table__heading {
+    padding-bottom: 10px;
+}
+
+.games-table__column:first-child, 
+.games-table__column:nth-child(2) {
+    border-right: 1px solid #2a2a2a;
+}
+
+.games-table__column:nth-child(2) .games-table__title,
+.games-table__column:last-child .games-table__title {
+    margin-left: 12px;
+}
+
+.games-table__title {
+    color: rgb(245, 245, 245);
+    font-size: 16px;
+}
+
+.games-table__btn {
+    padding: 8px 25px;
+    border-color: rgba(245, 245, 245, 0.6);
+    transition: background-color 0.2s ease-out;
+    font-size: 1.1rem;
+    margin-right: 12px;
+}
+
+.games-table__btn:hover {
+    border-color: rgba(245, 245, 245, 0.6);
+    color: var(--white-color);
+    background-color: #373737;
+}
+
+.games-table__list {
+    list-style: none;
+}
+
+.games-table__column:first-child .games-table__list {
+    margin-left: -12px;
+}
+
+.games-table__item {
+    padding: 0 12px;
+}
+
+.games-table__link {
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
+.games-table__link:hover {
+    background-color: #252525;
+}
+
+.games-table__icon {
+    width: 48px;
+    height: 64px;
+    border-radius: 6px;
+}
+
+.games-table__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.games-table__name {
+    font-size: 1.4rem;
+    color: var(--white-color);
+    line-height: 1.8rem;
+}
+
+.games-table__price {
+    font-size: 1.3rem;
+    color: var(--white-color);
+    font-weight: 600;
+}
+
+.games-table__price--upcoming {
+    color: rgb(245, 245, 245, 0.6);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* End content design */
+.more {
+    margin-top: 60px;
+    padding-bottom: 60px;
+}
+
+.more__link {
+    display: block;
+    width: 100%;
+    height: 340px;
+    background-size: cover;
+    background-image: url(https://cdn2.unrealengine.com/egs-featured-titles-blade-16x9-1920x1080-aaf6937d52da.jpg?h=1080&resize=1&w=1920);
+    background-position: top center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    transition: opacity 0.2s ease-out;
+}
+
+.more__link:hover {
+    opacity: 0.7;
+}
+
+.more__about {
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.more__title {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.more__title:hover {
+    color: var(--white-color);
+}
+
+.more__desc {
+    color: rgba(245, 245, 245, 0.6);
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+.more__btn {
+    width: 120px;
+    padding: 12px 0;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    transition: opacity 0.2s ease-out;
+}
+
+.more__btn:hover {
+    opacity: 0.7;
+}
+
