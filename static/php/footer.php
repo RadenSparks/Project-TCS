@@ -56,8 +56,8 @@
                             <p>Store Refund Policy</p>
                         </div>
                         <div class="Footer_right__3yQE6"><img
-                                src="https://epic-games-clone.vercel.app/icons/Epic_Games_white.svg"
-                                alt="epicGamesLogo"><img
+                                src="./static/image/img-layoutold/logo.png"
+                                alt="epicGamesLogo" style="width: 50px;"><img
                                 src="https://epic-games-clone.vercel.app/icons/Unreal_Engine_Logo.svg" alt="unreal">
                         </div>
                     </div>
