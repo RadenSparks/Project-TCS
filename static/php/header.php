@@ -20,17 +20,17 @@ $search = null;
     <link rel="stylesheet" href="./static/css/sliders.css">
     <link rel="stylesheet" href="./static/css/content.css">
     <link rel="stylesheet" href="./static/css/footer.css">
-    <title>Epic Games</title>
-    <meta name="title" content="Epic Games">
+    <title>TCS</title>
+    <meta name="title" content="TCS">
     <meta name="description" content="A gaming platform where users can buy and get different kinds of games.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://epic-games-clone.vercel.app/">
-    <meta property="og:title" content="Epic Games">
+    <meta property="og:title" content="TCS">
     <meta property="og:description" content="A gaming platform where users can buy and get different kinds of games.">
     <meta property="og:image" content="https://epic-games-clone.vercel.app/og-image.png">
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://epic-games-clone.vercel.app/">
-    <meta property="twitter:title" content="Epic Games">
+    <meta property="twitter:title" content="TCS">
     <meta property="twitter:description" content="A gaming platform where users can buy and get different kinds of games.">
     <meta property="twitter:image" content="https://epic-games-clone.vercel.app/og-image.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,10 +43,10 @@ $search = null;
         <div class="App">
             <div id="header" class="header_header__main__div__1miNF">
                 <div class="header_header__first__3S80d"><a href="./index.php">
-                        <div class="header_header__logo__36Cdj"><img src="https://epic-games-clone.vercel.app/icons/Epic_Games_white.svg" alt="epic" style="height: 36px;"></div>
+                        <div class="header_header__logo__36Cdj"><img src="./static/image/img-layoutold/logo.png" alt="epic" style="height: 55px;"></div>
                     </a>
                     <div class="header_header__navigations__wRzWm">
-                        <div class="header_header__navigations__div__2pSIS"><a href="/">
+                        <div class="header_header__navigations__div__2pSIS"><a href="./static/php/home.php">
                                 <p class="header_onhover__color__white__3u48K">STORE</p>
                             </a></div>
                         <div class="header_header__navigations__div__2pSIS">
@@ -88,7 +88,7 @@ $search = null;
                                     $username = strtoupper(explode('@', $email)[0]);
                                     echo '
                         <div class="nav-item nav-item--no-animation logged-in header_header__rewrite__2vMyA">
-                            <span class="btn nav-link">'.$username.'
+                            <span class="btn nav-link">' . $username . '
                                 <i style="padding: 0 5px" class="fa-solid fa-caret-down fa-sm"></i>
                                 <div class="user-menu">
                                     <ul class="user-menu__list">
@@ -107,7 +107,7 @@ $search = null;
                                     echo '
                                     <div id="header_header__rewrite__2vMyA"
                                     class="header_padding__right__EBNcD header_display__none__R6tIm">
-                                    <p class="header_onhover__color__white__3u48K">SIGN IN</p>
+                                    <p class="header_onhover__color__white__3u48K href="./index.php?act=signin">SIGN IN</p>
                                 </div>
                         ';
                                 }
@@ -200,12 +200,13 @@ $search = null;
                     </a>
                 </div>
                 <div class="sub-navbar_right__1pAwu">
-                    <a href="/cart">
-                        <div class="sub-navbar_cart__RmSJY">Cart</div>
-                    </a>
-                    <a href="/wishlist">
+                    <a href="./index.php?act=wishlist">
                         <div class="sub-navbar_wishlist__RmSJY">Wishlist</div>
                     </a>
+                    <a href="./index.php?act=cart">
+                        <div class="sub-navbar_cart__RmSJY">Cart</div>
+                    </a>
+                    <span class="count-product">1</span>
                 </div>
             </div>
 

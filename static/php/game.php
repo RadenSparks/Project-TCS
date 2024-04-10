@@ -22,16 +22,16 @@ if (isset($_SESSION['email'])) {
 ?>
 
 <div class="browse-page_card_container__3Uo6_">
-    <a href="<?php echo './index.php?act=detail&id=' . $gameid ?>">
+    <a>
         <div class="game-card_card__RBJ5f">
 
             <?php
             if ($inWishlist) {
-                echo '<div class="game-card_image_div__3GP6O"><img src="' . $icon . '" alt="' . $gameName . '">';
-                echo '<div class="game-card_icon__o86Ds"><img src="https://epic-games-clone.vercel.app/icons/Already_in_Wishlist.svg" alt="icon"></div>';
+                echo '<div class="game-card_image_div__3GP6O"><img name="game-thumbnail" id="'.$gameid.'" src="' . $icon . '" alt="' . $gameName . '">';
+                echo '<div class="game-card_icon__o86Ds"><img src="./static/icon/already-in-wishlist.png"alt="icon"></div>';
                 echo '</div>';
             } else {
-                echo '<div class="game-card_image_div__3GP6O"><img src="' . $icon . '" alt="' . $gameName . '">';
+                echo '<div class="game-card_image_div__3GP6O"><img name="game-thumbnail" id="'.$gameid.'" src="' . $icon . '" alt="' . $gameName . '">';
                 echo '<div class="game-card_icon__o86Ds"><img name="wishlist-icon" id="'.$gameid.'" src="https://epic-games-clone.vercel.app/icons/Add_to_Wishlist.svg" alt="icon"></div>';
                 echo '</div>';
             }
