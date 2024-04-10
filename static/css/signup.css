@@ -1,0 +1,113 @@
+
+/* * {
+    box-sizing: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+} */
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #000;
+    color: #fff;
+}
+.signup_container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #202020;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.head {
+    text-align: center;
+    margin: 25px 0 50px 0;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+.input_group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.input_group input {
+    width: 300px;
+    height: 50px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    color: #fff;
+    background-color: #202020;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+.input_name {
+    display: flex;
+    justify-content: space-between;
+}
+.first_name {
+    max-width: 135px;
+    margin-right: 10px;
+}
+.last_name {
+    max-width: 135px;
+}
+.options_login {
+    font-size: 12px;
+    margin: 0 0 0 -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.options_login input {
+    margin-right: 10px;
+}
+.options_login p {
+    color: #ccc;
+}
+.options_login a {
+    color: white;
+    font-weight: bold;
+}
+.button_login {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.button_login button{
+    width: 250px;
+    height: 50px;
+    background-color: #26BBFF;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 550;
+    border-radius: 10px;
+}
+.button_login button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.policy_swapfunc {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}.policy_swapfunc .policy {
+    margin-bottom: 15px;
+}
+.policy_swapfunc .policy a {
+    font-style: italic;
+    color: #fff;
+}
+.policy_swapfunc p {
+    color: #ccc;
+}
+.policy_swapfunc a{
+    color: #fff;
+    font-size: 12px;
+}

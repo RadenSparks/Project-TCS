@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+    box-sizing: inherit;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'PT sans', sans-serif;
+}
+body {
+    background-color: #000;
+    color: #fff;
+}
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+}
+.title_cart {
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+.cart {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.left_cart {
+    width: 800px;
+    height: 250px;
+    background-color: #202020;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.about_games {
+    width: 400px;
+    display: flex;
+    padding: 25px;
+}
+.image_game img {
+    width: 140px;
+    height: 180px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.operasys_icon svg {
+    width: 20px;
+    height: 20px;
+}
+.info_game {
+    margin-left: 25px;
+}
+.type_game {
+    width: 80px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+.name_game {
+    width: 350px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.gift_game{
+    font-size: 15px;
+    margin-top: 30px;
+}
+.more_game {
+    font-size: 15px;
+    margin-top: 15px;
+}
+.more_game svg {
+    width: 20px;
+    height: 13px;
+}
+.price_game {
+    padding: 25px;
+}
+.prices {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+.discount {
+    width: 45px;
+    height: 25px;
+    text-align: center;
+    background-color: #26BBFF;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 14px;
+}
+.del_price {
+    color: #ccc;
+    font-size: 12px;
+}
+.real_price {
+    font-size: 16px;
+}
+.options {
+    width: 250px;
+    margin-top: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.remove_game {
+    font-size: 15px;
+    color: #9d9d9d;
+    text-decoration: none;
+    padding: 5px !important;
+}
+.remove_game:hover {
+    text-decoration: underline;
+}
+.options button {
+    width: 190px;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: transparent;
+}
+.options button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+.options button a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+}
+.right_cart {
+    width: 350px;
+}
+.title_pay {
+    font-size: 45px;
+    line-height: 50px;
+}
+.price,
+.tax,
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.price {
+    margin: 40px 0 20px 0;
+}
+.tax {
+    margin-bottom: 20px;
+}
+.tax span {
+    color: #ccc;
+}
+.border_line {
+    border: 1px solid #9d9d9d;
+    margin-bottom: 20px;
+}
+.price span,
+.tax span,
+.total span {
+    font-size: 16px;
+}
+.right_cart button {
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #26BBFF;
+}
+.right_cart button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.right_cart button a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+}
+/* RESPONSIVE */
+@media screen and (max-width: 739px) {
+    
+}
+
+
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+    
+}

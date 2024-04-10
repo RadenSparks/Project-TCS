@@ -1,0 +1,99 @@
+.game-slider {
+    display: flex;
+    padding: 0;
+}
+
+.game-slider__img {
+    width: 80%;
+    user-select: none;
+}
+
+.game-slider, .slide {
+    transition: all 0.4s ease-in-out;
+}
+
+.game-slider__list {
+    width: 20%;
+    margin: 0;
+    position: relative;
+    flex-direction: column;
+    text-indent: 0;
+    justify-content:flex-start;
+    margin-left: 16px;
+}
+
+.game-slider__list [data-bs-target] {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color: #121212;
+    border-radius: 16px;
+}
+
+.game-slider__list .active {
+    background-color: #252525;
+}
+
+.game-slider__item {
+    padding: 0 24px;
+}
+
+.game-slider__icon {
+    width: 40px;
+    height: 53.3px;
+}
+
+.game-slider__title {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+}
+
+.slide__label {
+    width: 225px;
+    height: 90px;
+    margin-bottom: 40%;
+    margin-left: -96%;
+}
+
+.slide__info {
+    position: absolute;
+    top: 40%;
+    left: -16%;
+}
+
+.slide__sub-label {
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.slide__desc {
+    width: 365px;
+    text-align: left;
+    font-size: 1.6rem;
+    padding-top: 12px;
+    line-height: 2.6rem;
+    font-weight: 500;
+}
+
+.slide__price {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 500;
+    padding-top: 20px;
+}
+
+.slide__btn {
+    display: block;
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: 165px;
+    padding: 15px 0;
+    top: 150px;
+}
+
