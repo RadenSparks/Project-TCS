@@ -382,8 +382,7 @@ mysqli_query($conn, "SET NAMES 'utf8'");
                             <div class="specifications_terms__3TdTi">
                                 <p>CONDITIONS AND RESTRICTIONS APPLY.</p>
                                 <div class="specifications_info__ZFOX0">
-                                    <p>SEE <a href="https://www.epicgames.com/store/en-US/p/" rel="noreferrer"> EPIC
-                                            GAMES </a>FOR DETAILS. NO WEAPON, VEHICLE
+                                    <p>SEE <a href="#" rel="noreferrer">  </a>TCS FOR DETAILS. NO WEAPON, VEHICLE
                                         OR GEAR MANUFACTURER IS AFFILIATED WITH OR HAS SPONSORED OR ENDORSED
                                         THIS GAME.</p>
                                 </div>
