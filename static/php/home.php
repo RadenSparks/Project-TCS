@@ -123,10 +123,10 @@ $conn = openConnection();
                                             $newPrice = $sale * $gamePrice;
                                             $salePercent = 100 - $sale * 100;
                                             $priceHtml = '<div class="price-component_blue_button__13OKH">-' . $salePercent . '%</div>'
-                                                . '<div class="price-component_prev_price__2Pdz0">₫' . number_format($gamePrice) . '</div>'
-                                                . '<div class="price-component_disounted_price__2aQkW">₫' . number_format($newPrice) . '</div>';
+                                                . '<div class="price-component_prev_price__2Pdz0">' . number_format($gamePrice) . ' vnđ</div>'
+                                                . '<div class="price-component_disounted_price__2aQkW">' . number_format($newPrice) . ' vnđ</div>';
                                         } else {
-                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">₫' . number_format($gamePrice) . ' </div>';
+                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">' . number_format($gamePrice) . ' vnđ</div>';
                                         }
                                     }
                                     echo ' <div class="mainCardContainer_card__2_wdK">
@@ -177,10 +177,10 @@ $conn = openConnection();
                                     $newPrice = $sale * $gamePrice;
                                     $salePercent = 100 - $sale * 100;
                                     $priceHtml = '<div class="price-component_blue_button__13OKH">-' . $salePercent . '%</div>'
-                                        . '<div class="price-component_prev_price__2Pdz0">₫' . number_format($gamePrice) . '</div>'
-                                        . '<div class="price-component_disounted_price__2aQkW">₫' . number_format($newPrice) . '</div>';
+                                        . '<div class="price-component_prev_price__2Pdz0">' . number_format($gamePrice) . ' vnđ</div>'
+                                        . '<div class="price-component_disounted_price__2aQkW">' . number_format($newPrice) . ' vnđ</div>';
                                 } else {
-                                    $priceHtml = '<div class="price-component_disounted_price__2aQkW">₫' . number_format($gamePrice) . '</div>';
+                                    $priceHtml = '<div class="price-component_disounted_price__2aQkW">' . number_format($gamePrice) . ' vnđ</div>';
                                 }
                             }
                             echo '   <a href="./index.php?act=detail&&id=' . $item['gameid'] . '">
@@ -243,9 +243,6 @@ $conn = openConnection();
                                                     <img class="freeCardContainer_banner__3cF79" 
                                                     src="./static/img/icon/' . $freeGame['icon'] . '" alt="freeCardImages">
                                                     <div class="game-card_icon__o86Ds">
-                                                    <input type="submit" id="submit" name="submit" value=".">
-                                                </div>
-                                                    <div class="game-card_icon__o86Ds">
                                                         </div>
                                                             <div class="freeCardContainer_free__16LQ5">Free Now</div>
                                                             <div class="freeCardContainer_coming__HQcXI">Coming Soon</div>
@@ -282,10 +279,10 @@ $conn = openConnection();
                                             $newPrice = $sale * $gamePrice;
                                             $salePercent = 100 - $sale * 100;
                                             $priceHtml = '<div class="price-component_blue_button__13OKH">-' . $salePercent . '%</div>'
-                                                . '<div class="price-component_prev_price__2Pdz0">₫' . number_format($gamePrice) . '</div>'
-                                                . '<div class="price-component_disounted_price__2aQkW">₫' . number_format($newPrice) . '</div>';
+                                                . '<div class="price-component_prev_price__2Pdz0">' . number_format($gamePrice) . ' vnđ</div>'
+                                                . '<div class="price-component_disounted_price__2aQkW">' . number_format($newPrice) . ' vnđ</div>';
                                         } else {
-                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">₫' . number_format($gamePrice) . '</div>';
+                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">' . number_format($gamePrice) . ' vnđ</div>';
                                         }
                                     }
                                     echo '   
@@ -336,10 +333,10 @@ $conn = openConnection();
                                             $newPrice = $sale * $gamePrice;
                                             $salePercent = 100 - $sale * 100;
                                             $priceHtml = '<div class="price-component_blue_button__13OKH">-' . $salePercent . '%</div>'
-                                                . '<div class="price-component_prev_price__2Pdz0">₫' . number_format($gamePrice) . '</div>'
-                                                . '<div class="price-component_disounted_price__2aQkW">₫' . number_format($newPrice) . '</div>';
+                                                . '<div class="price-component_prev_price__2Pdz0">' . number_format($gamePrice) . ' vnđ</div>'
+                                                . '<div class="price-component_disounted_price__2aQkW">' . number_format($newPrice) . ' vnđ</div>';
                                         } else {
-                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">₫' . number_format($gamePrice) . '</div>';
+                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">' . number_format($gamePrice) . ' vnđ</div>';
                                         }
                                     }
                                     echo ' <a href="./index.php?act=detail&&id=' . $item['gameid'] . '">                                        
@@ -388,10 +385,10 @@ $conn = openConnection();
                                             $newPrice = $sale * $gamePrice;
                                             $salePercent = 100 - $sale * 100;
                                             $priceHtml = '<div class="price-component_blue_button__13OKH">-' . $salePercent . '%</div>'
-                                                . '<div class="price-component_prev_price__2Pdz0">₫' . number_format($gamePrice) . '</div>'
-                                                . '<div class="price-component_disounted_price__2aQkW">₫' . number_format($newPrice) . '</div>';
+                                                . '<div class="price-component_prev_price__2Pdz0">' . number_format($gamePrice) . ' vnđ</div>'
+                                                . '<div class="price-component_disounted_price__2aQkW">' . number_format($newPrice) . ' vnđ</div>';
                                         } else {
-                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">₫' . number_format($gamePrice) . '</div>';
+                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">' . number_format($gamePrice) . ' vnđ</div>';
                                         }
                                     }
                                     echo '<a href="./index.php?act=detail&&id=' . $item['gameid'] . '">
@@ -475,10 +472,10 @@ $conn = openConnection();
                                             $newPrice = $sale * $gamePrice;
                                             $salePercent = 100 - $sale * 100;
                                             $priceHtml = '<div class="price-component_blue_button__13OKH">-' . $salePercent . '%</div>'
-                                                . '<div class="price-component_prev_price__2Pdz0">₫' . number_format($gamePrice) . '</div>'
-                                                . '<div class="price-component_disounted_price__2aQkW">₫' . number_format($newPrice) . '</div>';
+                                                . '<div class="price-component_prev_price__2Pdz0">' . number_format($gamePrice) . ' vnđ</div>'
+                                                . '<div class="price-component_disounted_price__2aQkW">' . number_format($newPrice) . ' vnđ</div>';
                                         } else {
-                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">₫' . number_format($gamePrice) . '</div>';
+                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">' . number_format($gamePrice) . ' vnđ</div>';
                                         }
                                     }
                                     echo '<div class="mainCardContainer_card__2_wdK">
@@ -487,9 +484,9 @@ $conn = openConnection();
                                                     <div class="game-card_image_div__3GP6O"><img
                                                             src="./static/img/icon/' . $item['icon'] . '"
                                                             alt="' . $item['gamename'] . '">
-                                                            <div class="game-card_icon__o86Ds">
-                                                            <input type="submit" id="submit" name="submit" value=".">
-                                                        </div>
+                                                        <div class="game-card_icon__o86Ds"><img
+                                                                src="https://epic-games-clone.vercel.app/icons/Add_to_Wishlist.svg"
+                                                                alt="icon"></div>
                                                     </div>
                                                     <div class="game-card_info__3_mzD">
                                                         <p class="game-card_title__3klhw">' . $item['gamename'] . '</p>
@@ -566,10 +563,10 @@ $conn = openConnection();
                                             $newPrice = $sale * $gamePrice;
                                             $salePercent = 100 - $sale * 100;
                                             $priceHtml = '<div class="price-component_blue_button__13OKH">-' . $salePercent . '%</div>'
-                                                . '<div class="price-component_prev_price__2Pdz0">₫' . number_format($gamePrice) . '</div>'
-                                                . '<div class="price-component_disounted_price__2aQkW">₫' . number_format($newPrice) . '</div>';
+                                                . '<div class="price-component_prev_price__2Pdz0">' . number_format($gamePrice) . ' vnđ</div>'
+                                                . '<div class="price-component_disounted_price__2aQkW">' . number_format($newPrice) . ' vnđ</div>';
                                         } else {
-                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">₫' . number_format($gamePrice) . '</div>';
+                                            $priceHtml = '<div class="price-component_disounted_price__2aQkW">' . number_format($gamePrice) . ' vnđ</div>';
                                         }
                                     }
                                     echo '<div class="mainCardContainer_card__2_wdK">
@@ -578,9 +575,9 @@ $conn = openConnection();
                                                     <div class="game-card_image_div__3GP6O"><img
                                                             src="./static/img/icon/' . $item['icon'] . '"
                                                             alt="' . $item['gamename'] . '">
-                                                         <div class="game-card_icon__o86Ds">
-                                                            <input type="submit" id="submit" name="submit" value=".">
-                                                        </div>
+                                                        <div class="game-card_icon__o86Ds"><img
+                                                                src="https://epic-games-clone.vercel.app/icons/Add_to_Wishlist.svg"
+                                                                alt="icon"></div>
                                                     </div>
                                                     <div class="game-card_info__3_mzD">
                                                         <p class="game-card_title__3klhw">' . $item['gamename'] . '</p>

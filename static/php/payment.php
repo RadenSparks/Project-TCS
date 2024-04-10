@@ -154,9 +154,9 @@ try {
         ?>
         
         <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&commit=true&disable-funding=paylater"></script>
-        <link rel="stylesheet" href="./assets/js/css/themes/semantic.css">
-        <link rel="stylesheet" href="./assets/js/css/alertify.css">
-        <script src="./assets/js/alertify.js"></script>
+        <link rel="stylesheet" href="./static/js/css/themes/semantic.css">
+        <link rel="stylesheet" href="./static/js/css/alertify.css">
+        <script src="./static/js/alertify.js"></script>
 <script>
     paypal.Buttons({
         style: {
@@ -195,7 +195,7 @@ try {
             return actions.order.create({
                 "purchase_units": [{
                     "amount": {
-                        "currency_code": "USD",
+                        "currency_code": "VND",
                         "value": "<?php echo $total ?>"
                     },
                     "reference_id": generateUUID()

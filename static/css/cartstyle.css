@@ -224,7 +224,8 @@
             }
 
             .header_mainMenu__3pxnB p {
-                       font-size: 12px;
+                text-align: left;
+                font-size: 12px;
             }
 
             .header_mainMenu__3pxnB p:hover {
@@ -874,8 +875,7 @@
 
 .container {
     max-width: 1200px;
-    margin: 30px auto;
-    width: 100% !important;
+    margin: 180px auto;
 }
 .title_cart {
     font-size: 40px;
@@ -883,7 +883,7 @@
 }
 .cart {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -891,14 +891,14 @@
 
 .main_cart {
     width: fit-content;
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
 }
 
 .left_cart {
-    width: 800px;
+    width: 1000px;
     height: 250px;
     background-color: #202020;
     border-radius: 4px;
@@ -932,6 +932,7 @@
     text-transform: uppercase;
     font-size: 12px;
     background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 .name_game {
     width: 350px;
@@ -954,9 +955,11 @@
     padding: 25px;
 }
 .prices {
+    width: 200px;
     display: flex;
     align-items: center;
-    margin-left: -25px;
+    justify-content: space-between;
+    margin-left: 50px;
 }
 
 .currency {
@@ -965,22 +968,19 @@
 
 .discount {
     width: 45px;
-    height: 30px;
+    height: 25px;
+    text-align: center;
     background-color: #26BBFF;
     border-radius: 5px;
     padding: 5px;
     font-size: 14px;
-    margin: 0 10px;
-    text-align: center;
 }
 .del_price {
     color: #ccc;
     font-size: 12px;
-    margin: 0 10px;
 }
 .real_price {
     font-size: 16px;
-    margin: 0 10px;
 }
 .options {
     width: 250px;
@@ -990,19 +990,14 @@
     justify-content: space-between;
     flex-direction: row;
 }
-.more_game .remove_game {
+.remove_game {
     font-size: 15px;
-    color: black;
+    color: white;
     text-decoration: none;
-    padding: 5px !important;
-    border: none;
-    background-color: #ddd;
-    border-radius: 6px;
     padding: 5px !important;
 }
 .remove_game:hover {
-    opacity: 0.7;
-    cursor: pointer;
+    text-decoration: underline;
 }
 .options button {
     width: 190px;
@@ -1022,7 +1017,7 @@
     color: #fff;
 }
 .right_cart {
-    margin-top: 30px;
+    margin-top: 50px;
     width: 350px;    
     margin-left: 20px;
 }
@@ -1059,12 +1054,9 @@
 .right_cart button {
     width: 100%;
     height: 50px;
-    font-size: 18px;
-    outline: none;
-    border: none;
-    color: #fff;
     margin-top: 25px;
     border-radius: 8px;
+    text-align: center;
     background-color: #26BBFF;
 }
 .right_cart button:hover {
@@ -1077,13 +1069,12 @@
     font-size: 18px;
     color: #fff;
 }
-#main-container {
-    width: 800px;
+/* RESPONSIVE */
+@media screen and (max-width: 739px) {
+    
 }
-.emptyCard_container__22WzV {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 1200px;
+
+
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+    
 }

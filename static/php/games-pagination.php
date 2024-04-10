@@ -1,6 +1,6 @@
 <div class="top-category-slider_icons__133YT">
     <a <?php if ($page > 1)
-    echo 'href="./index.php?act=browse&page=' . (max(1, $page - 1)) . '&keyword='.$keyword.'&genreid='.$genre.'&price='.$price.'&sort='.$sort.'"' ?>
+    echo 'href="./index.php?act=browse&page=' . (max(1, min($pageCount, $page - 1))) . '&keyword='.$keyword.'&genreid='.$genre.'&price='.$price.'&sort='.$sort.'"' ?>
         class="top-category-slider_icon__1CEFP"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
             viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -12,7 +12,7 @@
     </a>
 
     <div class="pagination">
-    <?php
+            <?php
     for ($i = 1; $i <= $pageCount; $i++) {
         if ($i == $page) {
             echo '<a class="active">' . $i . '</a>';

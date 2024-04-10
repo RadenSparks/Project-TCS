@@ -89,7 +89,6 @@
     transition: all 0.2s ease-in-out;
     top: 0px;
     background-color: rgb(132, 109, 109);
-    width: 150px;
 }
 
 .user-menu__list {
@@ -100,6 +99,7 @@
     background-color: #0079f288;
     border-radius: 4px;
 }
+
 .user-menu__link {
     display: block;
     text-align: center;
