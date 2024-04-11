@@ -160,7 +160,7 @@
 
 					<!----add-modal start--------->
 					<div class="modal fade" tabindex="-1" id="addModal" role="dialog">
-						<div class="modal-dialog" role="document">
+						<div class="modal-dialog modal-dialog-lg" role="document">
 							<form class="modal-content" id="add-form">
 								<div class="modal-header">
 									<h5 class="modal-title">Add Game</h5>
@@ -169,40 +169,49 @@
 									</button>
 								</div>
 								<div class="modal-body">
-									<div class="form-group">
-										<label>Name</label>
-										<input type="text" class="form-control" name="name" required>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label>Name</label>
+											<input type="text" class="form-control" name="name" required>
+										</div>
+										<div class="form-group col-md-6">
+											<label>Price</label>
+											<input type="number" min="0" step="1" class="form-control" name="price" required>
+
+										</div>
 									</div>
-									<div class="form-group">
-										<label>Price</label>
-										<input type="number" min="0" step="1" class="form-control" name="price" required>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label>Sale</label>
+											<input type="number" min="0" step="0.01" max="1" class="form-control" name="sale" required>
+										</div>
+										<div class="form-group col-md-6">
+											<label for="inputState">Genre</label>			
+											<select name="genre" id="inputState" class="form-control">
+												<?php
+												foreach ($genreArr as $i => $genre) {
+													echo '<option value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
+												}
+												?>
+											</select>
+										</div>
 									</div>
-									<div class="form-group">
-										<label>Sale</label>
-										<input type="number" min="0" step="0.01" max="1" class="form-control" name="sale" required>
+									<div class="form-row">
+										<div class="form-group col-md-6">
+											<label>Developer</label>
+											<input type="text" class="form-control" name="developer" required>
+										</div>
+										<div class="form-group col-md-6">
+											<label>Publisher</label>
+											<input type="text" class="form-control" name="publisher" required>
+										</div>
 									</div>
-									<div class="form-group">
-										<label>Developer</label>
-										<input type="text" class="form-control" name="developer" required>
-									</div>
-									<div class="form-group">
-										<label>Publisher</label>
-										<input type="text" class="form-control" name="publisher" required>
-									</div>
-									<div class="form-group">
-										<label>Genre</label>
-										<select name="genre">
-											<?php
-											foreach ($genreArr as $i => $genre) {
-												echo '<option value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
-											}
-											?>
-										</select>
-									</div>
-									<div class="form-group">
-										<label>Summary</label>
-										<textarea class="form-control" name="summary" rows="8" required></textarea>
-									</div>
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<label>Summary</label>
+											<textarea class="form-control" name="summary" rows="4" required></textarea>
+										</div>
+									</div>									
 								</div>
 								<div class="modal-footer">
 									<button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -218,7 +227,7 @@
 					foreach ($gamePaginationArr as $i => $game) {
 						echo '
 							<div class="modal fade" tabindex="-1" id="editModal-' . $game['gameid'] . '" role="dialog">
-								<div class="modal-dialog" role="document">
+								<div class="modal-dialog modal-dialog-lg" role="document">
 									<form class="modal-content" name="edit-form">
 										<div class="modal-header">
 											<h5 class="modal-title">Edit Game #' . $game['gameid'] . '</h5>
@@ -228,43 +237,52 @@
 										</div>
 										<div class="modal-body">
 											<input type="text" hidden class="form-control" name="id" value="' . $game['gameid'] . '" required>
-											<div class="form-group">
-												<label>Name</label>
-												<input type="text" class="form-control" name="name" value="' . $game['gamename'] . '" required>
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label>Name</label>
+													<input type="text" class="form-control" name="name" value="' . $game['gamename'] . '" required>
+												</div>
+												<div class="form-group col-md-6">
+													<label>Price</label>
+													<input type="number" min="0" step="1" class="form-control" name="price" value="' . $game['price'] . '" required>
+
+												</div>
 											</div>
-											<div class="form-group">
-												<label>Price</label>
-												<input type="number" min="0" step="1" class="form-control" name="price" value="' . $game['price'] . '" required>
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label>Sale</label>
+													<input type="number" min="0" step="0.01" max="1" class="form-control" name="sale" value="' . $game['sale'] . '" required>
+												</div>
+												<div class="form-group col-md-6">
+													<label for="inputState">Genre</label>			
+													<select name="genre" id="inputState" class="form-control">';
+													foreach ($genreArr as $i => $genre) {
+														if ($game['genreid'] == $genre['genreid']) {
+															echo '<option selected value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
+														} else {
+															echo '<option value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
+														}
+													}
+													echo '</select>
+												</div>
 											</div>
-											<div class="form-group">
-												<label>Sale</label>
-												<input type="number" min="0" max="1" step="0.01" class="form-control" name="sale" value="' . $game['sale'] . '" required>
+											<div class="form-row">
+												<div class="form-group col-md-6">
+													<label>Developer</label>
+													<input type="text" class="form-control" name="developer" value="' . $game['developer'] . '" required>
+												</div>
+												<div class="form-group col-md-6">
+													<label>Publisher</label>
+													<input type="text" class="form-control" name="publisher" value="' . $game['publisher'] . '" required>
+												</div>
 											</div>
-											<div class="form-group">
-												<label>Developer</label>
-												<input type="text" class="form-control" name="developer" value="' . $game['developer'] . '" required>
-											</div>
-											<div class="form-group">
-												<label>Publisher</label>
-												<input type="text" class="form-control" name="publisher" value="' . $game['publisher'] . '" required>
-											</div>
-											<div class="form-group">
-												<label>Genre</label>
-												<select name="genre">';
-						foreach ($genreArr as $i => $genre) {
-							if ($game['genreid'] == $genre['genreid']) {
-								echo '<option selected value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
-							} else {
-								echo '<option value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
-							}
-						}
-						echo '</select>
-											</div>
-											<div class="form-group">
-												<label>Summary</label>
-												<textarea class="form-control" name="summary" rows="8" required>' . $game['summary'] . '</textarea>
-											</div>
-										</div>
+											<div class="form-row">
+												<div class="form-group col-md-12">
+													<label>Summary</label>
+													<textarea class="form-control" name="summary" rows="4" required>' . $game['summary'] . '</textarea>
+												</div>
+											</div>											
+										</div>										
 										<div class="modal-footer">
 											<button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 											<button type="submit" class="btn btn-success">Save</button>
@@ -328,9 +346,10 @@
 			e.preventDefault();
 			const form = e.target;
 			const body = new FormData(form);
-			await fetch('http://localhost/Project-TCS/static/php/dashboard/addGame.php', {
+			await fetch('./static/php/dashboard/addGame.php', {
 				method: 'POST',
 				body: body,
+				mode:"no-cors"					
 			}).then(response =>
 				response.json()
 			).then(response => {
@@ -431,8 +450,6 @@
 
 		}
 	</script>
-
-
 
 	<script type="text/javascript">
 		$(document).ready(function() {

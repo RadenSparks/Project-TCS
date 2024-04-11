@@ -59,9 +59,9 @@ body,html{
   
   
   
-  h1,h2,h3,h4,h5,h6,.h1,.21,.h3,.h4{
+  h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4{
 	   font-weight:400;
-	   line-height;1.5em;
+	   line-height:1.5em;
   }
   
   p{
@@ -698,6 +698,11 @@ background-color:rgba(0,0,0,0.09);
 	   .modal .modal-dialog{
 		   max-width:400px;
 	   }
+
+	   .modal .modal-dialog.modal-dialog-lg {
+			max-width:800px;
+		}
+
 	   .modal .modal-header, .modal .modal-body,.modal .modal-footer{
 		   padding:20px 30px;
 	   }

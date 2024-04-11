@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
+
 include_once "../../model/query.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
@@ -16,10 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $publisher = $_POST['publisher'];
         $genre = $_POST['genre'];
         $summary = $_POST['summary'];
+        
 
         $conn->begin_transaction();
         $insert_query = "INSERT INTO `game`(`gamename`, `sale`, `price`, `genreid`, `developer`, `publisher`, `summary`) VALUES ('".$name."', ".$sale.", ".$price.", ".$genre.", '".$developer."', '".$publisher."', '".$summary."')";
-        // queryResult($conn, $insert_query, 'sfiisss', $name, $sale, $price, $genre, $developer, $publisher, $summary);
         $result->query = $insert_query;
         query($conn, $insert_query);
         $result->status = true;
