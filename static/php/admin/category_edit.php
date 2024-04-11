@@ -8,10 +8,6 @@
                     <label class="form-label" for="categoryName">Category Name</label>
                     <input class="form-control" type="text" name="categoryName" id="categoryName" value="<?php echo isset($category) ? $category['genrename'] : ''; ?>">
                 </div>
-                <div>
-                    <label class="form-label" for="categoryImage">Category Image</label>
-                    <input class="form-control" type="file" name="categoryImage" id="categoryImage">
-                </div>
             </div>
         </div>
         <div class="text-right"> 
