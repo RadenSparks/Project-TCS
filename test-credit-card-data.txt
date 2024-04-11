@@ -1,0 +1,7 @@
+Generated credit card details
+Card number
+4032032038846199
+Expiry date
+08/2027
+CVC code
+844

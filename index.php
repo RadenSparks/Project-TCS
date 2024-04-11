@@ -2,7 +2,7 @@
 session_start();
 ob_start();
 include_once "./static/model/connectdb.php";
-include_once "./static/model/product.php";
+include_once "./static/model/gameModel.php";
 include_once "./static/model/detail.php";
 include_once "./static/model/account.php";
 include_once "./static/model/query.php";
@@ -24,8 +24,8 @@ if (isset($_SESSION['email'])) {
 }
 
 if($loggedIn && $account['isadmin'] && $act != 'dashboard' && $act != 'accountsetting'){
-    header('Location: /Project-TCS/index.php?act=dashboard&entity=game&page=1');
-    exit;
+    // header('Location: /Project-TCS/index.php?act=dashboard&pg=database');
+    // exit;
 }
 
 switch ($act) {
@@ -125,40 +125,41 @@ switch ($act) {
         break;
 
     case 'dashboard':
-        include_once "./static/model/query.php";
-        if (!$loggedIn || !$account['isadmin']) {
-            header('Location: /Project-TCS/index.php');
-            exit;
-        }
+        include "./static/php/admin/index.php";
+        // include_once "./static/model/query.php";
+        // if (!$loggedIn || !$account['isadmin']) {
+        //     header('Location: /Project-TCS/index.php');
+        //     exit;
+        // }
 
-        if (!isset($_GET['page'])) {
-            $page = "1";
-        } else {
-            $page = $_GET['page'];
-        }
+        // if (!isset($_GET['page'])) {
+        //     $page = "1";
+        // } else {
+        //     $page = $_GET['page'];
+        // }
 
-        if (!isset($_GET['entity'])) {
-            $entity = "game";
-        } else {
-            $entity = $_GET['entity'];
-        }
-        switch ($entity) {
-            case 'game':
-                include_once "./static/php/dashboard/gameDashboard.php";
-                break;
+        // if (!isset($_GET['entity'])) {
+        //     $entity = "game";
+        // } else {
+        //     $entity = $_GET['entity'];
+        // }
+        // switch ($entity) {
+        //     case 'game':
+        //         include_once "./static/php/admin/product.php";
+        //         break;
 
-            case 'account':
-                include_once "./static/php/dashboard/accountDashboard.php";
-                break;
+        //     case 'account':
+        //         include_once "./static/php/admin/account.php";
+        //         break;
 
-            case 'genre':
-                include_once "./static/php/dashboard/genreDashboard.php";
-                break;
+        //     case 'genre':
+        //         include_once "./static/php/admin/category_list.php";
+        //         break;
 
-            default:
-                include_once "./static/php/dashboard/gameDashboard.php";
-                break;
-        }
+        //     default:
+        //         include_once "./static/php/admin/product.php";
+        //         break;
+        // }
 
         break;
 

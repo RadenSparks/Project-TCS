@@ -1,6 +1,6 @@
 <?php
 include_once "./static/model/connectdb.php";
-include_once "./static/model/product.php";
+include_once "./static/model/gameModel.php";
 include_once "./static/model/query.php";
 $data = product();
 
