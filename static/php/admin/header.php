@@ -18,7 +18,7 @@
                 <!-- logo -->
                 <div class="logo">
                     <a href="#">
-                        <img src="img/logo.jpg" alt="LOGO"><br>
+                        <img src="./static/img/logo.jpg" alt="LOGO"><br>
                         <h2> TCS SHOP</h2>
                     </a>
                 </div>
@@ -70,7 +70,7 @@
                         <div class="Account">
 
                             <a href="#">
-                                <img src="img/logo.jpg" alt="">
+                                <img src="./static/img/logo.jpg" alt="">
                             </a>
                             <a href="#">admin</a>
                         </div>
