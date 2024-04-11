@@ -1,35 +1,45 @@
 <?php
+include_once "../model/query.php";
 session_start();
 if (!isset($_SESSION['email']) || !isset($_GET['id'])) {
     header('Location: /Project-TCS/index.php?act=signin');
     exit;
 }
 
-try {
-    $conn = new PDO("mysql:host=localhost;dbname=db_epicgamers", "root", "");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $conn->exec("SET NAMES 'utf8'");
+try {    
+    $conn = openConnection();
 
-    $stmt = $conn->prepare("SELECT * from wishlist w join accounts a on w.accountid = a.accountid where a.email = :email and w.gameid = :gameid");
-    $stmt->bindParam(':email', $_SESSION['email']);
-    $stmt->bindParam(':gameid', $_GET['id']);
-    $stmt->execute();
+    $accountResult = getAccountResultByEmail($conn, $_SESSION['email']);
     
+    if($accountResult->num_rows > 0){
+        $conn->begin_transaction();
+        $account = $accountResult->fetch_assoc();
+        $accountId = $account['accountid'];
 
-    if ($stmt->rowCount() == 0) {
-        $user_stmt = $conn->prepare("SELECT * from accounts a where a.email = :email LIMIT 1");
-        $user_stmt->bindParam(':email', $_SESSION['email']);
-        $user_stmt->execute();
-        if($user_stmt->rowCount() > 0){
-            $user_row = $user_stmt->fetch(PDO::FETCH_ASSOC);
-            $accountId = $user_row['accountid'];
-            $insert_query = "INSERT INTO `wishlist` (`accountid`, `gameid`) VALUES (:accountid, :gameid)";
-            $stmt = $conn->prepare($insert_query);
-            $stmt->bindParam(':accountid', $accountId);
-            $stmt->bindParam(':gameid', $_GET['id']);
-            $stmt->execute();
-        }        
+        $wishlistQuery =  "SELECT * from wishlist w join accounts a on w.accountid = a.accountid where a.email = ? and w.gameid = ?";
+        $wishlistResult = queryResult($conn, $wishlistQuery, 'si', $_SESSION['email'], $_GET['id']);
+
+        $insert_query = "INSERT INTO `wishlist` (`accountid`, `gameid`) VALUES (?, ?)";
+        queryResult($conn, $insert_query, 'ii', $accountId, $_GET['id']);
+
+        $conn->commit();            
     }
+
+
+    // if ($stmt->rowCount() == 0) {
+    //     $user_stmt = $conn->prepare("SELECT * from accounts a where a.email = :email and active = 1 LIMIT 1");
+    //     $user_stmt->bindParam(':email', $_SESSION['email']);
+    //     $user_stmt->execute();
+    //     if($user_stmt->rowCount() > 0){
+    //         $user_row = $user_stmt->fetch(PDO::FETCH_ASSOC);
+    //         $accountId = $user_row['accountid'];
+    //         $insert_query = "INSERT INTO `wishlist` (`accountid`, `gameid`) VALUES (:accountid, :gameid)";
+    //         $stmt = $conn->prepare($insert_query);
+    //         $stmt->bindParam(':accountid', $accountId);
+    //         $stmt->bindParam(':gameid', $_GET['id']);
+    //         $stmt->execute();
+    //     }        
+    // }
 
     if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);

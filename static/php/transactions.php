@@ -17,7 +17,7 @@
             include_once "generateUUID.php";
             if (isset($_SESSION['email'])) {
                 $conn = openConnection();
-                $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? and active = 1 LIMIT 1', 's', $_SESSION['email']);
 
                 if ($accountResult->num_rows > 0) {
                     $account = $accountResult->fetch_assoc();

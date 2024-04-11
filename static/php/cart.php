@@ -13,7 +13,7 @@ $totalCart = 0;
 $cartId = "";
 if (isset($_SESSION['email'])) {
     $conn = openConnection();
-    $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+    $accountResult = getAccountResultByEmail($conn, $_SESSION['email']);
     if ($accountResult->num_rows > 0) {
         $account = $accountResult->fetch_assoc();
         $accountId = $account["accountid"];

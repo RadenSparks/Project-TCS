@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if(isset($_POST['newpass']) && isset($_POST['confirmnewpass'])){         
             if($_POST['newpass'] == $_POST['confirmnewpass']){
                 $conn->begin_transaction();
-                $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                $accountResult = getAccountResultByEmail($conn, $_SESSION['email']);
                 if($accountResult->num_rows > 0){
                     $account = $accountResult->fetch_assoc();
                     $accountId = $account["accountid"];

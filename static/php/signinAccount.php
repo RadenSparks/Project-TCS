@@ -1,10 +1,11 @@
 <?php
- include_once "../model/query.php";
+include_once "../model/query.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
 
-    $conn = openConnection();
+    
     try {
+        $conn = openConnection();
         $result = new stdClass();
         $result->status = false;
 
@@ -12,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
             $pass = $_POST['pass'];
 
-            $accountResult = queryResult($conn, "SELECT email, password FROM accounts WHERE email = ? LIMIT 1", 's', $email);
+            $accountResult = getAccountResultByEmail($conn, $email);            
             
-            $account = $accountResult->fetch_assoc();
-            if ($account != null) {
+            if ($accountResult->num_rows > 0) {
+                $account = $accountResult->fetch_assoc();
                 if ($pass == $account['password']) {
                     $_SESSION['loggedin'] = true;
                     $_SESSION['email'] = $email;
@@ -32,9 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     $result->status = true;                    
                 } 
-                // else {                    
-                    // echo '<script defer type="text/javascript">var errorNotify = document.querySelector(".error"); errorNotify.style.display = "block";</script>';
-                // }
             }
         }        
         echo json_encode($result);

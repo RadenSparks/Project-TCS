@@ -20,4 +20,17 @@
         $result = $stmt->get_result();
         return $result;
     }
+
+    function getAccountResultByEmail($conn, $email){
+        $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? and active = 1 LIMIT 1', 's', $email);
+        return $accountResult;
+    }
+
+    function getAccountByEmail($conn, $email){
+        $result = getAccountResultByEmail($conn, $email);
+        if($result->num_rows > 0){
+            return $result->fetch_assoc();
+        }
+        return null;
+    }
 ?>

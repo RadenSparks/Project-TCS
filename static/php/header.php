@@ -83,7 +83,7 @@ $search = null;
                                     $username = strtoupper(explode('@', $email)[0]);
                                     $dashboardHtml = "";
                                     
-                                    $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                                    $accountResult = getAccountResultByEmail($conn, $_SESSION['email']);
                                     if ($accountResult->num_rows > 0) {
                                         $account = $accountResult->fetch_assoc();
                                         if($account['isadmin']){
@@ -182,7 +182,7 @@ $search = null;
 
                             $conn->begin_transaction();
 
-                            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? and active = 1 LIMIT 1', 's', $_SESSION['email']);
                             $account = $accountResult->fetch_assoc();
                             $accountId = $account["accountid"];
                             $wishItemResult = queryResult($conn, 'SELECT * from wishlist w WHERE w.accountid = ?', 'i', $accountId);
@@ -203,7 +203,7 @@ $search = null;
 
                             $conn->begin_transaction();
 
-                            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                            $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? and active = 1 LIMIT 1', 's', $_SESSION['email']);
                             $account = $accountResult->fetch_assoc();
                             $accountId = $account["accountid"];
 

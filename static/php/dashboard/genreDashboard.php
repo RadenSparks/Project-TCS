@@ -48,12 +48,12 @@
 							<div class="table-title">
 								<div class="row">
 									<div class="col-sm-6 p-0 flex justify-content-lg-start justify-content-center">
-										<h2 class="ml-lg-2">Manage Game</h2>
+										<h2 class="ml-lg-2">Manage Genre</h2>
 									</div>
 									<div class="col-sm-6 p-0 flex justify-content-lg-end justify-content-center">
 										<a href="#addModal" class="btn btn-success" data-toggle="modal">
 											<i class="material-icons">&#xE147;</i>
-											<span>Add New Game Product</span>
+											<span>Add New Genre</span>
 										</a>
 										<a id="deleteMulti" href="#deleteModal" class="btn btn-danger" data-toggle="modal" onclick="removeMulti()">
 											<i class="material-icons">&#xE15C;</i>
@@ -69,56 +69,43 @@
 										<th><span class="custom-checkbox">
 												<input type="checkbox" id="selectAll">
 												<label for="selectAll"></label></th>
-										<th>Name</th>
-										<th>Price</th>
-										<th>Sale</th>
-										<th>Genre</th>
-										<th>Developer</th>
-										<th>Publisher</th>
+										<th>#</th>
+										<th>Genre Name</th>
 										<th>Actions</th>
 									</tr>
 								</thead>
 
 								<tbody>
 									<?php
-									$gamePerPage = 10;
-									$pagination = ($page * $gamePerPage) - $gamePerPage;
-
-									$genreQuery = 'SELECT * from genre gnr where retired = 0';
-									$gamesQuery = 'SELECT * from game g join genre gnr on g.genreid = gnr.genreid where g.retired = 0';
-									$gameQueryPagination = $gamesQuery . ' ORDER BY g.gamename LIMIT ' . $pagination . ',' . $gamePerPage;
+									$genrePerPage = 10;
+									$pagination = ($page * $genrePerPage) - $genrePerPage;
 
 
-									$gameResult = query($conn, $gamesQuery);
-									$gamePaginationResult = query($conn, $gameQueryPagination);
+									$genreQuery = 'SELECT * from genre g where retired = 0';
+									$genreQueryPagination = $genreQuery . ' ORDER BY g.genreid LIMIT ' . $pagination . ',' . $genrePerPage;
+
+
 									$genreResult = query($conn, $genreQuery);
-									$pageCount = ceil($gameResult->num_rows / $gamePerPage);
-									$gamePaginationArr = array();
-									$genreArr = array();
-									while ($genre = $genreResult->fetch_assoc()) {
-										array_push($genreArr, $genre);
-									}
+									$genrePaginationResult = query($conn, $genreQueryPagination);
 
-									while ($game = $gamePaginationResult->fetch_assoc()) {
-										array_push($gamePaginationArr, $game);
-										$price = $game['price'] > 0 ? number_format($game['price']) . " vnđ" : 'Free';
+									$pageCount = ceil($genreResult->num_rows / $genrePerPage);
+									$genrePaginationArr = array();
+
+									while ($genre = $genrePaginationResult->fetch_assoc()) {
+										array_push($genrePaginationArr, $genre);
 										echo '
 												<tr>
 													<th><span class="custom-checkbox">
-															<input type="checkbox" id="checkbox1" name="check[]" value="' . $game['gameid'] . '">
+															<input type="checkbox" id="checkbox1" name="check[]" value="' . $genre['genreid'] . '">
 															<label for="checkbox1"></label></th>
-													<th>' . $game['gamename'] . '</th>
-													<th>' . $price . '</th>
-													<th>' . $game['sale'] * 100 . "%" . '</th>
-													<th>' . $game['genrename'] . '</th>
-													<th>' . $game['developer'] . '</th>
-													<th>' . $game['publisher'] . '</th>
+													<th>' . $genre['genreid'] . '</th>		
+													<th>' . $genre['genrename'] . '</th>
 													<th>
-														<a href="#editModal-' . $game['gameid'] . '" class="edit" data-toggle="modal">
+														<a href="#editModal-' . $genre['genreid'] . '" class="edit" data-toggle="modal">
 															<i class="material-icons" data-toggle="tooltip"
 																title="Edit">&#xE254;</i>
 														</a>
-														<a href="#deleteModal" class="delete" data-toggle="modal" onclick="remove(' . $game['gameid'] . ')">
+														<a href="#deleteModal" class="delete" data-toggle="modal" onclick="remove(' . $genre['genreid'] . ')">
 															<i class="material-icons" data-toggle="tooltip"
 																title="Delete">&#xE872;</i>
 														</a>
@@ -134,24 +121,24 @@
 
 							<div class="clearfix">
 								<div class="hint-text">showing <b>
-										<?php echo $gamePaginationResult->num_rows ?>
+										<?php echo $genrePaginationResult->num_rows ?>
 									</b> out of <b>
-										<?php echo $gameResult->num_rows ?>
+										<?php echo $genreResult->num_rows ?>
 									</b></div>
 								<ul class="pagination">
 									<li class="page-item disabled"><a <?php if ($page > 1)
-																			echo 'href="index.php?act=dashboard&entity=game&page=' . (max(1, $page - 1)) . '"' ?>>Previous</a></li>
+																			echo 'href="index.php?act=dashboard&entity=genre&page=' . (max(1, $page - 1)) . '"' ?>>Previous</a></li>
 									<?php
 									for ($i = 1; $i <= $pageCount; $i++) {
 										if ($i == $page) {
 											echo '<li class="page-item active"><a class="page-link">' . $i . '</a></li>';
 										} else {
-											echo '<li class="page-item"><a href="index.php?act=dashboard&entity=game&page=' . $i . '" class="page-link">' . $i . '</a></li>';
+											echo '<li class="page-item"><a href="index.php?act=dashboard&entity=genre&page=' . $i . '" class="page-link">' . $i . '</a></li>';
 										}
 									}
 									?>
 									<li class="page-item "><a <?php if ($page < $pageCount)
-																	echo 'href="index.php?act=dashboard&entity=game&page=' . (max(1, min($pageCount, $page + 1))) . '"' ?> class="page-link">Next</a></li>
+																	echo 'href="index.php?act=dashboard&entity=genre&page=' . (max(1, min($pageCount, $page + 1))) . '"' ?> class="page-link">Next</a></li>
 								</ul>
 							</div>
 						</div>
@@ -163,46 +150,16 @@
 						<div class="modal-dialog" role="document">
 							<form class="modal-content" id="add-form">
 								<div class="modal-header">
-									<h5 class="modal-title">Add Game</h5>
+									<h5 class="modal-title">Add Genre</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
 								<div class="modal-body">
 									<div class="form-group">
-										<label>Name</label>
-										<input type="text" class="form-control" name="name" required>
-									</div>
-									<div class="form-group">
-										<label>Price</label>
-										<input type="number" min="0" step="1" class="form-control" name="price" required>
-									</div>
-									<div class="form-group">
-										<label>Sale</label>
-										<input type="number" min="0" step="0.01" max="1" class="form-control" name="sale" required>
-									</div>
-									<div class="form-group">
-										<label>Developer</label>
-										<input type="text" class="form-control" name="developer" required>
-									</div>
-									<div class="form-group">
-										<label>Publisher</label>
-										<input type="text" class="form-control" name="publisher" required>
-									</div>
-									<div class="form-group">
-										<label>Genre</label>
-										<select name="genre">
-											<?php
-											foreach ($genreArr as $i => $genre) {
-												echo '<option value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
-											}
-											?>
-										</select>
-									</div>
-									<div class="form-group">
-										<label>Summary</label>
-										<textarea class="form-control" name="summary" rows="8" required></textarea>
-									</div>
+										<label>Genre Name</label>
+										<input type="text" class="form-control" name="genrename" required>
+									</div>									
 								</div>
 								<div class="modal-footer">
 									<button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -215,55 +172,23 @@
 
 					<!----edit-modal start--------->
 					<?php
-					foreach ($gamePaginationArr as $i => $game) {
+					foreach ($genrePaginationArr as $i => $genre) {
 						echo '
-							<div class="modal fade" tabindex="-1" id="editModal-' . $game['gameid'] . '" role="dialog">
+							<div class="modal fade" tabindex="-1" id="editModal-' . $genre['genreid'] . '" role="dialog">
 								<div class="modal-dialog" role="document">
 									<form class="modal-content" name="edit-form">
 										<div class="modal-header">
-											<h5 class="modal-title">Edit Game #' . $game['gameid'] . '</h5>
+											<h5 class="modal-title">Edit Genre #' . $genre['genreid'] . '</h5>
 											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												<span aria-hidden="true">&times;</span>
 											</button>
 										</div>
 										<div class="modal-body">
-											<input type="text" hidden class="form-control" name="id" value="' . $game['gameid'] . '" required>
+											<input type="text" hidden class="form-control" name="id" value="' . $genre['genreid'] . '" required>
 											<div class="form-group">
-												<label>Name</label>
-												<input type="text" class="form-control" name="name" value="' . $game['gamename'] . '" required>
-											</div>
-											<div class="form-group">
-												<label>Price</label>
-												<input type="number" min="0" step="1" class="form-control" name="price" value="' . $game['price'] . '" required>
-											</div>
-											<div class="form-group">
-												<label>Sale</label>
-												<input type="number" min="0" max="1" step="0.01" class="form-control" name="sale" value="' . $game['sale'] . '" required>
-											</div>
-											<div class="form-group">
-												<label>Developer</label>
-												<input type="text" class="form-control" name="developer" value="' . $game['developer'] . '" required>
-											</div>
-											<div class="form-group">
-												<label>Publisher</label>
-												<input type="text" class="form-control" name="publisher" value="' . $game['publisher'] . '" required>
-											</div>
-											<div class="form-group">
-												<label>Genre</label>
-												<select name="genre">';
-						foreach ($genreArr as $i => $genre) {
-							if ($game['genreid'] == $genre['genreid']) {
-								echo '<option selected value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
-							} else {
-								echo '<option value="' . $genre['genreid'] . '">' . $genre['genrename'] . '</option>';
-							}
-						}
-						echo '</select>
-											</div>
-											<div class="form-group">
-												<label>Summary</label>
-												<textarea class="form-control" name="summary" rows="8" required>' . $game['summary'] . '</textarea>
-											</div>
+												<label>Genre Name</label>
+												<input type="text" class="form-control" name="genrename" required value="' . $genre['genrename'] . '">
+											</div>					
 										</div>
 										<div class="modal-footer">
 											<button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -281,7 +206,7 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content" id="delete-form">
 								<div class="modal-header">
-									<h5 class="modal-title">Delete Game</h5>
+									<h5 class="modal-title">Delete Genre</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -328,7 +253,7 @@
 			e.preventDefault();
 			const form = e.target;
 			const body = new FormData(form);
-			await fetch('http://localhost/Project-TCS/static/php/dashboard/addGame.php', {
+			await fetch('./static/php/dashboard/addGenre.php', {
 				method: 'POST',
 				body: body,
 			}).then(response =>
@@ -349,7 +274,7 @@
 				e.preventDefault();
 				const form = e.target;
 				const body = new FormData(form);
-				await fetch('./static/php/dashboard/updateGame.php', {
+				await fetch('./static/php/dashboard/updateGenre.php', {
 					method: 'POST',
 					body: body,
 				}).then(response =>
@@ -415,7 +340,7 @@
 			e.preventDefault();
 			const body = new FormData();
 			body.set("ids", deleteModal.getAttribute("deleteIds"));
-			await fetch('./static/php/dashboard/deleteGame.php', {
+			await fetch('./static/php/dashboard/deleteGenre.php', {
 				method: 'POST',
 				body: body,
 			}).then(response =>

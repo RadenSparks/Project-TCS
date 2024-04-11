@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $conn->begin_transaction();
 
-        $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+        $accountResult = getAccountResultByEmail($conn, $_SESSION['email']);
         $account = $accountResult->fetch_assoc();
         $accountId = $account["accountid"];
 

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2024 at 03:38 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Apr 11, 2024 at 09:50 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,17 +34,19 @@ CREATE TABLE `accounts` (
   `lastname` text NOT NULL,
   `displayname` varchar(60) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `isadmin` bit(1) NOT NULL DEFAULT b'0'
+  `isadmin` bit(1) NOT NULL DEFAULT b'0',
+  `active` bit(1) NOT NULL DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displayname`, `email`, `isadmin`) VALUES
-(1, '123456', 'Phuoc', 'Le Minh', 'Le Minh Phuoc', 'phuoc@gmail.com', b'0'),
-(2, '123456', 'Leaf', 'Koder', 'Leaf Koder', 'leaf@gmail.com', b'0'),
-(3, '123456', 'User', 'Admin', 'Administrator', 'tcs.admin@tcsshop.com', b'1');
+INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displayname`, `email`, `isadmin`, `active`) VALUES
+(1, '123456', 'Phuoc', 'Le Minh', 'Le Minh Phuoc', 'phuoc@gmail.com', b'0', b'1'),
+(2, '123456', 'Leaf', 'Koder', 'Leaf Koder', 'leaf@gmail.com', b'0', b'1'),
+(3, '123456', 'User', 'Admin', 'Administrator', 'tcs.admin@tcsshop.com', b'1', b'1'),
+(4, '123456789', 'Doctor', 'Who', 'Who Doctor', 'drwho@gmail.com', b'0', b'1');
 
 -- --------------------------------------------------------
 
@@ -80,6 +82,14 @@ CREATE TABLE `cartitem` (
   `quantity` int(11) DEFAULT NULL,
   `gameid` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cartitem`
+--
+
+INSERT INTO `cartitem` (`cartitemid`, `cartid`, `quantity`, `gameid`) VALUES
+(33, 5, 1, 13),
+(34, 5, 1, 74);
 
 -- --------------------------------------------------------
 
@@ -153,7 +163,7 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 (38, 'Pupperazzi', 0, 188000, 0, 7, 'game38.jpg', 'Sundae Month', 'Kitfox Games', 'Put your love for pups to the test - we have a bunch of dogs that need their photos taken, doggone it! Photograph and catalogue the finest (and derpiest) dogs to build your career, upgrade your camera, and discover new canines. WOOF.', '', 'game38.jpg', 'game38.jpg', 'game38.jpg', 'game38.jpg', 'icon38.jpg', 'logo38.jpg', b'0'),
 (39, 'The Big Con', 0, 165000, 0, 7, 'game39.jpg', 'Mighty Yell', 'Skybound Games', 'Hustle and grift your way across America in the ‘90s as a teenage con artist on a crime-filled road trip adventure! Play as Ali, a curious and sarcastic high schooler who ditches band camp to go on a cross-country road trip to save her family video store.', '', 'game39.jpg', 'game39.jpg', 'game39.jpg', 'game39.jpg', 'icon39.jpg', 'logo39.jpg', b'0'),
 (40, 'Deponia: The Complete Journey', 0, 250000, 0, 7, 'game40.jpg', 'Daedalic Entertainment', 'Daedalic Entertainment', 'Join Rufus on his thrilling journeys, for the first time in a complete edition with many new features, that will not only be a blast for hardcore adventure fans, but also those new to the genre.', '', 'game40.jpg', 'game40.jpg', 'game40.jpg', 'game40.jpg', 'icon40.jpg', 'logo40.jpg', b'0'),
-(41, '3 out of 10: Season Two', 0, 0, 0, 7, 'game41.jpg', 'Terrible Posture Games, Inc.', 'Terrible Posture Games, Inc.', 'Caffeinated super-powers, sentient AIs, and rival game studios all stand in the way of Shovelworks studios as they struggle to finally make a game that scores better than “3 out of 10”. Will this be the Season that they finally do it?', 'free', 'game41.jpg', 'game41.jpg', 'game41.jpg', 'game41.jpg', 'icon41.jpg', 'logo41.jpg', b'0'),
+(41, '3 out of 10: Season Two !!', 0, 0, 0, 7, 'game41.jpg', 'Terrible Posture Games, Inc.', 'Terrible Posture Games, Inc.', 'Caffeinated super-powers, sentient AIs, and rival game studios all stand in the way of Shovelworks studios as they struggle to finally make a game that scores better than “3 out of 10”. Will this be the Season that they finally do it?', 'free', 'game41.jpg', 'game41.jpg', 'game41.jpg', 'game41.jpg', 'icon41.jpg', 'logo41.jpg', b'0'),
 (42, 'What Lies in the Multiverse', 0, 140000, 0, 7, 'game42.jpg', 'IguanaBee SpA.', 'Untold Tales S.A.', 'Welcome to What Lies in the Multiverse – a dimension-shifting, comedic adventure about worlds turned inside out through the powers of one gifted young boy and the misguided lessons of an eccentric scientist.', '', 'game42.jpg', 'game42.jpg', 'game42.jpg', 'game42.jpg', 'icon42.jpg', 'logo42.jpg', b'0'),
 (43, 'Wildcat Gun Machine', 0, 170000, 0, 8, 'game43.jpg', 'Chunkybox Games', 'Daedalic Entertainment', 'Wildcat Gun Machine is a bullet hell dungeon crawler where you take on hordes of disgusting flesh beasts with a wide variety of guns, giant mech robots, and cute kittens.', '', 'game43.jpg', 'game43.jpg', 'game43.jpg', 'game43.jpg', 'icon43.jpg', 'logo43.jpg', b'0'),
 (44, 'Riverbond', 0, 233000, 0, 8, 'game44.jpg', 'Riverbond', 'Riverbond', 'Riverbond is a fun and frantic couch co-op adventure game for 1 to 4 players set in a stunning voxel world. Embark on a heroic journey to complete missions, battle adorable enemies, and smash everything into tiny cubes!', '', 'game44.jpg', 'game44.jpg', 'game44.jpg', 'game44.jpg', 'icon44.jpg', 'logo44.jpg', b'0'),
@@ -197,25 +207,26 @@ INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid
 
 CREATE TABLE `genre` (
   `genreid` int(11) NOT NULL,
-  `genrename` text NOT NULL
+  `genrename` text NOT NULL,
+  `retired` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `genre`
 --
 
-INSERT INTO `genre` (`genreid`, `genrename`) VALUES
-(0, 'Action'),
-(1, 'Action-Adventure'),
-(2, 'Adventure'),
-(3, 'Application'),
-(4, 'Card Game'),
-(5, 'Casual'),
-(6, 'City Builder'),
-(7, 'Comedy'),
-(8, 'Dungeon Crawler'),
-(9, 'Exploration'),
-(10, 'Fighting');
+INSERT INTO `genre` (`genreid`, `genrename`, `retired`) VALUES
+(0, 'Action', b'0'),
+(1, 'Action-Adventure', b'0'),
+(2, 'Adventure', b'0'),
+(3, 'Application', b'0'),
+(4, 'Card Game', b'0'),
+(5, 'Casual', b'0'),
+(6, 'City Builder', b'0'),
+(7, 'Comedy', b'0'),
+(8, 'Dungeon Crawler', b'0'),
+(9, 'Exploration', b'0'),
+(10, 'Fighting', b'0');
 
 -- --------------------------------------------------------
 
@@ -234,7 +245,11 @@ CREATE TABLE `wishlist` (
 --
 
 INSERT INTO `wishlist` (`wishid`, `accountid`, `gameid`) VALUES
-(31, 2, 41);
+(31, 2, 41),
+(32, 3, 13),
+(33, 3, 74),
+(34, 2, 28),
+(35, 2, 13);
 
 --
 -- Indexes for dumped tables
@@ -291,7 +306,7 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `accountid` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `accountid` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -303,7 +318,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `cartitem`
 --
 ALTER TABLE `cartitem`
-  MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `game`
@@ -321,7 +336,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `wishid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Constraints for dumped tables

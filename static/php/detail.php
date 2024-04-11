@@ -427,7 +427,7 @@ mysqli_query($conn, "SET NAMES 'utf8'");
                             <?php
                             include_once "./static/model/query.php";
                             if(isset($_SESSION['email'])){
-                                $accountResult = queryResult($conn, 'SELECT * from accounts a where a.email = ? LIMIT 1', 's', $_SESSION['email']);
+                                $accountResult = getAccountResultByEmail($conn, $_SESSION['email']);
                                 $account = $accountResult->fetch_assoc();
                                 $accountId = $account["accountid"];
                                 $cartItemResult = queryResult($conn, 'SELECT * FROM cartitem ci join cart c on c.cartid = ci.cartid join accounts a on c.accountid = a.accountid WHERE status = 1 and a.accountid = ? and ci.gameid = ? LIMIT 1', 'ii', $accountId, $gameDetail['gameid']);

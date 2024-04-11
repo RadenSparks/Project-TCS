@@ -14,7 +14,7 @@
             </a>            
         </li>
         <li class="<?php if($entity == "genre") echo 'active' ?>">
-            <a href="#" class="dashboard">
+            <a href="index.php?act=dashboard&entity=genre&page=1" class="dashboard">
                 Genre
             </a>            
         </li>
