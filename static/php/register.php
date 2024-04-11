@@ -96,7 +96,7 @@
         if ($checkEmailResult) {
             echo '<script defer type="text/javascript">var errorNotify = document.querySelector(".error");errorNotify.style.display = "block";</script>';
         } else {
-            $addEmailStmt = $conn->prepare("INSERT INTO accounts (email, password, firstname, lastname, displayname) VALUES (:email, :pass, :firstName, :lastName, :displayName)");
+            $addEmailStmt = $conn->prepare("INSERT INTO accounts (email, password, firstname, lastname, displayname,active) VALUES (:email, :pass, :firstName, :lastName, :displayName, 1)");
             $addEmailStmt->bindParam(':email', $email);
             $addEmailStmt->bindParam(':pass', $pass);
             $addEmailStmt->bindParam(':firstName', $firstName);
