@@ -135,10 +135,26 @@ if (isset($_GET['act'])) {
             if (!isset($_GET['entity'])) {
                 $entity = "game";
             } else {
-                $genre = $_GET['entity'];
+                $entity = $_GET['entity'];
             } 
+            switch ($entity) {
+                case 'game':
+                    include_once "./static/php/dashboard/gameDashboard.php";
+                    break;
 
-            include_once "./static/php/dashboard/gameDashboard.php";
+                case 'account':
+                    include_once "./static/php/dashboard/accountDashboard.php";
+                    break;
+
+                case 'genre':
+                    # code...
+                    break;
+                
+                default:
+                    include_once "./static/php/dashboard/gameDashboard.php";
+                    break;
+            }
+            
             break;
 
         default:
