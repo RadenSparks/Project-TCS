@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2024 at 03:02 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Apr 11, 2024 at 06:06 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,7 +35,7 @@ CREATE TABLE `accounts` (
   `displayname` varchar(60) NOT NULL,
   `email` varchar(100) NOT NULL,
   `isadmin` bit(1) NOT NULL DEFAULT b'0',
-  `active` bit(1) NOT NULL DEFAULT b'1'
+  `active` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -43,7 +43,6 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`accountid`, `password`, `firstname`, `lastname`, `displayname`, `email`, `isadmin`, `active`) VALUES
-(1, '123456', 'Phuoc', 'Le Minh', 'Le Minh Phuoc', 'phuoc@gmail.com', b'0', b'1'),
 (2, '123456', 'Leaf', 'Koder', 'Leaf Koder', 'leaf@gmail.com', b'0', b'1'),
 (3, '123456', 'User', 'Admin', 'Administrator', 'tcs.admin@tcsshop.com', b'1', b'1'),
 (4, '123456789', 'Doctor', 'Who', 'Who Doctor', 'drwho@gmail.com', b'0', b'1');
@@ -60,15 +59,9 @@ CREATE TABLE `cart` (
   `purchasedate` datetime DEFAULT NULL,
   `status` bit(1) DEFAULT NULL,
   `paymentmethod` int(11) NOT NULL,
-  `totalprice` float NOT NULL
+  `totalprice` float NOT NULL,
+  `retired` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`cartid`, `accountid`, `purchasedate`, `status`, `paymentmethod`, `totalprice`) VALUES
-(5, 2, '2024-04-06 13:49:08', b'1', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -80,16 +73,9 @@ CREATE TABLE `cartitem` (
   `cartitemid` bigint(20) NOT NULL,
   `cartid` bigint(20) NOT NULL,
   `quantity` int(11) DEFAULT NULL,
-  `gameid` bigint(20) NOT NULL
+  `gameid` bigint(20) NOT NULL,
+  `retired` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `cartitem`
---
-
-INSERT INTO `cartitem` (`cartitemid`, `cartid`, `quantity`, `gameid`) VALUES
-(33, 5, 1, 13),
-(34, 5, 1, 74);
 
 -- --------------------------------------------------------
 
@@ -123,10 +109,6 @@ CREATE TABLE `game` (
 --
 
 INSERT INTO `game` (`gameid`, `gamename`, `sale`, `price`, `saleprice`, `genreid`, `first-img`, `developer`, `publisher`, `summary`, `tag`, `second-img`, `third-img`, `fourth-img`, `fifth-img`, `icon`, `logo`, `retired`) VALUES
-(1, 'Zelter', 0, 186000, 0, 0, 'game1.jpg', 'G1 Playground', 'SuperGG.com', 'All the horrors of zombie apocalypse in adorable pixelated form! Craft explore and rescue people in a city overrun by the zombie horde. Good luck survivors!', 'topsellers', 'game1.jpg', 'game1.jpg', 'game1.jpg', 'game1.jpg', 'icon1.jpg', 'logo1.jpg', b'0'),
-(2, 'Retrowave Rider', 0.8, 37000, 37600, 0, 'game2.jpg', 'Starchaser Game', 'Meridian4', 'Retrowave Rider is a 2D precision platformer where you control not only the character but also the level itself. Dive into synthwave worlds filled with retro-inspired visuals and smooth synth sounds and experience this journey with all of its trials and glories.', '', 'game2.jpg', 'game2.jpg', 'game2.jpg', 'game2.jpg', 'icon2.jpg', 'logo2.jpg', b'0'),
-(3, 'Monster Outbreak', 0, 112000, 0, 1, 'game3.jpg', 'GameMunchers', 'Freedom Games', 'The King dimensional orb has malfunctioned bringing hordes of monsters into the Kingdom. Defend your safeground against the monsters by gathering resources building defenses upgrading your arsenal and surviving long enough to find the source of monsters and destroy it.', '', 'game3.jpg', 'game3.jpg', 'game3.jpg', 'game3.jpg', 'icon3.jpg', 'logo3.jpg', b'0'),
-(4, 'Airoheart', 0, 250000, 0, 1, 'game4.jpg', 'Pixel Heart Studios', 'SOEDESCO', 'Airoheart is a top-down action-adventure RPG inspired by the classics. Embark on an epic journey to save the world from evil and test the strength of your heart in this emotional tale of betrayal tragedy and redemption.', '', 'game4.jpg', 'game4.jpg', 'game4.jpg', 'game4.jpg', 'icon4.jpg', 'logo4.jpg', b'0'),
 (5, 'ANNO: Mutationem', 0, 203000, 0, 1, 'game5.jpg', 'ThinkingStars', 'Lightning Games', 'ANNO: Mutationem is an action-adventure game with RPG elements set in a cyberpunk world featuring a unique mix of pixelated 2D & 3D graphic style with a rich dark and bizarre plot.', '', 'game5.jpg', 'game5.jpg', 'game5.jpg', 'game5.jpg', 'icon5.jpg', 'logo5.jpg', b'0'),
 (6, 'Venice 2089', 0, 140000, 0, 2, 'game6.jpg', 'Safe Place Studio', 'Safe Place Studio', 'Explore a future Venice struggling with the effects of rising water slowly destroying the city as a bored teenager with your hoverboard and your trusty drone.', 'topsellers', 'game6.jpg', 'game6.jpg', 'game6.jpg', 'game6.jpg', 'icon6.jpg', 'logo6.jpg', b'0'),
 (7, 'Atari Mania', 0, 133000, 0, 2, 'game7.jpg', 'iLLOGIKA Studios', 'Atari Inc', 'A wild journey through videogame history, Atari Mania is a microgame collection wrapped in a hilarious retro-driven narrative of exploration and surprise.', '', 'game7.jpg', 'game7.jpg', 'game7.jpg', 'game7.jpg', 'icon7.jpg', 'logo7.jpg', b'0'),
@@ -252,21 +234,6 @@ CREATE TABLE `wishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `wishlist`
---
-
-INSERT INTO `wishlist` (`wishid`, `accountid`, `gameid`) VALUES
-(31, 2, 41),
-(32, 3, 13),
-(33, 3, 74),
-(34, 2, 28),
-(35, 2, 13);
-
---
--- Indexes for dumped tables
---
-
---
 -- Indexes for table `accounts`
 --
 ALTER TABLE `accounts`
@@ -323,19 +290,19 @@ ALTER TABLE `accounts`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cartid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `cartitem`
 --
 ALTER TABLE `cartitem`
-  MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `cartitemid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `game`
 --
 ALTER TABLE `game`
-  MODIFY `gameid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `gameid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `genre`
