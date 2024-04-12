@@ -87,13 +87,6 @@
                         <input class="form-control" type="file" name="logo" id="logo">
                     </div>
 
-                    <div>   
-                        <label class="form-label" for="status">Status</label>
-                        <select class="form-select" name="status" id="status">
-                            <option value="Đang hoạt động">Active</option>
-                            <option value="Tạm ngưng">Inactive</option>
-                        </select>
-                    </div>
                 </div>
                 
             </div>

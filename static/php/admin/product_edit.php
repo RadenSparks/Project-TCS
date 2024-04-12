@@ -79,15 +79,6 @@ if (isset($_GET['gameid'])) {
 
                     </div>
 
-                    <div>
-                        <label class="form-label" for="status">Status</label>
-                        <select class="form-select" name="status" id="status">
-                            <option value="Đang hoạt động">Active</option>
-                            <option value="Tạm ngưng">Inactive</option>
-                        </select>
-                    </div>
-
-
 
                 </div>
                 <div class="col-md-6">
