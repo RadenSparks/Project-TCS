@@ -25,6 +25,26 @@ To get a local copy up and running, follow these steps:
 - Apache ( XAMMP )
 
 ### Installation
-1. Clone the repo
+Clone the repo
    ```bash
    git clone https://github.com/RadenSparks/Project-TCS.git
+Navigate to the project directory
+Copy
+cd Project-TCS
+Import the database schema located in db/schema.sql into your MySQL database.
+Update the database connection settings in config.php.
+Start your web server and navigate to http://localhost/Project-TCS in your browser.
+Usage
+Create an account or log in to explore the game library and make purchases.
+Add games to your shopping cart and proceed to checkout.
+Contributing
+Contributions are welcome! Please read the CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Contact
+For inquiries, please reach out to RadenSparks.
+
+Acknowledgments
+Inspired by the Epic Games Store.
