@@ -34,17 +34,18 @@ cd Project-TCS
 Import the database schema located in db/schema.sql into your MySQL database.
 Update the database connection settings in config.php.
 Start your web server and navigate to http://localhost/Project-TCS in your browser.
-Usage
+
+### Usage
 Create an account or log in to explore the game library and make purchases.
 Add games to your shopping cart and proceed to checkout.
 Contributing
 Contributions are welcome! Please read the CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
 
-License
+### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Contact
+### Contact
 For inquiries, please reach out to RadenSparks.
 
-Acknowledgments
+### Acknowledgments
 Inspired by the Epic Games Store.
