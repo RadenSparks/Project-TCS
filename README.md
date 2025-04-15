@@ -26,7 +26,6 @@ To get a local copy up and running, follow these steps:
 
 ### Installation
 Clone the repo
-   ```bash
    git clone https://github.com/RadenSparks/Project-TCS.git
 Navigate to the project directory
 Copy
