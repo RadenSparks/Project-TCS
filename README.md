@@ -24,16 +24,30 @@ To get a local copy up and running, follow these steps:
 - MySQL
 - Apache ( XAMMP )
 
-### Installation
-Clone the repo
+Copy
+## Installation
+
+To get a local copy of the project up and running, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
    git clone https://github.com/RadenSparks/Project-TCS.git
-Navigate to the project directory
+Navigate to the project directory:
+
 Copy
 cd Project-TCS
+Import the database schema:
 Import the database schema located in db/schema.sql into your MySQL database.
-Update the database connection settings in config.php.
-Start your web server and navigate to http://localhost/Project-TCS in your browser.
 
+Update the database connection settings:
+Modify the database connection settings in config.php to match your local setup.
+
+Start your web server:
+Launch your web server and navigate to http://localhost/Project-TCS in your browser.
+
+Copy
+
+Feel free to ask if you need any more adjustments or additions!
 ### Usage
 Create an account or log in to explore the game library and make purchases.
 Add games to your shopping cart and proceed to checkout.
